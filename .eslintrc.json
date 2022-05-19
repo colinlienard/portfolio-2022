@@ -1,0 +1,31 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:vue/essential",
+    "@nuxtjs/eslint-config-typescript",
+    "airbnb-base",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module"
+  },
+  "plugins": ["vue", "@typescript-eslint", "prettier"],
+  "rules": {
+    "linebreak-style": ["error", "windows"],
+    "prettier/prettier": "error"
+  },
+  // Vue and Nuxt auto imports (https://v3.nuxtjs.org/guide/concepts/auto-imports)
+  "overrides": [
+    {
+      "files": ["**/*.vue"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ]
+}

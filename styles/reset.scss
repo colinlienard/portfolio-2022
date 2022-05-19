@@ -1,0 +1,101 @@
+/*
+  * tinyreset.css • v1.2.0
+  * MIT License
+  * https://github.com/ColinLienard/tinyreset.css
+*/
+
+/* Remove margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply prefered box-sizing for all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Apply smooth scrolling when clicking on anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+/*
+  * 1. Body takes at least all the space in the screen
+  * 2. Set fonts to default
+  * 3. Optimize rendering speed of texts
+*/
+body {
+  /* 1 */
+  min-height: 100vh;
+
+  /* 2 */
+  font-size: 100%;
+  line-height: 1;
+
+  /* 3 */
+  text-rendering: optimizespeed;
+}
+
+/* Apply regular font weight on headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+/* Apply regular styles for anchors */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Apply regular styles for buttons and inputs */
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+/* Apply only vertical resize on textarea */
+textarea {
+  resize: vertical;
+}
+
+/* Apply the pointer cursor for all buttons */
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  cursor: pointer;
+}
+
+/* Make images, videos and svgs easier to work with */
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Remove list style */
+ul {
+  list-style: none;
+}
+
+/* Apply regular styles for strong */
+strong {
+  font-weight: inherit;
+}
