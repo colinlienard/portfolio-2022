@@ -1,0 +1,19 @@
+@use 'screens';
+
+@mixin heading-1 {
+  font-weight: 600;
+  font-size: 3rem;
+
+  @include screens.laptop {
+    font-size: 5rem;
+  }
+}
+
+@mixin heading-2 {
+  font-weight: 600;
+  font-size: 2rem;
+
+  @include screens.laptop {
+    font-size: 4rem;
+  }
+}
