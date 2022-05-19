@@ -4,7 +4,12 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "lint:ts": "eslint **/*.ts **/*.vue",
+    "lint:style": "stylelint \"**/*.{vue,scss}\"",
+    "lint:prettier": "prettier --check .",
+    "lint": "pnpm lint:ts && pnpm lint:style && pnpm lint:prettier",
+    "lintfix": "prettier --write ."
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^10.0.0",
