@@ -6,7 +6,8 @@
     "extends": [
         "plugin:vue/essential",
         "@nuxtjs/eslint-config-typescript",
-        "airbnb-base"
+        "airbnb-base",
+        "prettier"
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
@@ -15,10 +16,12 @@
     },
     "plugins": [
         "vue",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier"
     ],
     "rules": {
-      "linebreak-style": ["error", "windows"]
+      "linebreak-style": ["error", "windows"],
+      "prettier/prettier": "error"
     },
     // Vue and Nuxt auto imports (https://v3.nuxtjs.org/guide/concepts/auto-imports)
     "overrides": [
