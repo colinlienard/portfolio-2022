@@ -9,7 +9,8 @@
     "lint:style": "stylelint \"**/*.{vue,scss}\"",
     "lint:prettier": "prettier --check .",
     "lint": "pnpm lint:ts && pnpm lint:style && pnpm lint:prettier",
-    "lintfix": "prettier --write ."
+    "lintfix": "prettier --write .",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^10.0.0",
@@ -21,6 +22,7 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^9.0.1",
+    "husky": "^8.0.1",
     "nuxt": "3.0.0-rc.3",
     "postcss": "^8.4.14",
     "postcss-html": "^1.4.1",
