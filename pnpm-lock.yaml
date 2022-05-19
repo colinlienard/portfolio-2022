@@ -10,6 +10,7 @@ specifiers:
   eslint-plugin-import: ^2.25.2
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-vue: ^9.0.1
+  husky: ^8.0.1
   nuxt: 3.0.0-rc.3
   postcss: ^8.4.14
   postcss-html: ^1.4.1
@@ -32,6 +33,7 @@ devDependencies:
   eslint-plugin-import: 2.26.0_eor5fr4wgkua4fh2zz3r4cqkce
   eslint-plugin-prettier: 4.0.0_iqftbjqlxzn3ny5nablrkczhqi
   eslint-plugin-vue: 9.0.1_eslint@8.15.0
+  husky: 8.0.1
   nuxt: 3.0.0-rc.3_sass@1.51.0
   postcss: 8.4.14
   postcss-html: 1.4.1
@@ -4556,6 +4558,15 @@ packages:
         integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==,
       }
     engines: { node: '>=10.17.0' }
+    dev: true
+
+  /husky/8.0.1:
+    resolution:
+      {
+        integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==,
+      }
+    engines: { node: '>=14' }
+    hasBin: true
     dev: true
 
   /iconv-lite/0.4.24:
