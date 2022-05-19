@@ -7,3 +7,9 @@ const count = ref(0);
     {{ count }}
   </button>
 </template>
+
+<style scoped lang="scss">
+button {
+  color: #000;
+}
+</style>
