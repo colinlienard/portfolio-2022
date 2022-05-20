@@ -8,6 +8,7 @@
 * {
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 
 /* Apply prefered box-sizing for all elements */
@@ -88,6 +89,7 @@ video,
 svg {
   display: block;
   max-width: 100%;
+  -webkit-user-drag: none;
 }
 
 /* Remove list style */
