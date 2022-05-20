@@ -1,8 +1,13 @@
+<script setup lang="ts">
+const isMobile = useIsMobile();
+</script>
+
 <template>
   <header class="header">
     <p class="pre-hero"><span class="emoji">👋</span> Bonjour !</p>
     <h1 class="hero">
-      Je suis<br />Colin Lienard, webdesigner<br />& développeur front-end
+      Je suis <br v-if="isMobile" />Colin Lienard, webdesigner
+      <br v-if="isMobile" />& développeur front-end
     </h1>
     <div class="discover">
       <p>Découvrez</p>
@@ -12,6 +17,7 @@
 </template>
 
 <style scroped lang="scss">
+@use '../styles/screens';
 @use '../styles/typography';
 @use '../styles/variables';
 
@@ -35,6 +41,10 @@
     margin-top: 1.5rem;
     position: relative;
 
+    @include screens.laptop {
+      max-width: 64rem;
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -49,6 +59,10 @@
       );
       mix-blend-mode: darken;
       transform: rotate(-30deg);
+
+      @include screens.laptop {
+        height: 12rem;
+      }
     }
   }
 

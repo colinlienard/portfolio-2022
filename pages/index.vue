@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="page">
-    <NavBar />
+    <BaseNavbar />
     <HomeHeader />
     <HomePortfolio />
     <HomeAbout />

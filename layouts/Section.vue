@@ -5,18 +5,12 @@
 </template>
 
 <style scoped lang="scss">
+@use '../styles/mixins';
 @use '../styles/screens';
 
 .section {
-  width: min(100%, 75rem);
-  padding: 0 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
+  @include mixins.section;
 
-  @include screens.laptop {
-    gap: 6rem;
-  }
+  width: min(100%, 75rem);
 }
 </style>

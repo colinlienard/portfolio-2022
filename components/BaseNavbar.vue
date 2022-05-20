@@ -16,6 +16,7 @@
 
 <style scoped lang="scss">
 @use '../styles/mixins';
+@use '../styles/screens';
 
 .nav {
   position: fixed;
@@ -29,6 +30,10 @@
     display: flex;
     gap: 2rem;
     white-space: nowrap;
+
+    @include screens.laptop {
+      gap: 4rem;
+    }
 
     .link {
       @include mixins.link;

@@ -1,17 +1,29 @@
+<script setup lang="ts">
+const isMobile = useIsMobile();
+</script>
+
 <template>
   <NuxtLayout name="section">
-    <h2 class="hero">À propos de moi</h2>
-    <img src="/images/colin.webp" alt="" class="image" />
-    <p class="paragraph">
-      Je suis un <strong>webdesigner</strong> 🎨 et un
-      <strong>développeur front-end</strong> ⚡ fraîchement diplômé,
-      actuellement basé à Limoges.<br /><br />Passioné de la
-      <strong>création d’interface</strong> 🖥️, aussi bien par le côté graphique
-      que par le développement, j’adore tester des
-      <strong>nouvelles tendances et technologies</strong>.<br /><br />J’essaie
-      aussi de créer des projets cools ✨👀 sur mon temps libre !<br /><br />Pour
-      découvrir mes compétences, <strong>cliquez n’importe où</strong>...
-    </p>
+    <figure class="figure">
+      <figcaption v-if="isMobile">
+        <h2 class="hero">À propos de moi</h2>
+      </figcaption>
+      <img src="/images/colin.webp" alt="" class="image" />
+      <figcaption class="figcaption">
+        <h2 v-if="!isMobile" class="hero">À propos de moi</h2>
+        <p class="paragraph">
+          Je suis un <strong>webdesigner</strong> 🎨 et un
+          <strong>développeur front-end</strong> ⚡ fraîchement diplômé,
+          actuellement basé à Limoges.<br /><br />Passioné de la
+          <strong>création d’interface</strong> 🖥️, aussi bien par le côté
+          graphique que par le développement, j’adore tester des
+          <strong>nouvelles tendances et technologies</strong
+          >.<br /><br />J’essaie aussi de créer des projets cools ✨👀 sur mon
+          temps libre !<br /><br />Pour découvrir mes compétences,
+          <strong>cliquez n’importe où</strong>...
+        </p>
+      </figcaption>
+    </figure>
     <ul class="list">
       <li class="timeline"></li>
       <li class="list-item">
@@ -50,25 +62,51 @@
 
 <style scoped lang="scss">
 @use '../styles/mixins';
+@use '../styles/screens';
 @use '../styles/typography';
 @use '../styles/variables';
 
-.hero {
-  @include typography.heading-2;
-}
+.figure {
+  @include mixins.section;
 
-.image {
-  width: 10rem;
-  border-radius: 99rem;
-}
+  padding: 0;
 
-.paragraph {
-  @include typography.paragraph;
+  @include screens.laptop {
+    flex-direction: row;
 
-  color: variables.$grey;
+    .figcaption {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      width: min-content;
 
-  strong {
-    color: variables.$white;
+      .hero {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .hero {
+    @include typography.heading-2;
+  }
+
+  .image {
+    width: 10rem;
+    border-radius: 99rem;
+
+    @include screens.laptop {
+      width: 16rem;
+    }
+  }
+
+  .paragraph {
+    @include typography.paragraph;
+
+    color: variables.$grey;
+
+    strong {
+      color: variables.$white;
+    }
   }
 }
 
@@ -77,6 +115,11 @@
   flex-direction: column;
   gap: 4rem;
   position: relative;
+
+  @include screens.laptop {
+    gap: 8rem;
+    right: 2rem;
+  }
 
   .timeline {
     position: absolute;
@@ -90,12 +133,21 @@
       variables.$green
     );
     z-index: -1;
+
+    @include screens.laptop {
+      left: calc(1.5rem - 1px);
+      top: -6rem;
+    }
   }
 
   .list-item {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+
+    @include screens.laptop {
+      gap: 3rem;
+    }
 
     .circle {
       flex: 0 0 auto;
@@ -104,6 +156,10 @@
       border-radius: 50%;
       background-color: variables.$dark;
       border: 2px solid variables.$white;
+
+      @include screens.laptop {
+        width: 3rem;
+      }
 
       &.full {
         background-color: variables.$white;
@@ -117,6 +173,10 @@
 
       .title {
         @include typography.heading-3;
+
+        @include screens.laptop {
+          transform: translateX(-18rem);
+        }
       }
 
       .description-wrapper {

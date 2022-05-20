@@ -1,16 +1,7 @@
 <template>
   <NuxtLayout name="section">
     <footer class="footer">
-      <aside class="spotify">
-        <img src="/icons/spotify.svg" alt="" class="icon" />
-        <p class="text">Like You Do • Joji</p>
-        <div class="music">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </aside>
+      <SpotifyListening />
       <article class="links-list">
         <ul class="list">
           <li>
@@ -63,74 +54,26 @@
 @use '../styles/screens';
 @use '../styles/variables';
 
-@keyframes music {
-  0% {
-    height: 10%;
-  }
-
-  50% {
-    height: 100%;
-  }
-
-  100% {
-    height: 10%;
-  }
-}
-
 .footer {
   display: flex;
   flex-direction: column;
   gap: 3rem;
   padding-bottom: 2rem;
 
-  .spotify {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-
-    .icon {
-      width: 1.5em;
-    }
-
-    .music {
-      width: 1em;
-      height: 1em;
-      transform: rotateX(180deg);
-
-      span {
-        width: 1px;
-        height: 100%;
-        background-color: variables.$grey;
-        animation: music ease-in-out infinite;
-
-        &:nth-of-type(1) {
-          animation-duration: 1s;
-          animation-delay: 0s;
-        }
-
-        &:nth-of-type(2) {
-          animation-duration: 0.9s;
-          animation-delay: 0.3s;
-        }
-
-        &:nth-of-type(3) {
-          animation-duration: 1.1s;
-          animation-delay: 0.2s;
-        }
-
-        &:nth-of-type(4) {
-          animation-duration: 1s;
-          animation-delay: 0.1s;
-        }
-      }
-    }
+  @include screens.laptop {
+    gap: 6rem;
+    padding-bottom: 4rem;
   }
 
   .links-list {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    @include screens.laptop {
+      display: grid;
+      grid-template-columns: repeat(3, 16rem);
+    }
 
     .list {
       display: flex;

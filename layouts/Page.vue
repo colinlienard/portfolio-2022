@@ -14,7 +14,7 @@
   gap: 8rem;
 
   @include screens.laptop {
-    gap: 12rem;
+    gap: 14rem;
   }
 }
 </style>
