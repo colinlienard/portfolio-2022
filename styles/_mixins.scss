@@ -1,0 +1,39 @@
+@use 'screens';
+@use 'variables';
+
+@keyframes blink {
+  from {
+    color: variables.$blue;
+  }
+
+  to {
+    color: variables.$green;
+  }
+}
+
+@mixin blink {
+  animation: blink 0.4s steps(2, jump-none) infinite;
+
+  &:hover {
+    animation: blink 0.2s steps(2, jump-none) infinite;
+  }
+}
+
+@mixin link {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@mixin section {
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+
+  @include screens.laptop {
+    padding: 0;
+    gap: 6rem;
+  }
+}

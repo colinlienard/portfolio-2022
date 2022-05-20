@@ -1,0 +1,26 @@
+@use 'screens';
+@use 'variables';
+
+@font-face {
+  font-family: Syne;
+  src: url('/fonts/Syne-Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Syne;
+  src: url('/fonts/Syne-SemiBold.ttf');
+  font-weight: 600;
+}
+
+body {
+  background-color: variables.$dark;
+  font-family: Syne, sans-serif;
+  font-weight: 500;
+  color: variables.$white;
+  font-size: 0.875rem;
+
+  @include screens.laptop {
+    font-size: 1rem;
+  }
+}
