@@ -1,5 +1,21 @@
+@use 'variables';
+
 @mixin link {
   &:hover {
     text-decoration: underline;
   }
+}
+
+@keyframes blink {
+  from {
+    color: variables.$blue;
+  }
+
+  to {
+    color: variables.$green;
+  }
+}
+
+@mixin blink {
+  animation: blink 0.3s steps(2, jump-none) infinite;
 }

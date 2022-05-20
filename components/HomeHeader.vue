@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <p class="pre-hero">👋 Bonjour !</p>
+    <p class="pre-hero"><span class="emoji">👋</span> Bonjour !</p>
     <h1 class="hero">
       Je suis<br />Colin Lienard, webdesigner<br />& développeur front-end
     </h1>
@@ -22,6 +22,10 @@
   justify-content: center;
   position: relative;
   height: 100vh;
+
+  .pre-hero .emoji {
+    font-size: 1.3em;
+  }
 
   .hero {
     @include typography.heading-1;
