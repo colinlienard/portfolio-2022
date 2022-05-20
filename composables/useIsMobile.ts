@@ -15,7 +15,7 @@ const useIsMobile = () => {
   });
 
   onUnmounted(() => {
-    window.addEventListener('resize', check);
+    window.removeEventListener('resize', check);
   });
 
   return isMobile;
