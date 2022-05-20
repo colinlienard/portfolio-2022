@@ -11,6 +11,7 @@ specifiers:
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-vue: ^9.0.1
   husky: ^8.0.1
+  locomotive-scroll: ^4.1.4
   nuxt: 3.0.0-rc.3
   postcss: ^8.4.14
   postcss-html: ^1.4.1
@@ -22,6 +23,9 @@ specifiers:
   stylelint-config-standard-vue: ^1.0.0
   stylelint-prettier: ^2.0.0
   typescript: ^4.6.4
+
+dependencies:
+  locomotive-scroll: 4.1.4
 
 devDependencies:
   '@nuxtjs/eslint-config-typescript': 10.0.0_hcfsmds2fshutdssjqluwm76uu
@@ -1793,6 +1797,13 @@ packages:
       }
     dev: true
 
+  /bezier-easing/2.1.0:
+    resolution:
+      {
+        integrity: sha512-gbIqZ/eslnUFC1tjEvtz0sgx+xTK20wDnYMIA27VA04R7w6xxXQPZDbibjA9DTWZRA2CXtwHykkVzlCaAJAZig==,
+      }
+    dev: false
+
   /binary-extensions/2.2.0:
     resolution:
       {
@@ -1800,6 +1811,13 @@ packages:
       }
     engines: { node: '>=8' }
     dev: true
+
+  /bindall-standalone/1.0.5:
+    resolution:
+      {
+        integrity: sha512-HDI7YBWXVJk/eoGz+e4lYQQJnYp1ZHcUvAY71lVptLMhQnDm86vD73AGPw2qIlgYR3P0bjmoAcXiA8qhFejBhA==,
+      }
+    dev: false
 
   /bindings/1.5.0:
     resolution:
@@ -5168,6 +5186,13 @@ packages:
       readable-stream: 2.3.7
     dev: true
 
+  /lethargy/1.0.9:
+    resolution:
+      {
+        integrity: sha512-nFM8blpCF9rqIL5mRAaTGc78W8oQixVtsD86jbEPvcI13+lDUYJf3R7DZQQL7tCiBpbGpGKMX2gwJFO9hiaOkg==,
+      }
+    dev: false
+
   /levn/0.4.1:
     resolution:
       {
@@ -5233,6 +5258,17 @@ packages:
     dependencies:
       p-locate: 4.1.0
     dev: true
+
+  /locomotive-scroll/4.1.4:
+    resolution:
+      {
+        integrity: sha512-6i98cFF2SKg6wIPpwVPuo2FG8qL3USsdDeew78TEYZyLoqleMWNfkSDpWA6mPym4dOfTIBXc678VmGlkgx3fTA==,
+      }
+    dependencies:
+      bezier-easing: 2.1.0
+      smoothscroll-polyfill: 0.4.4
+      virtual-scroll: 1.5.2
+    dev: false
 
   /lodash._reinterpolate/3.0.0:
     resolution: { integrity: sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0= }
@@ -6056,7 +6092,6 @@ packages:
   /object-assign/4.1.1:
     resolution: { integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM= }
     engines: { node: '>=0.10.0' }
-    dev: true
 
   /object-inspect/1.12.0:
     resolution:
@@ -7577,6 +7612,13 @@ packages:
       is-fullwidth-code-point: 3.0.0
     dev: true
 
+  /smoothscroll-polyfill/0.4.4:
+    resolution:
+      {
+        integrity: sha512-TK5ZA9U5RqCwMpfoMq/l1mrH0JAR7y7KRvOBx0n2869aLxch+gT9GhN3yUfjiw+d/DiF1mKo14+hd62JyMmoBg==,
+      }
+    dev: false
+
   /source-map-js/1.0.2:
     resolution:
       {
@@ -8223,6 +8265,10 @@ packages:
     resolution: { integrity: sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU= }
     dev: true
 
+  /tiny-emitter/1.2.0:
+    resolution: { integrity: sha1-bchFBSywjr78GHRyO1jySmSMO28= }
+    dev: false
+
   /tiny-invariant/1.2.0:
     resolution:
       {
@@ -8679,6 +8725,18 @@ packages:
       spdx-correct: 3.1.1
       spdx-expression-parse: 3.0.1
     dev: true
+
+  /virtual-scroll/1.5.2:
+    resolution:
+      {
+        integrity: sha512-7jDHwlKbHUho7CYU/HojE/VKFH8GV9P5fVWP2HCa7dRUOpVvwl93OBOKIIcb2mKd+vqsbVR/0zl0X70+3sUZqA==,
+      }
+    dependencies:
+      bindall-standalone: 1.0.5
+      lethargy: 1.0.9
+      object-assign: 4.1.1
+      tiny-emitter: 1.2.0
+    dev: false
 
   /vite-node/0.12.6_sass@1.51.0:
     resolution:

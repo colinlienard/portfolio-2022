@@ -12,6 +12,9 @@
     "lintfix": "prettier --write .",
     "prepare": "husky install"
   },
+  "dependencies": {
+    "locomotive-scroll": "^4.1.4"
+  },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
