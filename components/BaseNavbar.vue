@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav">
+  <nav class="nav" data-scroll data-scroll-sticky data-scroll-target="main">
     <ul class="list">
       <li>
         <button class="link">Portfolio</button>
@@ -21,10 +21,14 @@
 .nav {
   position: fixed;
   top: 2rem;
-  left: 50%;
   transform: translateX(-50%);
   mix-blend-mode: difference;
   z-index: 999;
+
+  @include screens.mobile {
+    // Only when locomotive-scroll is disabled
+    left: 50%;
+  }
 
   .list {
     display: flex;

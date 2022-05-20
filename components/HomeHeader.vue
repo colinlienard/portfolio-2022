@@ -28,6 +28,7 @@ const isMobile = useIsMobile();
   justify-content: center;
   position: relative;
   height: 100vh;
+  background-color: variables.$dark;
 
   .pre-hero .emoji {
     font-size: 1.3em;
