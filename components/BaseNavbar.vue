@@ -21,14 +21,8 @@
 .nav {
   position: fixed;
   top: 2rem;
-  transform: translateX(-50%);
   mix-blend-mode: difference;
   z-index: 999;
-
-  @include screens.mobile {
-    // Only when locomotive-scroll is disabled
-    left: 50%;
-  }
 
   .list {
     display: flex;
