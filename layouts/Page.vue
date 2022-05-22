@@ -2,14 +2,16 @@
 // @ts-ignore
 import LocomotiveScroll from 'locomotive-scroll';
 
+const scroll = ref();
+
+provide('scroll', scroll);
+
 onMounted(() => {
-  const scroll = new LocomotiveScroll({
+  scroll.value = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true,
     multiplier: 0.8,
   });
-
-  provide('scroll', scroll);
 });
 </script>
 

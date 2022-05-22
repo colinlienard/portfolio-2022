@@ -1,14 +1,18 @@
+<script setup>
+const scrollTo = useScrollTo();
+</script>
+
 <template>
   <nav class="nav" data-scroll data-scroll-sticky data-scroll-target="main">
     <ul class="list">
       <li>
-        <button class="link">Portfolio</button>
+        <button class="link" @click="scrollTo('#portfolio')">Portfolio</button>
       </li>
       <li>
-        <button class="link">À propos</button>
+        <button class="link" @click="scrollTo('#about')">À propos</button>
       </li>
       <li>
-        <button class="link">Contact</button>
+        <button class="link" @click="scrollTo('#contact')">Contact</button>
       </li>
     </ul>
   </nav>
