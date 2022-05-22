@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="section">
+  <NuxtLayout id="contact" name="section">
     <h2 class="hero">
       <a href="mailto:colin.lienard87@orange.fr">Discutons par mail</a>
     </h2>
