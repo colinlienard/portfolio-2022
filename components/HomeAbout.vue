@@ -3,7 +3,7 @@ const isMobile = useIsMobile();
 </script>
 
 <template>
-  <NuxtLayout name="section">
+  <NuxtLayout id="about" name="section">
     <figure class="figure">
       <figcaption v-if="isMobile">
         <h2 class="hero">À propos de moi</h2>

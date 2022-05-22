@@ -1,3 +1,7 @@
+<script setup>
+const scrollTo = useScrollTo();
+</script>
+
 <template>
   <NuxtLayout name="section">
     <footer class="footer">
@@ -5,13 +9,17 @@
       <article class="links-list">
         <ul class="list">
           <li>
-            <button class="button">Portfolio</button>
+            <button class="button" @click="scrollTo('#portfolio')">
+              Portfolio
+            </button>
           </li>
           <li>
-            <button class="button">À propos</button>
+            <button class="button" @click="scrollTo('#about')">À propos</button>
           </li>
           <li>
-            <button class="button">Contact</button>
+            <button class="button" @click="scrollTo('#contact')">
+              Contact
+            </button>
           </li>
         </ul>
         <ul class="list">

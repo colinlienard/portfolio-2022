@@ -1,17 +1,28 @@
 <template>
-  <NuxtLayout name="section">
+  <article id="portfolio" class="container">
     <h2 class="hero">Portfolio 2022</h2>
     <ul class="list">
-      <li class="list-item"></li>
-      <li class="list-item"></li>
-      <li class="list-item"></li>
+      <li class="list-item">
+        <div class="image" data-scroll data-scroll-speed="-3"></div>
+      </li>
+      <li class="list-item">
+        <div class="image" data-scroll data-scroll-speed="-3"></div>
+      </li>
+      <li class="list-item">
+        <div class="image" data-scroll data-scroll-speed="-3"></div>
+      </li>
     </ul>
-  </NuxtLayout>
+  </article>
 </template>
 
 <style scoped lang="scss">
+@use '../styles/mixins';
 @use '../styles/typography';
 @use '../styles/variables';
+
+.container {
+  @include mixins.section;
+}
 
 .hero {
   @include typography.heading-2;
@@ -21,12 +32,20 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  border-radius: 2rem;
+  overflow: hidden;
 
   .list-item {
-    aspect-ratio: 16 / 9;
-    border-radius: variables.$radius;
-    border: 1px solid variables.$grey;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    .image {
+      width: 100vw;
+      height: 100vh;
+      background-image: url('/images/colin.webp');
+      background-size: contain;
+    }
   }
 }
 </style>

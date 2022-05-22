@@ -16,6 +16,7 @@
   },
   "plugins": ["vue", "@typescript-eslint", "prettier"],
   "rules": {
+    "import/extensions": ["error", { "ts": "never" }],
     "linebreak-style": ["error", "windows"],
     "prettier/prettier": "error"
   },
