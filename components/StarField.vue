@@ -8,6 +8,8 @@ type Star = {
   brightness: number;
 };
 
+const props = defineProps<{ visible: boolean }>();
+
 const canvas = ref<HTMLCanvasElement>();
 const context = ref<CanvasRenderingContext2D>();
 let width = 0;
@@ -107,5 +109,19 @@ onMounted(() => {
 </script>
 
 <template>
-  <canvas ref="canvas" class="canvas"></canvas>
+  <canvas ref="canvas" :class="['canvas', { visible: props.visible }]"></canvas>
 </template>
+
+<style scoped lang="scss">
+.canvas {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 4s ease-in-out;
+
+  &.visible {
+    opacity: 1;
+  }
+}
+</style>
