@@ -56,11 +56,10 @@ const scrollTo = useScrollTo();
     max-width: 24rem;
     margin-top: 1.5rem;
     position: relative;
-    transition: transform 2s ease-in-out;
+    transition: transform 4s ease-in-out;
 
     &:hover {
       transform: scale(0.9);
-      transition: transform 4s ease-in-out;
     }
 
     @include screens.laptop {
