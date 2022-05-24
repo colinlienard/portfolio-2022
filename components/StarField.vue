@@ -104,17 +104,29 @@ const loop = () => {
   }
 };
 
-onMounted(() => {
+const updateSize = () => {
   if (canvas.value) {
     width = window.innerWidth;
     height = window.innerHeight;
     canvas.value.width = width;
     canvas.value.height = height;
+  }
+};
+
+onMounted(() => {
+  if (canvas.value) {
+    updateSize();
+
+    window.addEventListener('resize', updateSize);
 
     context.value = canvas.value?.getContext('2d') as CanvasRenderingContext2D;
 
     createStarField(starsNumber);
   }
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateSize);
 });
 
 onUpdated(() => {
