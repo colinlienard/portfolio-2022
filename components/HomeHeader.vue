@@ -1,18 +1,25 @@
 <script setup lang="ts">
+const starFieldVisible = ref(false);
 const isMobile = useIsMobile();
+const scrollTo = useScrollTo();
 </script>
 
 <template>
   <header class="header">
     <p class="pre-hero"><span class="emoji">👋</span> Bonjour !</p>
-    <h1 class="hero">
+    <h1
+      class="hero"
+      @mouseenter="starFieldVisible = true"
+      @mouseleave="starFieldVisible = false"
+    >
       Je suis <br v-if="isMobile" />Colin Lienard, webdesigner
       <br v-if="isMobile" />& développeur front-end
     </h1>
-    <div class="discover">
-      <p>Découvrez</p>
+    <button class="discover" @click="scrollTo('#portfolio')">
+      <p>Explorez</p>
       <span class="line"></span>
-    </div>
+    </button>
+    <StarField :visible="starFieldVisible" />
   </header>
 </template>
 
@@ -28,10 +35,18 @@ const isMobile = useIsMobile();
   justify-content: center;
   position: relative;
   height: 100vh;
-  background-color: variables.$dark;
 
-  .pre-hero .emoji {
-    font-size: 1.3em;
+  .pre-hero {
+    z-index: 1;
+
+    .emoji {
+      font-size: 1.3em;
+    }
+  }
+
+  .hero-container {
+    position: relative;
+    background-color: black;
   }
 
   .hero {
@@ -41,6 +56,11 @@ const isMobile = useIsMobile();
     max-width: 24rem;
     margin-top: 1.5rem;
     position: relative;
+    transition: transform 4s ease-in-out;
+
+    &:hover {
+      transform: scale(0.9);
+    }
 
     @include screens.laptop {
       max-width: 64rem;
@@ -60,10 +80,20 @@ const isMobile = useIsMobile();
       );
       mix-blend-mode: darken;
       transform: rotate(-30deg);
+      z-index: 0;
 
       @include screens.laptop {
         height: 12rem;
       }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: -20rem;
+      background-color: variables.$dark;
+      pointer-events: none;
+      z-index: -1;
     }
   }
 
