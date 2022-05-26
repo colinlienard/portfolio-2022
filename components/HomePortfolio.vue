@@ -52,8 +52,7 @@ const { data } = await useAsyncData('projects', () =>
     .image {
       width: 100vw;
       height: 100vh;
-      background-image: url('/images/colin.webp');
-      background-size: contain;
+      object-fit: cover;
     }
   }
 }
