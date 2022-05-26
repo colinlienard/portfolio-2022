@@ -1,5 +1,8 @@
 <script setup lang="ts">
 const isMobile = useIsMobile();
+const { data } = await useAsyncData('milestones', async () =>
+  queryContent('/milestones').findOne()
+);
 </script>
 
 <template>
@@ -26,22 +29,16 @@ const isMobile = useIsMobile();
     </figure>
     <ul class="list">
       <li class="timeline"></li>
-      <li class="list-item">
+      <li
+        v-for="(milestone, index) in data.milestones"
+        :key="index"
+        class="list-item"
+      >
         <span class="circle"></span>
         <div class="content">
-          <h3 class="title">2019 - 2021</h3>
-          <p class="description">DUT Métiers du Multimédia et de l’Internet</p>
-          <p class="sub">Limoges</p>
-        </div>
-      </li>
-      <li class="list-item">
-        <span class="circle"></span>
-        <div class="content">
-          <h3 class="title">2021 - 2022</h3>
-          <p class="description">
-            Licence professionnelle Métiers de l’Informatique Application Web
-          </p>
-          <p class="sub">La Rochelle, Limoges</p>
+          <h3 class="title">{{ milestone.start }} - {{ milestone.end }}</h3>
+          <p class="description">{{ milestone.name }}</p>
+          <p class="sub">{{ milestone.description }}</p>
         </div>
       </li>
       <li class="list-item">
