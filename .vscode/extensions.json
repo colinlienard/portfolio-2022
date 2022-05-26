@@ -2,6 +2,7 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
+    "nuxt.mdc",
     "vue.volar",
     "stylelint.vscode-stylelint"
   ]

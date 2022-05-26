@@ -1,15 +1,23 @@
+<script setup lang="ts">
+const { data } = await useAsyncData('projects', () =>
+  queryContent('/projects').findOne()
+);
+</script>
+
 <template>
   <article id="portfolio" class="container">
     <h2 class="hero">Portfolio 2022</h2>
     <ul class="list">
-      <li class="list-item">
-        <div class="image" data-scroll data-scroll-speed="-3"></div>
-      </li>
-      <li class="list-item">
-        <div class="image" data-scroll data-scroll-speed="-3"></div>
-      </li>
-      <li class="list-item">
-        <div class="image" data-scroll data-scroll-speed="-3"></div>
+      <li v-for="(project, index) in data.projects" :key="index">
+        <NuxtLink :to="project.slug" class="list-item">
+          <img
+            class="image"
+            :src="project.image"
+            alt=""
+            data-scroll
+            data-scroll-speed="-3"
+          />
+        </NuxtLink>
       </li>
     </ul>
   </article>
@@ -39,12 +47,12 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    display: block;
 
     .image {
       width: 100vw;
       height: 100vh;
-      background-image: url('/images/colin.webp');
-      background-size: contain;
+      object-fit: cover;
     }
   }
 }

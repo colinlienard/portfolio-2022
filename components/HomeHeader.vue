@@ -23,7 +23,7 @@ const scrollTo = useScrollTo();
   </header>
 </template>
 
-<style scroped lang="scss">
+<style scoped lang="scss">
 @use '../styles/screens';
 @use '../styles/typography';
 @use '../styles/variables';

@@ -1,5 +1,16 @@
-<script setup>
+<script setup lang="ts">
 const scrollTo = useScrollTo();
+const route = useRoute();
+
+const handleScrollTo = (target: string) => {
+  // If the current page is the home
+  if (Object.keys(route.params).length === 0) {
+    scrollTo(target);
+    return;
+  }
+
+  navigateTo(`/${target}`);
+};
 </script>
 
 <template>
@@ -9,15 +20,17 @@ const scrollTo = useScrollTo();
       <article class="links-list">
         <ul class="list">
           <li>
-            <button class="button" @click="scrollTo('#portfolio')">
+            <button class="button" @click="handleScrollTo('#portfolio')">
               Portfolio
             </button>
           </li>
           <li>
-            <button class="button" @click="scrollTo('#about')">À propos</button>
+            <button class="button" @click="handleScrollTo('#about')">
+              À propos
+            </button>
           </li>
           <li>
-            <button class="button" @click="scrollTo('#contact')">
+            <button class="button" @click="handleScrollTo('#contact')">
               Contact
             </button>
           </li>

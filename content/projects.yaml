@@ -1,0 +1,8 @@
+projects:
+  - name: Your Core Music
+    slug: your-core-music
+    image: images/colin.webp
+
+  - name: Requiz
+    slug: requiz
+    image: images/colin.webp

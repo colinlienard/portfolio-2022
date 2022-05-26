@@ -2,21 +2,30 @@
 // @ts-ignore
 import LocomotiveScroll from 'locomotive-scroll';
 
+const container = ref();
 const scroll = ref();
 
 provide('scroll', scroll);
 
-onMounted(() => {
-  scroll.value = new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-    smooth: true,
-    multiplier: 0.8,
-  });
+watch(container, () => {
+  if (container.value) {
+    setTimeout(() => {
+      scroll.value = new LocomotiveScroll({
+        el: container.value,
+        smooth: true,
+        multiplier: 0.8,
+      });
+    }, 100);
+  }
+});
+
+onUnmounted(() => {
+  scroll.value.destroy();
 });
 </script>
 
 <template>
-  <main class="main" data-scroll-container>
+  <main ref="container" class="main">
     <slot />
   </main>
 </template>
