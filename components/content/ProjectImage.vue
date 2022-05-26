@@ -5,8 +5,16 @@ defineProps<{
 </script>
 
 <template>
-  <figure class="figure">
-    <img class="image" :src="image" alt="" />
+  <figure class="image-content">
+    <div class="image-container">
+      <img
+        class="image"
+        :src="image"
+        alt=""
+        data-scroll
+        data-scroll-speed="-2"
+      />
+    </div>
     <figcaption class="figcaption">
       <slot />
     </figcaption>
@@ -14,21 +22,37 @@ defineProps<{
 </template>
 
 <style scoped lang="scss">
+@use '../../styles/mixins';
+@use '../../styles/screens';
 @use '../../styles/variables';
 
-.figure {
+.image-content {
+  @include mixins.section-width;
+
   padding: 0 1.5rem;
 
-  .image {
-    width: 100%;
+  @include screens.laptop {
+    padding: 0;
+  }
+
+  .image-container {
     border-radius: 2rem;
+    overflow: hidden;
+
+    .image {
+      width: 100%;
+    }
   }
 
   .figcaption {
     text-align: center;
     margin-top: 1rem;
     color: variables.$grey;
-    font-size: 0.8em;
+    font-size: 0.9em;
+
+    @include screens.laptop {
+      margin-top: 2rem;
+    }
   }
 }
 </style>

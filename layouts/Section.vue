@@ -10,7 +10,6 @@
 
 .section {
   @include mixins.section;
-
-  width: min(100%, 75rem);
+  @include mixins.section-width;
 }
 </style>
