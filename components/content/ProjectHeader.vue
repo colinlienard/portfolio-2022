@@ -39,7 +39,8 @@ defineProps<{
     border-radius: 0 0 2rem 2rem;
     overflow: hidden;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out, height 0.5s ease-in-out;
+    transition: opacity 0.3s ease-in-out, height 0.5s ease-in-out,
+      border-radius 0.5s ease-in-out;
 
     &.visible {
       opacity: 1;
@@ -47,7 +48,9 @@ defineProps<{
 
     &:hover {
       height: 80vh;
-      transition: height 1.5s 0.25s ease-in-out;
+      border-radius: 0;
+      transition: height 1.5s 0.25s ease-in-out,
+        border-radius 1.5s 0.25s ease-in-out;
     }
 
     .image {
@@ -101,6 +104,10 @@ defineProps<{
 
       @include screens.laptop {
         gap: 4rem;
+      }
+
+      li {
+        @include mixins.link;
       }
     }
   }
