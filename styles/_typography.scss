@@ -7,6 +7,10 @@
   @include screens.laptop {
     font-size: 5rem;
   }
+
+  @include screens.desktop {
+    font-size: 6rem;
+  }
 }
 
 @mixin heading-2 {
