@@ -104,11 +104,21 @@ const scrollTo = useScrollTo();
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    overflow: hidden;
 
     .line {
       width: 1px;
       height: 8rem;
       background-color: variables.$white;
+    }
+
+    * {
+      transition: transform 0.5s variables.$ease-in-out;
+    }
+
+    &:hover * {
+      transform: translateY(2rem);
+      transition: transform 1s variables.$ease-in-out;
     }
   }
 }
