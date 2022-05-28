@@ -27,7 +27,12 @@ const { data } = await useAsyncData('milestones', async () =>
         </p>
       </figcaption>
     </figure>
-    <ul class="list">
+    <ul
+      class="list"
+      data-scroll
+      data-scroll-class="visible"
+      :data-scroll-offset="isMobile ? '0' : '25%'"
+    >
       <li class="timeline"></li>
       <li
         v-for="(milestone, index) in data.milestones"
@@ -130,6 +135,8 @@ const { data } = await useAsyncData('milestones', async () =>
       variables.$green
     );
     z-index: -1;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 1.5s variables.$ease-in-out;
 
     @include screens.laptop {
       left: calc(1.5rem - 1px);
@@ -153,6 +160,8 @@ const { data } = await useAsyncData('milestones', async () =>
       border-radius: 50%;
       background-color: variables.$dark;
       border: 2px solid variables.$white;
+      transform: scale(0);
+      transition: transform 0.5s 0.25s variables.$ease-in-out;
 
       @include screens.laptop {
         width: 3rem;
@@ -167,6 +176,9 @@ const { data } = await useAsyncData('milestones', async () =>
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      opacity: 0;
+      transform: translateY(1rem);
+      transition: 0.5s 0.25s variables.$ease-in-out;
 
       .title {
         @include typography.heading-3;
@@ -194,6 +206,35 @@ const { data } = await useAsyncData('milestones', async () =>
 
       .sub {
         color: variables.$grey;
+      }
+    }
+
+    &:nth-of-type(2) * {
+      transition-delay: 0.5s;
+    }
+
+    &:nth-of-type(3) * {
+      transition-delay: 0.75s;
+    }
+
+    &:nth-of-type(4) * {
+      transition-delay: 1s;
+    }
+  }
+
+  &.visible {
+    .timeline {
+      clip-path: inset(0);
+    }
+
+    .list-item {
+      .circle {
+        transform: none;
+      }
+
+      .content {
+        transform: none;
+        opacity: 1;
       }
     }
   }

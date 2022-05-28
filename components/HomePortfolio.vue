@@ -30,6 +30,8 @@ const { data } = await useAsyncData('projects', () =>
 
 .container {
   @include mixins.section;
+
+  padding: 0;
 }
 
 .hero {

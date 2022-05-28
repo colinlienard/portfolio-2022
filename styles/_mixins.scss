@@ -21,7 +21,7 @@
 
 @mixin link {
   &:hover {
-    text-decoration: underline;
+    @include blink;
   }
 }
 

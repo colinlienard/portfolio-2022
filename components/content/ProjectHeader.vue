@@ -16,10 +16,12 @@ defineProps<{
       <img class="image" :src="image" alt="" />
     </div>
     <div class="content">
-      <NuxtLink class="back" to="/">
-        <span class="line"></span>
-        Retour
-      </NuxtLink>
+      <div class="back-wrapper">
+        <NuxtLink class="back" to="/">
+          <span class="line"></span>
+          Retour
+        </NuxtLink>
+      </div>
       <slot name="hero" />
       <slot name="links" />
     </div>
@@ -39,7 +41,8 @@ defineProps<{
     border-radius: 0 0 2rem 2rem;
     overflow: hidden;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out, height 0.5s ease-in-out;
+    transition: opacity 0.3s variables.$ease-in-out,
+      height 1s variables.$ease-in-out, border-radius 1s variables.$ease-in-out;
 
     &.visible {
       opacity: 1;
@@ -47,7 +50,9 @@ defineProps<{
 
     &:hover {
       height: 80vh;
-      transition: height 1.5s 0.25s ease-in-out;
+      border-radius: 0;
+      transition: height 1.5s 0.25s variables.$ease-in-out,
+        border-radius 1.5s 0.25s variables.$ease-in-out;
     }
 
     .image {
@@ -69,19 +74,27 @@ defineProps<{
       padding: 3rem 0 0;
     }
 
-    .back {
+    .back-wrapper {
       @include mixins.section-width;
 
-      display: flex;
-      align-items: center;
-      gap: 1em;
+      .back {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        width: fit-content;
 
-      .line {
-        width: 3rem;
-        height: 1px;
-        background-color: variables.$white;
+        .line {
+          width: 3rem;
+          height: 1px;
+          background-color: variables.$white;
+          transition: width 0.5s variables.$ease-in-out;
 
-        @include screens.laptop {
+          @include screens.laptop {
+            width: 1rem;
+          }
+        }
+
+        &:hover .line {
           width: 4rem;
         }
       }
@@ -101,6 +114,10 @@ defineProps<{
 
       @include screens.laptop {
         gap: 4rem;
+      }
+
+      li {
+        @include mixins.link;
       }
     }
   }
