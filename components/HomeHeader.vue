@@ -129,6 +129,7 @@ const scrollTo = useScrollTo();
     max-width: 24rem;
     margin-top: 1.5rem;
     position: relative;
+    overflow: hidden;
     transition: transform 4s ease-in-out;
     animation: hero 2.5s variables.$ease-in-out;
 
@@ -147,7 +148,7 @@ const scrollTo = useScrollTo();
     &::after {
       content: '';
       position: absolute;
-      inset: -32rem;
+      inset: 0;
       background-color: variables.$dark;
       pointer-events: none;
       z-index: -1;
