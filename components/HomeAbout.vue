@@ -7,6 +7,7 @@ const { data } = await useAsyncData('milestones', async () =>
 
 <template>
   <NuxtLayout id="about" name="section">
+    <SkillsContainer />
     <figure class="figure">
       <figcaption v-if="isMobile">
         <h2 class="hero">À propos de moi</h2>
@@ -117,6 +118,7 @@ const { data } = await useAsyncData('milestones', async () =>
   flex-direction: column;
   gap: 4rem;
   position: relative;
+  z-index: 2;
 
   @include screens.laptop {
     gap: 8rem;
