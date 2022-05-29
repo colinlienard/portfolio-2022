@@ -119,6 +119,7 @@ const { data } = await useAsyncData('milestones', async () =>
   gap: 4rem;
   position: relative;
   z-index: 2;
+  pointer-events: none;
 
   @include screens.laptop {
     gap: 8rem;
@@ -203,6 +204,8 @@ const { data } = await useAsyncData('milestones', async () =>
 
         .button {
           @include mixins.blink;
+
+          pointer-events: all;
         }
       }
 
