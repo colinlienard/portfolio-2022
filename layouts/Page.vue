@@ -4,8 +4,11 @@ import LocomotiveScroll from 'locomotive-scroll';
 
 const container = ref();
 const scroll = ref();
+const cursorContent = ref<string | null>();
+const isMobile = useIsMobile();
 
 provide('scroll', scroll);
+provide('cursor', cursorContent);
 
 watch(container, () => {
   if (container.value) {
@@ -26,6 +29,7 @@ onUnmounted(() => {
 
 <template>
   <main ref="container" class="main">
+    <CustomCursor v-if="!isMobile" />
     <slot />
   </main>
 </template>
@@ -34,6 +38,7 @@ onUnmounted(() => {
 @use '../styles/screens';
 
 .main {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
