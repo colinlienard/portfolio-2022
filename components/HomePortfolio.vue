@@ -1,4 +1,9 @@
 <script setup lang="ts">
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { inject, Ref } from 'vue';
+
+const cursorContent = inject<Ref<string | null>>('cursor');
+
 const { data } = await useAsyncData('projects', () =>
   queryContent('/projects').findOne()
 );
@@ -16,6 +21,8 @@ const { data } = await useAsyncData('projects', () =>
             alt=""
             data-scroll
             data-scroll-speed="-3"
+            @mouseenter="cursorContent = project.name"
+            @mouseleave="cursorContent = null"
           />
         </NuxtLink>
       </li>

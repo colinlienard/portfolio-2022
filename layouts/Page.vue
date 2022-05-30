@@ -2,11 +2,13 @@
 // @ts-ignore
 import LocomotiveScroll from 'locomotive-scroll';
 
-const isMobile = useIsMobile();
 const container = ref();
 const scroll = ref();
+const cursorContent = ref<string | null>();
+const isMobile = useIsMobile();
 
 provide('scroll', scroll);
+provide('cursor', cursorContent);
 
 watch(container, () => {
   if (container.value) {
