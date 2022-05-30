@@ -2,14 +2,14 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { inject, Ref } from 'vue';
 
-const x = ref(0);
-const y = ref(0);
+const x = ref('0px');
+const y = ref('0px');
 const hovering = ref(false);
 const cursorContent = inject<Ref<string | null>>('cursor');
 
-const handleMouseMove = (event: MouseEvent) => {
-  x.value = event.clientX;
-  y.value = event.clientY;
+const handleMouseMove = useThrottle((event: MouseEvent) => {
+  x.value = `${event.clientX}px`;
+  y.value = `${event.clientY}px`;
 
   switch ((event.target as Element).tagName) {
     case 'BUTTON':
@@ -20,7 +20,7 @@ const handleMouseMove = (event: MouseEvent) => {
       hovering.value = false;
       break;
   }
-};
+}, 20);
 
 onMounted(() => {
   window.addEventListener('mousemove', handleMouseMove);
@@ -79,24 +79,26 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(
-    calc(v-bind(x) * 1px - 50%),
-    calc(v-bind(y) * 1px - 50%)
-  );
+  top: -1.5rem;
+  left: -1.5rem;
+  transform: translate(v-bind(x), v-bind(y));
   animation: appear 2s variables.$ease-in-out;
   transition: transform 300ms cubic-bezier(0.2, 0.5, 0.5, 1),
-    width 0.5s variables.$ease-in-out,
+    width 0.5s variables.$ease-in-out, top 0.5s variables.$ease-in-out,
+    left 0.5s variables.$ease-in-out,
     background-color 0.5s variables.$ease-in-out;
 
   &.small {
-    width: 0.75rem;
+    width: 0.8rem;
+    top: -0.4rem;
+    left: -0.4rem;
     background-color: variables.$white;
   }
 
   &.big {
     width: 16rem;
+    top: -9rem;
+    left: -8rem;
     background-color: variables.$white;
   }
 

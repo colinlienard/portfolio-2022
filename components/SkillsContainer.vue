@@ -40,6 +40,7 @@ const placeSkill = (event: MouseEvent) => {
 .container {
   position: absolute;
   inset: -8rem 0;
+  cursor: crosshair;
   z-index: 1;
 
   @include screens.laptop {
