@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const route = useRoute();
-const { data } = await useAsyncData(route.params.project as string, () =>
+
+const { data } = await useAsyncData(route.params.project[0], () =>
   queryContent(`/projects/${route.params.project}`).findOne()
 );
 </script>
