@@ -11,5 +11,7 @@ definePageMeta({
 </script>
 
 <template>
-  <NuxtPage />
+  <Html lang="fr">
+    <NuxtPage />
+  </Html>
 </template>

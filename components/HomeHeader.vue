@@ -17,7 +17,7 @@ const scrollTo = useScrollTo();
       <span class="gradient" />
     </h1>
     <button class="discover" @click="scrollTo('#portfolio')">
-      <p>Explorez</p>
+      <span>Explorez</span>
       <span class="line"></span>
     </button>
     <StarField :visible="starFieldVisible" />
