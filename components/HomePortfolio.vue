@@ -24,6 +24,7 @@ const { data } = await useAsyncData('projects', () =>
             @mouseenter="cursorContent = project.title"
             @mouseleave="cursorContent = null"
           />
+          <p class="link-text">{{ project.title }}</p>
         </NuxtLink>
       </li>
     </ul>
@@ -62,6 +63,10 @@ const { data } = await useAsyncData('projects', () =>
       width: 100vw;
       height: 100vh;
       object-fit: cover;
+    }
+
+    .link-test {
+      display: none;
     }
   }
 }
