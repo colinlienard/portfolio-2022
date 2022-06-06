@@ -5,7 +5,7 @@ import { inject, Ref } from 'vue';
 const cursorContent = inject<Ref<string | null>>('cursor');
 
 const { data } = await useAsyncData('projects', () =>
-  queryContent('/projects').findOne()
+  queryContent('/projects/').sort({ order: 1 }).find()
 );
 </script>
 
@@ -13,7 +13,7 @@ const { data } = await useAsyncData('projects', () =>
   <article id="portfolio" class="container">
     <h2 class="hero">Portfolio 2022</h2>
     <ul class="list">
-      <li v-for="(project, index) in data.projects" :key="index">
+      <li v-for="(project, index) in data" :key="index">
         <NuxtLink :to="`/projects/${project.slug}`" class="list-item">
           <img
             class="image"
@@ -21,7 +21,7 @@ const { data } = await useAsyncData('projects', () =>
             alt=""
             data-scroll
             data-scroll-speed="-3"
-            @mouseenter="cursorContent = project.name"
+            @mouseenter="cursorContent = project.title"
             @mouseleave="cursorContent = null"
           />
         </NuxtLink>

@@ -4,6 +4,16 @@ const route = useRoute();
 const { data } = await useAsyncData(route.params.project[0], () =>
   queryContent(`/projects/${route.params.project}`).findOne()
 );
+
+useHead({
+  title: `${data.value.title} ● Colin Lienard`,
+  meta: [
+    {
+      name: 'description',
+      content: data.value.description,
+    },
+  ],
+});
 </script>
 
 <template>
