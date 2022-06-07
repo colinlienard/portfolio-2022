@@ -1,6 +1,6 @@
 <template>
   <aside class="spotify">
-    <img src="/icons/spotify.svg" alt="" class="icon" />
+    <img src="/icons/spotify.svg" alt="" class="icon" width="24" height="24" />
     <p class="text">Like You Do • Joji</p>
     <div class="music">
       <span></span>
@@ -33,10 +33,6 @@
   align-items: center;
   justify-content: center;
   gap: 1em;
-
-  .icon {
-    width: 1.5em;
-  }
 
   .music {
     width: 1em;

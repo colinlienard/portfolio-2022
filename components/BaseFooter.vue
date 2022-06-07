@@ -17,7 +17,12 @@ const handleScrollTo = (target: string) => {
   <NuxtLayout name="section">
     <footer class="footer">
       <SpotifyListening />
-      <article class="links-list">
+      <h2 class="title">
+        <strong>
+          Colin Lienard,<br />webdesigner et développeur front-end
+        </strong>
+      </h2>
+      <div class="links-list">
         <ul class="list">
           <li>
             <button class="button" @click="handleScrollTo('#portfolio')">
@@ -63,7 +68,7 @@ const handleScrollTo = (target: string) => {
             <button class="button">Mentions légales</button>
           </li>
         </ul>
-      </article>
+      </div>
       <p class="copyright">
         © Copyright 2022 - Tous droits réservés, Colin Lienard
       </p>
@@ -73,6 +78,7 @@ const handleScrollTo = (target: string) => {
 
 <style scoped lang="scss">
 @use '../styles/screens';
+@use '../styles/typography';
 @use '../styles/variables';
 
 .footer {
@@ -84,6 +90,12 @@ const handleScrollTo = (target: string) => {
   @include screens.laptop {
     gap: 6rem;
     padding-bottom: 4rem;
+  }
+
+  .title {
+    @include typography.heading-3;
+
+    text-align: center;
   }
 
   .links-list {

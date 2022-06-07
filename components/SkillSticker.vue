@@ -7,10 +7,17 @@ defineProps<{
 
 const maxTilt = 40;
 const tilt = Math.round(Math.random() * maxTilt - maxTilt / 2);
+const isMobile = useIsMobile();
 </script>
 
 <template>
-  <img class="skill" :src="`/icons/${source}.svg`" alt="" />
+  <img
+    class="skill"
+    :src="`/icons/${source}.svg`"
+    alt=""
+    :width="isMobile ? 64 : 100"
+    :height="isMobile ? 64 : 100"
+  />
 </template>
 
 <style scoped lang="scss">
@@ -35,12 +42,8 @@ const tilt = Math.round(Math.random() * maxTilt - maxTilt / 2);
   top: calc(v-bind(y) * 1px);
   left: calc(v-bind(x) * 1px);
   transform: translate(-50%, -50%) rotate(calc(v-bind(tilt) * 1deg));
-  height: 4rem;
+  width: auto;
   pointer-events: none;
   animation: appear 0.2s variables.$ease-in-out;
-
-  @include screens.laptop {
-    height: 6rem;
-  }
 }
 </style>

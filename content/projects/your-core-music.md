@@ -1,3 +1,11 @@
+---
+title: Your Core Music
+slug: your-core-music
+description: A duis gravida consectetur ullamcorper aliquet magna quam morbi. Neque feugiat enim sem morbi vel faucibus cursus.
+image: images/colin.webp
+order: 1
+---
+
 ::project-header{image="/images/colin.webp"}
 #hero
 # Your Core Music
