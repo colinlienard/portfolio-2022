@@ -11,7 +11,7 @@ const { data } = await useAsyncData('projects', () =>
 
 <template>
   <article id="portfolio" class="container">
-    <h2 class="hero">Portfolio 2022</h2>
+    <h2 class="hero"><strong>Portfolio</strong> 2022</h2>
     <ul class="list">
       <li v-for="(project, index) in data" :key="index">
         <NuxtLink :to="`/projects/${project.slug}`" class="list-item">

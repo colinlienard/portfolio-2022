@@ -12,8 +12,9 @@ const scrollTo = useScrollTo();
       @mouseenter="starFieldVisible = true"
       @mouseleave="starFieldVisible = false"
     >
-      Je suis <br v-if="isMobile" />Colin Lienard, webdesigner
-      <br v-if="isMobile" />& développeur front-end
+      Je suis <br v-if="isMobile" /><strong>Colin Lienard</strong>,
+      <strong>webdesigner</strong> <br v-if="isMobile" />&
+      <strong>développeur front-end</strong>
       <span class="gradient" />
     </h1>
     <button class="discover" @click="scrollTo('#portfolio')">

@@ -20,8 +20,11 @@
 }
 
 @mixin link {
+  color: variables.$white;
+  transition: color 0.3s variables.$ease-in-out;
+
   &:hover {
-    @include blink;
+    color: variables.$green;
   }
 }
 
