@@ -5,6 +5,13 @@ import { defineNuxtConfig } from 'nuxt';
 export default defineNuxtConfig({
   css: ['~/styles/reset.scss', '~/styles/globals.scss'],
   modules: ['@nuxt/content'],
+  runtimeConfig: {
+    public: {
+      spotifyClientId: '',
+      spotifyClientSecret: '',
+      spotifyRefreshToken: '',
+    },
+  },
   ssr: false,
   target: 'static',
   typescript: {
