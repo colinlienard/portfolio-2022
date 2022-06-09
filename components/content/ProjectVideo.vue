@@ -5,23 +5,21 @@ defineProps<{
 </script>
 
 <template>
-  <figure
-    class="image-container"
+  <div
+    class="section-container"
     data-scroll
     data-scroll-class="visible"
     data-scroll-repeat
     data-scroll-offset="25%,0%"
   >
-    <img
-      class="image"
+    <video
+      class="video"
       :src="`/images/projects/${source}`"
-      alt=""
-      width="1200"
+      autoplay
+      muted
+      loop
     />
-    <figcaption class="figcaption">
-      <slot />
-    </figcaption>
-  </figure>
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -29,7 +27,7 @@ defineProps<{
 @use '../../styles/screens';
 @use '../../styles/variables';
 
-.image-container {
+.section-container {
   @include mixins.section-width;
 
   padding: 0 1.5rem;
@@ -44,20 +42,9 @@ defineProps<{
     padding: 0;
   }
 
-  .image {
+  .video {
     width: 100%;
     border-radius: 2rem;
-  }
-
-  .figcaption {
-    text-align: center;
-    margin-top: 1rem;
-    color: variables.$grey;
-    font-size: 0.9em;
-
-    @include screens.laptop {
-      margin-top: 2rem;
-    }
   }
 }
 </style>

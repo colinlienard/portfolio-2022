@@ -17,7 +17,7 @@ const { data } = await useAsyncData('projects', () =>
         <NuxtLink :to="`/projects/${project.slug}`" class="list-item">
           <img
             class="image"
-            :src="project.image"
+            :src="`/images/projects/${project.image}`"
             alt=""
             data-scroll
             data-scroll-speed="-3"
