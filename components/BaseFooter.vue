@@ -17,11 +17,6 @@ const handleScrollTo = (target: string) => {
   <NuxtLayout name="section">
     <footer class="footer">
       <SpotifyListening />
-      <h2 class="title">
-        <strong>
-          Colin Lienard,<br />webdesigner et développeur front-end
-        </strong>
-      </h2>
       <div class="links-list">
         <ul class="list">
           <li>

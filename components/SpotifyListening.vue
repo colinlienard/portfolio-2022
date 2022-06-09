@@ -94,15 +94,15 @@ onUnmounted(() => {
 
 @keyframes music {
   0% {
-    clip-path: inset(75% 0 0 0);
+    clip-path: inset(70% 0 0 0);
   }
 
-  50% {
+  60% {
     clip-path: inset(0 0 0 0);
   }
 
   100% {
-    clip-path: inset(75% 0 0 0);
+    clip-path: inset(70% 0 0 0);
   }
 }
 
@@ -113,12 +113,16 @@ onUnmounted(() => {
   gap: 1em;
 
   &.disabled {
-    opacity: 0.5;
+    opacity: 0.6;
+  }
+
+  .text {
+    text-align: center;
   }
 
   .music {
     width: 1em;
-    height: 1em;
+    height: 0.8em;
     display: flex;
     justify-content: space-between;
 
