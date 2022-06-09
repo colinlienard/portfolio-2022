@@ -1,42 +1,27 @@
-# Nuxt 3 Minimal Starter
+# Get a new Spotify refresh token
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+## Request user authorization
 
-## Setup
-
-Make sure to install the dependencies:
+Go to the following url:
 
 ```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
+https://accounts.spotify.com/authorize?client_id=<client_id>&response_type=code&redirect_uri=http://localhost:3000/&scope=user-read-currently-playing%20user-top-read
 ```
 
-## Development Server
+You will be redirected to `localhost` width a code in the url params.
 
-Start the development server on http://localhost:3000
+## Request access and refresh tokens
+
+Encode the following in base64 using [this website](https://www.base64encode.org/):
+
+```
+<client_id>:<client_secret>
+```
+
+Then run the following in a terminal with the encoded string and the code:
 
 ```bash
-npm run dev
+curl -H "Authorization: Basic <encoded>" -d grant_type=authorization_code -d code=<code> -d redirect_uri=http://localhost:3000/ https://accounts.spotify.com/api/token
 ```
 
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+You will get a response with a refresh token. Save it in an environment variable. It will never expire.
