@@ -13,7 +13,7 @@ const isMobile = useIsMobile();
 <template>
   <img
     class="skill"
-    :src="`/icons/${source}.svg`"
+    :src="`/images/skills/${source}`"
     alt=""
     :width="isMobile ? 64 : 100"
     :height="isMobile ? 64 : 100"

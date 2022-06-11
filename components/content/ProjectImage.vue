@@ -1,20 +1,23 @@
 <script setup lang="ts">
 defineProps<{
-  image: string;
+  source: string;
 }>();
 </script>
 
 <template>
-  <figure class="image-content">
-    <div class="image-container">
-      <img
-        class="image"
-        :src="image"
-        alt=""
-        data-scroll
-        data-scroll-speed="-2"
-      />
-    </div>
+  <figure
+    class="image-container"
+    data-scroll
+    data-scroll-class="visible"
+    data-scroll-repeat
+    data-scroll-offset="25%,0%"
+  >
+    <img
+      class="image"
+      :src="`/images/projects/${source}`"
+      alt=""
+      width="1200"
+    />
     <figcaption class="figcaption">
       <slot />
     </figcaption>
@@ -26,22 +29,24 @@ defineProps<{
 @use '../../styles/screens';
 @use '../../styles/variables';
 
-.image-content {
+.image-container {
   @include mixins.section-width;
 
   padding: 0 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s variables.$ease-in-out;
+
+  &.visible {
+    opacity: 1;
+  }
 
   @include screens.laptop {
     padding: 0;
   }
 
-  .image-container {
+  .image {
+    width: 100%;
     border-radius: 2rem;
-    overflow: hidden;
-
-    .image {
-      width: 100%;
-    }
   }
 
   .figcaption {

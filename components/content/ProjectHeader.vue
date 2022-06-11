@@ -13,7 +13,7 @@ defineProps<{
       data-scroll-repeat
       data-scroll-offset="0%,25%"
     >
-      <img class="image" :src="image" alt="" />
+      <img class="image" :src="`/images/projects/${image}`" alt="" />
     </div>
     <div class="content">
       <div class="back-wrapper">

@@ -54,8 +54,12 @@ const downloadCV = () => {
         <span class="circle"></span>
         <div class="content">
           <h3 class="title">{{ milestone.start }} - {{ milestone.end }}</h3>
-          <p class="description">{{ milestone.name }}</p>
-          <p class="sub">{{ milestone.description }}</p>
+          <p class="description">
+            <strong>{{ milestone.name }}</strong>
+          </p>
+          <p class="sub">
+            <strong>{{ milestone.description }}</strong>
+          </p>
         </div>
       </li>
       <li class="list-item">
