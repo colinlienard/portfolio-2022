@@ -1,7 +1,7 @@
 ---
 name: Requiz
 slug: requiz
-description: A duis gravida consectetur ullamcorper aliquet magna quam morbi. Neque feugiat enim sem morbi vel faucibus cursus.
+description: Requiz est un site permettant de jouer à des quiz en simultané avec d'autres personnes, et de créer et partager son propre quiz.
 image: requiz-thumbnail.webp
 order: 3
 ---

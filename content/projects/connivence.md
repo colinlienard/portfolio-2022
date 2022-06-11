@@ -1,7 +1,7 @@
 ---
 title: Connivence
 slug: connivence
-description: A duis gravida consectetur ullamcorper aliquet magna quam morbi. Neque feugiat enim sem morbi vel faucibus cursus.
+description: Connivence est une franchise de salon de coiffure avec la volonté de se digitaliser.
 image: connivence-thumbnail.webp
 order: 4
 ---

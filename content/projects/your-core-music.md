@@ -1,7 +1,7 @@
 ---
 title: Your Core Music
 slug: your-core-music
-description: A duis gravida consectetur ullamcorper aliquet magna quam morbi. Neque feugiat enim sem morbi vel faucibus cursus.
+description: Your Core Music est un site permettant de découvrir ses statistiques Spotify.
 image: your-core-music-thumbnail.webp
 order: 1
 ---
@@ -27,7 +27,7 @@ order: 1
 ::project-paragraph
 ## Présentation
 
-**Your Core Music** est un site permettant de voir ses **statistiques Spotify**.
+**Your Core Music** est un site permettant de découvrir ses **statistiques Spotify**.
 
 L'utilisateur doit se connecter à son compte Spotify pour ensuite être redirigé vers l'interface de statistiques divisée en 4 parties.
 ::

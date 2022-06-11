@@ -1,7 +1,7 @@
 ---
 title: Outer Life
 slug: outerlife
-description: A duis gravida consectetur ullamcorper aliquet magna quam morbi. Neque feugiat enim sem morbi vel faucibus cursus.
+description: Outer Life est en jeu en cours de développement à propos d'un aventurier explorant des planètes inconnues.
 image: outerlife-thumbnail.webp
 order: 2
 ---
