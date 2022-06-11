@@ -2,25 +2,60 @@
 title: Your Core Music
 slug: your-core-music
 description: A duis gravida consectetur ullamcorper aliquet magna quam morbi. Neque feugiat enim sem morbi vel faucibus cursus.
-image: images/colin.webp
+image: your-core-music-thumbnail.webp
 order: 1
 ---
 
-::project-header{image="/images/colin.webp"}
+::project-header{image="your-core-music-thumbnail.webp"}
 #hero
 # Your Core Music
 
 #links
-- [Lien direct](https://your-core-music.vercel.app)
+- [Voir Your Core Music](https://your-core-music.vercel.app)
 - [Repo GitHub](https://github.com/ColinLienard/your-core-music)
 ::
 
 ::project-paragraph
-A duis gravida consectetur ullamcorper aliquet magna quam morbi. Neque feugiat enim sem morbi vel faucibus cursus. Orci lectus varius pellentesque sed adipiscing volutpat et. Quam eget nibh pharetra mauris sodales massa.
+## Technologies utilisées
 
-Lectus iaculis eu odio amet, suspendisse quisque. Turpis blandit ultrices amet, eu enim nunc porttitor. Non dictum nibh praesent nunc eget scelerisque fringilla. Netus imperdiet auctor lorem sed. Egestas eu, amet, neque sed nisi egestas.
+- React
+- Nextjs
+- Typescript
+- L'API Spotify
 ::
 
-::project-image{image="/images/colin.webp"}
-Description de l'image
+::project-paragraph
+## Présentation
+
+**Your Core Music** est un site permettant de voir ses **statistiques Spotify**.
+
+L'utilisateur doit se connecter à son compte Spotify pour ensuite être redirigé vers l'interface de statistiques divisée en 4 parties.
+::
+
+::project-image{source="your-core-music-0.webp"}
+Les artistes les plus écoutées.
+::
+
+::project-paragraph
+Un **player audio** est disponible et se déclenche quand l'utilisateur arrive sur la page. Des extraits de 30 secondes des 10 premiers morceaux préférés sont jouées à la suite. La musique peut être mise en pause, et il y a des liens vers le morceau et son artiste.
+::
+
+::project-image{source="your-core-music-1.webp"}
+Les morceaux les plus écoutées.
+::
+
+::project-paragraph
+L'utilisateur peut choisir la période de ses statistiques : depuis un mois, six mois ou depuis la création de son compte.
+::
+
+::project-image{source="your-core-music-2.webp"}
+Les genres les plus écoutées.
+::
+
+::project-paragraph
+Pour chaque artiste, chaque morceau et chaque genre de chaque période, il est possible de voir si l'élément a monté ou baissé dans le classement, et de combien de places.
+::
+
+::project-image{source="your-core-music-3.webp"}
+Des recommendations musicales basées sur différentes ambiances.
 ::
