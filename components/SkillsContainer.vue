@@ -24,6 +24,14 @@ const placeSkill = (event: MouseEvent) => {
 
   skills.value.push({ source, x, y });
 };
+
+// Preload images
+onMounted(() => {
+  data.skills.forEach((skill: string) => {
+    const image = new Image();
+    image.src = `/images/skills/${skill}`;
+  });
+});
 </script>
 
 <template>
