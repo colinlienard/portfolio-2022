@@ -53,7 +53,6 @@ defineProps<{
     text-align: center;
     margin-top: 1rem;
     color: variables.$grey;
-    font-size: 0.9em;
 
     @include screens.laptop {
       margin-top: 2rem;

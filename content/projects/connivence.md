@@ -1,14 +1,14 @@
 ---
 title: Connivence
 slug: connivence
-description: Connivence est une franchise de salon de coiffure avec la volonté de se digitaliser.
+description: Connivence est une franchise de salon de coiffure avec une évolution digitale.
 image: connivence-thumbnail.webp
 order: 4
 ---
 
 ::project-header{image="connivence-thumbnail.webp"}
 #hero
-# Connivenve
+# Connivence
 
 #links
 - [Voir Connivence](https://connivence.net/)
@@ -18,7 +18,7 @@ order: 4
 ::project-paragraph
 ## Présentation
 
-**Connivence** est une franchise de salon de coiffure avec la volonté de se digitaliser, pour laquelle j'ai travaillé pendant plus d'un an.
+**Connivence** est une franchise de salon de coiffure avec une évolution digitale, pour laquelle j'ai travaillé pendant plus d'un an.
 
 J'ai réalisé le design ainsi qu'une grande partie de l'intégration de leur site principal.
 ::

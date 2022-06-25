@@ -29,8 +29,8 @@ const downloadCV = () => {
         <p class="paragraph">
           Je suis un <strong>webdesigner</strong> 🎨 et un
           <strong>développeur front-end</strong> ⚡ fraîchement diplômé,
-          actuellement basé à Limoges.<br /><br />Passioné de la
-          <strong>création d’interface</strong> 🖥️, aussi bien par le côté
+          actuellement basé à Limoges.<br /><br />Passionné par la
+          <strong>création d’interfaces</strong> 🖥️, aussi bien par le côté
           graphique que par le développement, j’adore tester des
           <strong>nouvelles tendances et technologies</strong
           >.<br /><br />J’essaie aussi de créer des projets cools ✨👀 sur mon
