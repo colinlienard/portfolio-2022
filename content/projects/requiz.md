@@ -42,7 +42,7 @@ L'interface de connexion.
 ::
 
 ::project-paragraph
-Un **éditeur de quiz** complet est présent et permet de créer des questions, chacune contenant des réponses possibles dont une seule qui est juste. Un thème peut aussi être choisi, ainsi qu'un nom et qu'une description. L'utilisateur peut ensuite sauvegarder son quiz pour l'éditer plus tard, ou alors le publier pour qu'il soit visible pour les autres utilisateurs.
+Un **éditeur de quiz** complet est présent et permet de créer des questions, chacune contenant des réponses possibles dont une seule juste. Un thème peut aussi être choisi, ainsi qu'un nom et qu'une description. L'utilisateur peut ensuite sauvegarder son quiz pour l'éditer plus tard, ou alors le publier pour qu'il soit visible pour les autres utilisateurs.
 ::
 
 ::project-image{source="requiz-1.webp"}
@@ -50,7 +50,7 @@ L'éditeur de quiz.
 ::
 
 ::project-paragraph
-Lorsqu'un quiz est rejoint par au moins une personne, une **salle d'attente** est créé dans laquelle un chat est disponible.
+Lorsqu'un quiz est rejoint par au moins une personne, une **salle d'attente** est créée dans laquelle un chat est disponible.
 ::
 
 ::project-image{source="requiz-2.webp"}
@@ -58,7 +58,7 @@ La salle d'attente.
 ::
 
 ::project-paragraph
-Quand le quiz est lancé, les questions s'enchaînent et les joueurs doivent cliquer sur ce qu'il pense être la bonne réponse. À chaque mauvaise réponse, les joueurs perdent une vie. Le gagnant du quiz est celui à qui il reste le plus de vies.
+Quand le quiz est lancé, les questions s'enchaînent et les joueurs doivent cliquer sur ce qu'ils pensent être la bonne réponse. À chaque mauvaise réponse, les joueurs perdent une vie. Le gagnant du quiz est celui à qui il reste le plus de vies.
 ::
 
 ::project-image{source="requiz-3.webp"}

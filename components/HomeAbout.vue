@@ -3,11 +3,6 @@ const isMobile = useIsMobile();
 const { data } = await useAsyncData('milestones', async () =>
   queryContent('/milestones').findOne()
 );
-
-const downloadCV = () => {
-  // eslint-disable-next-line no-alert
-  alert('CV bientôt disponible !');
-};
 </script>
 
 <template>
@@ -29,8 +24,8 @@ const downloadCV = () => {
         <p class="paragraph">
           Je suis un <strong>webdesigner</strong> 🎨 et un
           <strong>développeur front-end</strong> ⚡ fraîchement diplômé,
-          actuellement basé à Limoges.<br /><br />Passioné de la
-          <strong>création d’interface</strong> 🖥️, aussi bien par le côté
+          actuellement basé à Limoges.<br /><br />Passionné par la
+          <strong>création d’interfaces</strong> 🖥️, aussi bien par le côté
           graphique que par le développement, j’adore tester des
           <strong>nouvelles tendances et technologies</strong
           >.<br /><br />J’essaie aussi de créer des projets cools ✨👀 sur mon
@@ -69,9 +64,9 @@ const downloadCV = () => {
           <div class="description-wrapper">
             <p class="description">Open to work!</p>
             <span class="line"></span>
-            <button class="button" @click="downloadCV">
+            <a class="button" href="/pdf/colin-lienard-cv.pdf" download>
               Télécharger mon CV
-            </button>
+            </a>
           </div>
           <p class="sub">La Rochelle, Limoges ou autres</p>
         </div>

@@ -33,15 +33,15 @@ L'utilisateur doit se connecter à son compte Spotify pour ensuite être redirig
 ::
 
 ::project-image{source="your-core-music-0.webp"}
-Les artistes les plus écoutées.
+Les artistes les plus écoutés.
 ::
 
 ::project-paragraph
-Un **player audio** est disponible et se déclenche quand l'utilisateur arrive sur la page. Des extraits de 30 secondes des 10 premiers morceaux préférés sont jouées à la suite. La musique peut être mise en pause, et il y a des liens vers le morceau et son artiste.
+Un **player audio** est disponible et se déclenche quand l'utilisateur arrive sur la page. Des extraits de 30 secondes des 10 premiers morceaux préférés sont joués à la suite. La musique peut être mise en pause, et il y a des liens vers le morceau et son artiste.
 ::
 
 ::project-image{source="your-core-music-1.webp"}
-Les morceaux les plus écoutées.
+Les morceaux les plus écoutés.
 ::
 
 ::project-paragraph
@@ -49,7 +49,7 @@ L'utilisateur peut choisir la période de ses statistiques : depuis un mois, six
 ::
 
 ::project-image{source="your-core-music-2.webp"}
-Les genres les plus écoutées.
+Les genres les plus écoutés.
 ::
 
 ::project-paragraph

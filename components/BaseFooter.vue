@@ -41,21 +41,23 @@ const handleScrollTo = (target: string) => {
               class="button"
               href="https://github.com/ColinLienard"
               target="_blank"
-              >GitHub</a
             >
+              GitHub
+            </a>
           </li>
           <li>
             <a
               class="button"
               href="https://www.linkedin.com/in/colin-lienard-83490a1a4/"
               target="_blank"
-              >LinkedIn</a
             >
+              LinkedIn
+            </a>
           </li>
           <li>
-            <a class="button" href="mailto:colin.lienard87@orange.fr"
-              >colin.lienard87@orange.fr</a
-            >
+            <a class="button" href="mailto:colin.lienard87@orange.fr">
+              colin.lienard87@orange.fr
+            </a>
           </li>
         </ul>
         <ul class="list">

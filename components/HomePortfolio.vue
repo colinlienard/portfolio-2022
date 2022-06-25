@@ -14,17 +14,20 @@ const { data } = await useAsyncData('projects', () =>
     <h2 class="hero"><strong>Portfolio</strong> 2022</h2>
     <ul class="list">
       <li v-for="(project, index) in data" :key="index">
-        <NuxtLink :to="`/projects/${project.slug}`" class="list-item">
-          <img
-            class="image"
-            :src="`/images/projects/${project.image}`"
-            alt=""
-            data-scroll
-            data-scroll-speed="-3"
-            @mouseenter="cursorContent = project.title"
-            @mouseleave="cursorContent = null"
-          />
-          <p class="link-text">{{ project.title }}</p>
+        <NuxtLink :to="`/projects/${project.slug}`">
+          <div class="image-wrapper">
+            <img
+              class="image"
+              :src="`/images/projects/${project.image}`"
+              alt=""
+              data-scroll
+              data-scroll-speed="-1"
+              @mouseenter="cursorContent = project.title"
+              @mouseleave="cursorContent = null"
+            />
+          </div>
+          <h3 class="title">{{ project.title }}</h3>
+          <p class="description">{{ project.description }}</p>
         </NuxtLink>
       </li>
     </ul>
@@ -33,13 +36,12 @@ const { data } = await useAsyncData('projects', () =>
 
 <style scoped lang="scss">
 @use '../styles/mixins';
+@use '../styles/screens';
 @use '../styles/typography';
 @use '../styles/variables';
 
 .container {
   @include mixins.section;
-
-  padding: 0;
 }
 
 .hero {
@@ -50,22 +52,46 @@ const { data } = await useAsyncData('projects', () =>
   width: 100%;
   display: flex;
   flex-direction: column;
-  border-radius: 2rem;
-  overflow: hidden;
+  gap: 3rem;
 
-  .list-item {
-    width: 100vw;
-    height: 100vh;
+  @include screens.laptop {
+    gap: 4rem;
+    padding: 0 2rem;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 2rem;
     overflow: hidden;
     display: block;
 
-    .image {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
+    @include screens.laptop {
+      aspect-ratio: 16 / 9;
     }
+  }
 
-    .link-test {
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .title {
+    @include typography.heading-3;
+
+    margin: 1em 0 0.5em;
+  }
+
+  .description {
+    @include typography.paragraph;
+
+    color: variables.$grey;
+  }
+
+  .title,
+  .description {
+    @include screens.laptop {
       display: none;
     }
   }
