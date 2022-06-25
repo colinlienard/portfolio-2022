@@ -3,11 +3,6 @@ const isMobile = useIsMobile();
 const { data } = await useAsyncData('milestones', async () =>
   queryContent('/milestones').findOne()
 );
-
-const downloadCV = () => {
-  // eslint-disable-next-line no-alert
-  alert('CV bientôt disponible !');
-};
 </script>
 
 <template>
@@ -69,9 +64,9 @@ const downloadCV = () => {
           <div class="description-wrapper">
             <p class="description">Open to work!</p>
             <span class="line"></span>
-            <button class="button" @click="downloadCV">
+            <a class="button" href="/pdf/colin-lienard-cv.pdf" download>
               Télécharger mon CV
-            </button>
+            </a>
           </div>
           <p class="sub">La Rochelle, Limoges ou autres</p>
         </div>

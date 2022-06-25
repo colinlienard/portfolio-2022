@@ -55,7 +55,7 @@ const { data } = await useAsyncData('projects', () =>
   gap: 3rem;
 
   @include screens.laptop {
-    gap: 8rem;
+    gap: 4rem;
     padding: 0 2rem;
   }
 
