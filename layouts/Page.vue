@@ -1,8 +1,4 @@
 <script setup lang="ts">
-// @ts-ignore
-import LocomotiveScroll from 'locomotive-scroll';
-
-const container = ref();
 const scroll = ref();
 const cursorContent = ref<string | null>();
 const isMobile = useIsMobile();
@@ -10,16 +6,17 @@ const isMobile = useIsMobile();
 provide('scroll', scroll);
 provide('cursor', cursorContent);
 
-watch(container, () => {
-  if (container.value) {
-    setTimeout(() => {
-      scroll.value = new LocomotiveScroll({
-        el: container.value,
-        smooth: true,
-        multiplier: 0.8,
-      });
-    }, 100);
-  }
+onMounted(() => {
+  setTimeout(async () => {
+    // @ts-ignore
+    const locomotiveScroll = await import('locomotive-scroll');
+    // eslint-disable-next-line new-cap
+    scroll.value = new locomotiveScroll.default({
+      el: document.querySelector('#main'),
+      smooth: true,
+      multiplier: 0.8,
+    });
+  }, 300);
 });
 
 onUnmounted(() => {
@@ -28,7 +25,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <main ref="container" class="main">
+  <main id="main" class="main">
     <CustomCursor v-if="!isMobile" />
     <slot />
   </main>
