@@ -12,7 +12,7 @@ export default defineNuxtConfig({
       spotifyRefreshToken: '',
     },
   },
-  ssr: false,
+  ssr: true,
   target: 'static',
   typescript: {
     strict: true,
