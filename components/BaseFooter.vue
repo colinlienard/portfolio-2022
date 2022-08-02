@@ -55,8 +55,8 @@ const handleScrollTo = (target: string) => {
             </a>
           </li>
           <li>
-            <a class="button" href="mailto:colin.lienard87@orange.fr">
-              colin.lienard87@orange.fr
+            <a class="button" href="mailto:contact@colin-lienard.fr">
+              contact@colin-lienard.fr
             </a>
           </li>
         </ul>
