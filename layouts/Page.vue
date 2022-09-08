@@ -16,7 +16,7 @@ onMounted(() => {
       smooth: true,
       multiplier: 0.8,
     });
-  }, 400);
+  }, 1000);
 });
 
 onUnmounted(() => {

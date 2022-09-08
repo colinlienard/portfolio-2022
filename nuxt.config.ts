@@ -7,7 +7,11 @@ export default defineNuxtConfig({
   alias: {
     styles: resolve(__dirname, './styles'),
   },
-  css: ['~/styles/reset.scss', '~/styles/globals.scss'],
+  css: [
+    'locomotive-scroll/dist/locomotive-scroll.css',
+    '~/styles/reset.scss',
+    '~/styles/globals.scss',
+  ],
   modules: ['@nuxt/content'],
   runtimeConfig: {
     public: {
