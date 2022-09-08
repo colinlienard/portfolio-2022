@@ -35,10 +35,10 @@ const { data } = await useAsyncData('projects', () =>
 </template>
 
 <style scoped lang="scss">
-@use '../styles/mixins';
-@use '../styles/screens';
-@use '../styles/typography';
-@use '../styles/variables';
+@use 'styles/mixins';
+@use 'styles/screens';
+@use 'styles/typography';
+@use 'styles/variables';
 
 .container {
   @include mixins.section;

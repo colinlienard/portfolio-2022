@@ -5,8 +5,8 @@
 </template>
 
 <style scoped lang="scss">
-@use '../styles/mixins';
-@use '../styles/screens';
+@use 'styles/mixins';
+@use 'styles/screens';
 
 .section {
   @include mixins.section;

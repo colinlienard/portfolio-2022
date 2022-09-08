@@ -26,9 +26,9 @@ const scrollTo = useScrollTo();
 </template>
 
 <style scoped lang="scss">
-@use '../styles/screens';
-@use '../styles/typography';
-@use '../styles/variables';
+@use 'styles/screens';
+@use 'styles/typography';
+@use 'styles/variables';
 
 @keyframes hello {
   0% {

@@ -29,10 +29,10 @@ defineProps<{
 </template>
 
 <style lang="scss">
-@use '../../styles/screens';
-@use '../../styles/mixins';
-@use '../../styles/typography';
-@use '../../styles/variables';
+@use 'styles/screens';
+@use 'styles/mixins';
+@use 'styles/typography';
+@use 'styles/variables';
 
 .header-container {
   .image-container {

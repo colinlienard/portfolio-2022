@@ -77,10 +77,10 @@ const { data } = await useAsyncData('milestones', async () =>
 </template>
 
 <style scoped lang="scss">
-@use '../styles/mixins';
-@use '../styles/screens';
-@use '../styles/typography';
-@use '../styles/variables';
+@use 'styles/mixins';
+@use 'styles/screens';
+@use 'styles/typography';
+@use 'styles/variables';
 
 .figure {
   @include mixins.section;
