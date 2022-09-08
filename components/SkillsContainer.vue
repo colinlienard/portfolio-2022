@@ -43,7 +43,7 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
-@use '../styles/screens';
+@use 'styles/screens';
 
 .container {
   position: absolute;

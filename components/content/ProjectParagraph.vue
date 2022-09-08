@@ -5,10 +5,10 @@
 </template>
 
 <style lang="scss">
-@use '../../styles/mixins';
-@use '../../styles/screens';
-@use '../../styles/typography';
-@use '../../styles/variables';
+@use 'styles/mixins';
+@use 'styles/screens';
+@use 'styles/typography';
+@use 'styles/variables';
 
 .paragraph-container {
   width: min(100%, 40rem);

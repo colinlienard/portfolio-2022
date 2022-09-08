@@ -26,9 +26,9 @@ const scrollTo = useScrollTo();
 </template>
 
 <style scoped lang="scss">
-@use '../styles/screens';
-@use '../styles/typography';
-@use '../styles/variables';
+@use 'styles/screens';
+@use 'styles/typography';
+@use 'styles/variables';
 
 @keyframes hello {
   0% {
@@ -108,6 +108,10 @@ const scrollTo = useScrollTo();
   justify-content: center;
   position: relative;
   height: 100vh;
+
+  @supports (height: 100svh) {
+    height: 100svh;
+  }
 
   .pre-hero {
     z-index: 1;

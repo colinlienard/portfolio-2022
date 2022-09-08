@@ -6,7 +6,7 @@
 </template>
 
 <style lang="scss">
-@use '../styles/screens';
+@use 'styles/screens';
 
 article {
   display: flex;

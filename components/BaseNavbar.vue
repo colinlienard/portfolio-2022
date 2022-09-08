@@ -19,9 +19,9 @@ const scrollTo = useScrollTo();
 </template>
 
 <style scoped lang="scss">
-@use '../styles/mixins';
-@use '../styles/screens';
-@use '../styles/variables';
+@use 'styles/mixins';
+@use 'styles/screens';
+@use 'styles/variables';
 
 @keyframes container {
   1% {

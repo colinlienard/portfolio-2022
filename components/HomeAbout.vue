@@ -35,6 +35,7 @@ const { data } = await useAsyncData('milestones', async () =>
       </figcaption>
     </figure>
     <ul
+      v-if="data"
       class="list"
       data-scroll
       data-scroll-class="visible"
@@ -64,7 +65,7 @@ const { data } = await useAsyncData('milestones', async () =>
           <div class="description-wrapper">
             <p class="description">Open to work!</p>
             <span class="line"></span>
-            <a class="button" href="/pdf/colin-lienard-cv.pdf" download>
+            <a class="button" href="/pdf/colin-lienard-cv.pdf" target="_blank">
               Télécharger mon CV
             </a>
           </div>
@@ -76,10 +77,10 @@ const { data } = await useAsyncData('milestones', async () =>
 </template>
 
 <style scoped lang="scss">
-@use '../styles/mixins';
-@use '../styles/screens';
-@use '../styles/typography';
-@use '../styles/variables';
+@use 'styles/mixins';
+@use 'styles/screens';
+@use 'styles/typography';
+@use 'styles/variables';
 
 .figure {
   @include mixins.section;

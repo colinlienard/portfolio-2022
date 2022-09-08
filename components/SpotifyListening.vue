@@ -90,7 +90,7 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="scss">
-@use '../styles/variables';
+@use 'styles/variables';
 
 @keyframes music {
   0% {

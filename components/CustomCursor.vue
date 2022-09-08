@@ -2,14 +2,22 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { inject, Ref } from 'vue';
 
-const x = ref('0px');
-const y = ref('0px');
+const lerpAmount = 0.1;
+
+const mouse = ref({ x: 0, y: 0 });
+const x = ref(0);
+const y = ref(0);
 const hovering = ref(false);
 const cursorContent = inject<Ref<string | null>>('cursor');
 
-const handleMouseMove = useThrottle((event: MouseEvent) => {
-  x.value = `${event.clientX}px`;
-  y.value = `${event.clientY}px`;
+const lerp = (start: number, end: number) =>
+  (1 - lerpAmount) * start + lerpAmount * end;
+
+const handleMouseMove = (event: MouseEvent) => {
+  mouse.value = {
+    x: event.clientX,
+    y: event.clientY,
+  };
 
   switch ((event.target as Element).tagName) {
     case 'BUTTON':
@@ -20,10 +28,26 @@ const handleMouseMove = useThrottle((event: MouseEvent) => {
       hovering.value = false;
       break;
   }
-}, 20);
+};
+
+const loop = () => {
+  x.value = lerp(x.value, mouse.value.x);
+  y.value = lerp(y.value, mouse.value.y);
+
+  requestAnimationFrame(() => loop());
+};
 
 onMounted(() => {
+  x.value = window.innerWidth / 2;
+  y.value = window.innerHeight / 2;
+  mouse.value = {
+    x: window.innerWidth / 2,
+    y: window.innerHeight / 2,
+  };
+
   window.addEventListener('mousemove', handleMouseMove);
+
+  loop();
 });
 
 onUnmounted(() => {
@@ -47,7 +71,7 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="scss">
-@use '../styles/variables';
+@use 'styles/variables';
 
 @keyframes appear {
   0%,
@@ -81,10 +105,9 @@ onUnmounted(() => {
   position: absolute;
   top: -1.5rem;
   left: -1.5rem;
-  transform: translate(v-bind(x), v-bind(y));
+  transform: translate(calc(v-bind(x) * 1px), calc(v-bind(y) * 1px));
   animation: appear 2s variables.$ease-in-out;
-  transition: transform 300ms cubic-bezier(0.2, 0.5, 0.5, 1),
-    width 0.5s variables.$ease-in-out, top 0.5s variables.$ease-in-out,
+  transition: width 0.5s variables.$ease-in-out, top 0.5s variables.$ease-in-out,
     left 0.5s variables.$ease-in-out,
     background-color 0.5s variables.$ease-in-out;
 

@@ -16,7 +16,7 @@ onMounted(() => {
       smooth: true,
       multiplier: 0.8,
     });
-  }, 400);
+  }, 1000);
 });
 
 onUnmounted(() => {
@@ -32,8 +32,8 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="scss">
-@use '../styles/screens';
-@use '../styles/variables';
+@use 'styles/screens';
+@use 'styles/variables';
 
 .page-enter-active,
 .page-leave-active {
