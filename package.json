@@ -5,6 +5,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "typecheck": "tsc --noEmit",
     "lint:ts": "eslint **/*.ts **/*.vue",
     "lint:style": "stylelint \"**/*.{vue,scss}\"",
     "lint:prettier": "prettier --check .",
