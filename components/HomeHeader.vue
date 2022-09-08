@@ -109,6 +109,10 @@ const scrollTo = useScrollTo();
   position: relative;
   height: 100vh;
 
+  @supports (height: 100svh) {
+    height: 100svh;
+  }
+
   .pre-hero {
     z-index: 1;
     animation: hello 2s variables.$ease-in-out;
