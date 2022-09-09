@@ -13,7 +13,13 @@ defineProps<{
       data-scroll-repeat
       data-scroll-offset="0%,25%"
     >
-      <img class="image" :src="`/images/projects/${image}`" alt="" />
+      <nuxt-img
+        class="image"
+        :src="`/images/projects/${image}`"
+        alt=""
+        sizes="mobile:800px tablet:2500px"
+        quality="100"
+      />
     </div>
     <div class="content">
       <div class="back-wrapper">

@@ -12,12 +12,12 @@ const { data } = await useAsyncData('milestones', async () =>
       <figcaption v-if="isMobile">
         <h2 class="hero">À propos de moi</h2>
       </figcaption>
-      <img
+      <nuxt-img
+        class="image"
         src="/images/colin.webp"
         alt=""
-        class="image"
-        width="400"
-        height="600"
+        sizes="mobile:160px tablet:256px"
+        quality="100"
       />
       <figcaption class="figcaption">
         <h2 v-if="!isMobile" class="hero">À propos de moi</h2>
@@ -107,13 +107,7 @@ const { data } = await useAsyncData('milestones', async () =>
   }
 
   .image {
-    width: 10rem;
-    height: auto;
     border-radius: 99rem;
-
-    @include screens.laptop {
-      width: 16rem;
-    }
   }
 
   .paragraph {

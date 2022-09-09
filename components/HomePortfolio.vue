@@ -16,10 +16,12 @@ const { data } = await useAsyncData('projects', () =>
       <li v-for="(project, index) in data" :key="index">
         <NuxtLink :to="`/projects/${project.slug}`">
           <div class="image-wrapper">
-            <img
+            <nuxt-img
               class="image"
               :src="`/images/projects/${project.image}`"
               alt=""
+              sizes="mobile:800px tablet:2500px"
+              quality="100"
               data-scroll
               data-scroll-speed="-1"
               @mouseenter="cursorContent = project.title"

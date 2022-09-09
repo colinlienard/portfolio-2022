@@ -12,11 +12,12 @@ defineProps<{
     data-scroll-repeat
     data-scroll-offset="25%,0%"
   >
-    <img
+    <nuxt-img
       class="image"
       :src="`/images/projects/${source}`"
       alt=""
-      width="1200"
+      sizes="mobile:480px tablet:1200px"
+      quality="100"
     />
     <figcaption class="figcaption">
       <slot />
