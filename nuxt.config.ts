@@ -8,11 +8,19 @@ export default defineNuxtConfig({
     styles: resolve(__dirname, './styles'),
   },
   css: [
-    'locomotive-scroll/dist/locomotive-scroll.css',
     '~/styles/reset.scss',
+    'locomotive-scroll/dist/locomotive-scroll.css',
     '~/styles/globals.scss',
   ],
-  modules: ['@nuxt/content'],
+  image: {
+    screens: {
+      mobile: 480,
+      tablet: 1024,
+      laptop: 1600,
+      desktop: 2560,
+    },
+  },
+  modules: ['@nuxt/content', '@nuxt/image-edge'],
   runtimeConfig: {
     public: {
       spotifyClientId: '',
