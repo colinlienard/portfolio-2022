@@ -45,3 +45,11 @@
 @mixin section-width {
   width: min(100%, 75rem);
 }
+
+@mixin text-stroke($color, $thickness: 2px) {
+  color: variables.$dark;
+  text-shadow: $thickness $thickness $color, -$thickness $thickness $color,
+    $thickness (-$thickness) $color, -$thickness (-$thickness) $color;
+
+  // -webkit-text-stroke: $thickness $color;
+}

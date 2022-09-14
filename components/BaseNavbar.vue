@@ -4,6 +4,7 @@ const scrollTo = useScrollTo();
 
 <template>
   <nav class="nav" data-scroll data-scroll-sticky data-scroll-target="main">
+    <button class="home-link" @click="scrollTo(0)">Colin Lienard</button>
     <ul class="list">
       <li class="link">
         <button @click="scrollTo('#portfolio')">Portfolio</button>
@@ -23,12 +24,12 @@ const scrollTo = useScrollTo();
 @use 'styles/screens';
 @use 'styles/variables';
 
-@keyframes container {
-  1% {
+@keyframes appear {
+  0% {
     opacity: 0;
   }
 
-  99% {
+  50% {
     opacity: 0;
   }
 
@@ -37,24 +38,20 @@ const scrollTo = useScrollTo();
   }
 }
 
-@keyframes appear {
-  from {
-    transform: translateY(-4rem);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 .nav {
+  @include mixins.section-width;
+
   position: fixed;
   top: 2rem;
+  display: flex;
+  justify-content: space-between;
   mix-blend-mode: difference;
   z-index: 999;
-  animation: container 2.5s;
+  animation: appear 2s variables.$ease-in-out;
+
+  .home-link {
+    font-weight: 700;
+  }
 
   .list {
     display: flex;
@@ -63,20 +60,6 @@ const scrollTo = useScrollTo();
 
     @include screens.laptop {
       gap: 4rem;
-    }
-
-    .link {
-      @include mixins.link;
-
-      animation: appear 1s 2s variables.$ease-in-out;
-
-      &:nth-of-type(2) {
-        animation-delay: 2.2s;
-      }
-
-      &:nth-of-type(3) {
-        animation-delay: 2.4s;
-      }
     }
   }
 }

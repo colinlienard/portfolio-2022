@@ -61,7 +61,7 @@ onUnmounted(() => {
     data-scroll-sticky
     data-scroll-target="main"
   >
-    <span :class="['cursor', { small: hovering }, { big: cursorContent }]">
+    <span :class="['cursor', { hovering }, { big: cursorContent }]">
       <Transition mode="out-in">
         <p v-if="cursorContent" class="text">{{ cursorContent }}</p>
       </Transition>
@@ -79,7 +79,7 @@ onUnmounted(() => {
   }
 
   100% {
-    width: 2rem;
+    width: 1rem;
   }
 }
 
@@ -91,30 +91,30 @@ onUnmounted(() => {
   height: 100vh;
   pointer-events: none;
   z-index: 999;
+  mix-blend-mode: difference;
 }
 
 .cursor {
-  width: 3rem;
+  width: 1rem;
   aspect-ratio: 1 / 1;
-  background-color: variables.$green;
+  background-color: variables.$white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: -1.5rem;
-  left: -1.5rem;
+  top: -0.5rem;
+  left: -0.5rem;
   transform: translate(calc(v-bind(x) * 1px), calc(v-bind(y) * 1px));
-  animation: appear 2s variables.$ease-in-out;
+  animation: appear 1s variables.$ease-in-out;
   transition: width 0.5s variables.$ease-in-out, top 0.5s variables.$ease-in-out,
     left 0.5s variables.$ease-in-out,
     background-color 0.5s variables.$ease-in-out;
 
-  &.small {
-    width: 0.8rem;
-    top: -0.4rem;
-    left: -0.4rem;
-    background-color: variables.$white;
+  &.hovering {
+    width: 3rem;
+    top: -1.5rem;
+    left: -1.5rem;
   }
 
   &.big {
