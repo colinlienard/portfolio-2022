@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { onMounted, onUnmounted, ref } from 'vue';
 
 const useIsMobile = () => {

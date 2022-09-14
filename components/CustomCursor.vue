@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { inject, Ref } from 'vue';
 
 const lerpAmount = 0.1;

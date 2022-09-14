@@ -14,11 +14,10 @@
     "parser": "@typescript-eslint/parser",
     "sourceType": "module"
   },
-  "plugins": ["vue", "@typescript-eslint", "prettier"],
+  "plugins": ["vue", "@typescript-eslint"],
   "rules": {
     "import/extensions": ["error", { "ts": "never" }],
-    "linebreak-style": ["error", "unix"],
-    "prettier/prettier": "error"
+    "import/no-extraneous-dependencies": "off"
   },
   // Vue and Nuxt auto imports (https://v3.nuxtjs.org/guide/concepts/auto-imports)
   "overrides": [

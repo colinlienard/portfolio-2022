@@ -2,4 +2,4 @@
 .output
 dist
 node_modules
-*.md
+content/*/*.md

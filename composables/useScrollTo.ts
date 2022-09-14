@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { inject, Ref } from 'vue';
 import useIsMobile from './useIsMobile';
 
