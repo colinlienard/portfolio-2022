@@ -1,16 +1,8 @@
-<!-- eslint-disable no-param-reassign -->
 <script setup lang="ts">
-import { Application, SPEObject } from '@splinetool/runtime';
+import { Application } from '@splinetool/runtime';
 
 const canvas = ref<HTMLCanvasElement>();
 const visible = ref(false);
-
-const loop = (cube: SPEObject) => {
-  cube.rotation.z -= 0.003;
-  cube.rotation.x -= 0.003;
-
-  requestAnimationFrame(() => loop(cube));
-};
 
 onMounted(async () => {
   if (canvas.value) {
@@ -18,11 +10,6 @@ onMounted(async () => {
     await spline.load('/spline/cube.splinecode');
 
     visible.value = true;
-
-    const cube = spline.findObjectByName('Cube');
-    if (cube) {
-      loop(cube);
-    }
   }
 });
 </script>
@@ -32,17 +19,25 @@ onMounted(async () => {
 </template>
 
 <style scoped lang="scss">
-@use 'styles/variables';
-
 .canvas {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  inset: -50%;
+  width: 200% !important;
+  height: 200% !important;
+  scale: 0.5;
+  pointer-events: none;
   transition: opacity 2s variables.$ease-in-out;
 
   &:not(&.visible) {
     opacity: 0;
+  }
+
+  @include screens.laptop {
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    scale: 1;
+    pointer-events: all;
   }
 }
 </style>

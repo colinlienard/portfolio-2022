@@ -70,8 +70,6 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="scss">
-@use 'styles/variables';
-
 @keyframes appear {
   0%,
   75% {

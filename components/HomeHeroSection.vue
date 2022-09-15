@@ -30,11 +30,6 @@ const isMobile = useIsMobile();
 </template>
 
 <style scoped lang="scss">
-@use 'styles/mixins';
-@use 'styles/screens';
-@use 'styles/typography';
-@use 'styles/variables';
-
 @keyframes arrow {
   0% {
     transform: translateY(-0.2rem);
@@ -87,7 +82,7 @@ const isMobile = useIsMobile();
     }
 
     :not(.filled) {
-      @include mixins.text-stroke(variables.$white);
+      @include mixins.text-stroke;
     }
   }
 

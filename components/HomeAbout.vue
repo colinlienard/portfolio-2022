@@ -10,7 +10,7 @@ const { data } = await useAsyncData('milestones', async () =>
     <SkillsContainer />
     <figure class="figure">
       <figcaption v-if="isMobile">
-        <h2 class="hero">À propos de moi</h2>
+        <h2 class="hero">À propos <span class="empty">de moi</span></h2>
       </figcaption>
       <nuxt-img
         class="image"
@@ -20,7 +20,9 @@ const { data } = await useAsyncData('milestones', async () =>
         quality="100"
       />
       <figcaption class="figcaption">
-        <h2 v-if="!isMobile" class="hero">À propos de moi</h2>
+        <h2 v-if="!isMobile" class="hero">
+          À propos <span class="empty">de moi</span>
+        </h2>
         <p class="paragraph">
           Je suis un <strong>webdesigner</strong> 🎨 et un
           <strong>développeur front-end</strong> ⚡ fraîchement diplômé,
@@ -77,11 +79,6 @@ const { data } = await useAsyncData('milestones', async () =>
 </template>
 
 <style scoped lang="scss">
-@use 'styles/mixins';
-@use 'styles/screens';
-@use 'styles/typography';
-@use 'styles/variables';
-
 .figure {
   @include mixins.section;
 
@@ -104,6 +101,10 @@ const { data } = await useAsyncData('milestones', async () =>
 
   .hero {
     @include typography.heading-2;
+
+    .empty {
+      @include mixins.text-stroke;
+    }
   }
 
   .image {
@@ -193,10 +194,6 @@ const { data } = await useAsyncData('milestones', async () =>
 
       .title {
         @include typography.heading-3;
-
-        @include screens.laptop {
-          transform: translateX(-18rem);
-        }
       }
 
       .description-wrapper {

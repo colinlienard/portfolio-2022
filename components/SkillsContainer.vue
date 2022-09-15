@@ -43,8 +43,6 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
-@use 'styles/screens';
-
 .container {
   position: absolute;
   inset: -8rem 0;

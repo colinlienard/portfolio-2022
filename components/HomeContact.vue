@@ -7,9 +7,6 @@
 </template>
 
 <style scoped lang="scss">
-@use 'styles/typography';
-@use 'styles/variables';
-
 .hero {
   @include typography.heading-2;
 

@@ -6,8 +6,6 @@
 </template>
 
 <style lang="scss">
-@use 'styles/screens';
-
 article {
   display: flex;
   flex-direction: column;

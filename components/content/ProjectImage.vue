@@ -26,10 +26,6 @@ defineProps<{
 </template>
 
 <style scoped lang="scss">
-@use 'styles/mixins';
-@use 'styles/screens';
-@use 'styles/variables';
-
 .image-container {
   @include mixins.section-width;
 

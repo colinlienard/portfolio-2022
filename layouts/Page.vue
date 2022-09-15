@@ -15,6 +15,7 @@ onMounted(() => {
       el: document.querySelector('#main'),
       smooth: true,
       multiplier: 0.8,
+      reloadOnContextChange: true,
     });
   }, 1000);
 });
@@ -32,9 +33,6 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="scss">
-@use 'styles/screens';
-@use 'styles/variables';
-
 .page-enter-active,
 .page-leave-active {
   transition: opacity 0.3s variables.$ease-in-out;

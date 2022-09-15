@@ -23,10 +23,6 @@ defineProps<{
 </template>
 
 <style scoped lang="scss">
-@use 'styles/mixins';
-@use 'styles/screens';
-@use 'styles/variables';
-
 .section-container {
   @include mixins.section-width;
 

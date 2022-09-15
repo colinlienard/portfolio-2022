@@ -10,23 +10,21 @@ const { data } = await useAsyncData('projects', () =>
 
 <template>
   <article id="portfolio" class="container">
-    <h2 class="hero"><strong>Portfolio</strong> 2022</h2>
+    <h2 class="hero">
+      <strong>Portfolio</strong> <span class="empty">2022</span>
+    </h2>
     <ul class="list">
       <li v-for="(project, index) in data" :key="index">
         <NuxtLink :to="`/projects/${project.slug}`">
-          <div class="image-wrapper">
-            <nuxt-img
-              class="image"
-              :src="`/images/projects/${project.image}`"
-              alt=""
-              sizes="mobile:800px tablet:2500px"
-              quality="100"
-              data-scroll
-              data-scroll-speed="-1"
-              @mouseenter="cursorContent = project.title"
-              @mouseleave="cursorContent = null"
-            />
-          </div>
+          <nuxt-img
+            class="image"
+            :src="`/images/projects/${project.image}`"
+            alt=""
+            sizes="mobile:800px tablet:2500px"
+            quality="100"
+            @mouseenter="cursorContent = project.title"
+            @mouseleave="cursorContent = null"
+          />
           <h3 class="title">{{ project.title }}</h3>
           <p class="description">{{ project.description }}</p>
         </NuxtLink>
@@ -36,17 +34,16 @@ const { data } = await useAsyncData('projects', () =>
 </template>
 
 <style scoped lang="scss">
-@use 'styles/mixins';
-@use 'styles/screens';
-@use 'styles/typography';
-@use 'styles/variables';
-
 .container {
   @include mixins.section;
 }
 
 .hero {
   @include typography.heading-2;
+
+  .empty {
+    @include mixins.text-stroke;
+  }
 }
 
 .list {
@@ -58,18 +55,6 @@ const { data } = await useAsyncData('projects', () =>
   @include screens.laptop {
     gap: 4rem;
     padding: 0 2rem;
-  }
-
-  .image-wrapper {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 2rem;
-    overflow: hidden;
-    display: block;
-
-    @include screens.laptop {
-      aspect-ratio: 16 / 9;
-    }
   }
 
   .image {
@@ -88,13 +73,6 @@ const { data } = await useAsyncData('projects', () =>
     @include typography.paragraph;
 
     color: variables.$grey;
-  }
-
-  .title,
-  .description {
-    @include screens.laptop {
-      display: none;
-    }
   }
 }
 </style>

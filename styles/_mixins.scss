@@ -28,8 +28,17 @@
   }
 }
 
-@mixin section {
+@mixin mobile-padding {
   padding: 0 1.5rem;
+
+  @include screens.laptop {
+    padding: 0;
+  }
+}
+
+@mixin section {
+  @include mobile-padding;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,7 +46,6 @@
   position: relative;
 
   @include screens.laptop {
-    padding: 0;
     gap: 6rem;
   }
 }
@@ -46,7 +54,7 @@
   width: min(100%, 75rem);
 }
 
-@mixin text-stroke($color, $thickness: 2px) {
+@mixin text-stroke($color: variables.$white, $thickness: 1px) {
   color: variables.$dark;
   text-shadow: $thickness $thickness $color, -$thickness $thickness $color,
     $thickness (-$thickness) $color, -$thickness (-$thickness) $color;

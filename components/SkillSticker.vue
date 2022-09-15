@@ -21,9 +21,6 @@ const isMobile = useIsMobile();
 </template>
 
 <style scoped lang="scss">
-@use 'styles/screens';
-@use 'styles/variables';
-
 @keyframes appear {
   from {
     opacity: 0;

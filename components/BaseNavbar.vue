@@ -20,10 +20,6 @@ const scrollTo = useScrollTo();
 </template>
 
 <style scoped lang="scss">
-@use 'styles/mixins';
-@use 'styles/screens';
-@use 'styles/variables';
-
 @keyframes appear {
   0% {
     opacity: 0;
@@ -39,11 +35,13 @@ const scrollTo = useScrollTo();
 }
 
 .nav {
+  @include mixins.mobile-padding;
   @include mixins.section-width;
 
   position: fixed;
   top: 2rem;
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
   mix-blend-mode: difference;
   z-index: 999;
@@ -55,10 +53,13 @@ const scrollTo = useScrollTo();
 
   .list {
     display: flex;
-    gap: 2rem;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
     white-space: nowrap;
 
     @include screens.laptop {
+      flex-direction: row;
       gap: 4rem;
     }
   }
