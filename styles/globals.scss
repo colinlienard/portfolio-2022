@@ -33,3 +33,25 @@ body {
     overflow: hidden;
   }
 }
+
+// Scroll bar styles
+.c-scrollbar {
+  opacity: 1 !important;
+
+  /* stylelint-disable-next-line selector-class-pattern */
+  .c-scrollbar_thumb {
+    background-color: variables.$grey;
+    opacity: 0.25;
+    margin: 4px;
+    transition: opacity 0.3s variables.$ease-in-out;
+
+    &:hover,
+    &:active {
+      opacity: 0.5;
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}
