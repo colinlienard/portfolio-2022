@@ -51,7 +51,7 @@ onUnmounted(() => {
   gap: 8rem;
 
   @include screens.laptop {
-    gap: 14rem;
+    gap: 16rem;
   }
 }
 </style>

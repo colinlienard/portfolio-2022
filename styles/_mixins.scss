@@ -51,7 +51,7 @@
 }
 
 @mixin section-width {
-  width: min(100%, 75rem);
+  width: min(100%, 64rem);
 }
 
 @mixin text-stroke($color: variables.$white, $thickness: 1px) {

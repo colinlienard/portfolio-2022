@@ -24,13 +24,12 @@ const isMobile = useIsMobile();
 @keyframes appear {
   from {
     opacity: 0;
-    transform: translate(-50%, -50%) rotate(calc(v-bind(tilt) * 1deg))
-      scale(1.2);
+    scale: 1.2;
   }
 
   to {
     opacity: 1;
-    transform: translate(-50%, -50%) rotate(calc(v-bind(tilt) * 1deg)) scale(1);
+    scale: 1;
   }
 }
 
@@ -38,7 +37,8 @@ const isMobile = useIsMobile();
   position: absolute;
   top: calc(v-bind(y) * 1px);
   left: calc(v-bind(x) * 1px);
-  transform: translate(-50%, -50%) rotate(calc(v-bind(tilt) * 1deg));
+  translate: -50% -50%;
+  rotate: calc(v-bind(tilt) * 1deg);
   width: auto;
   pointer-events: none;
   animation: appear 0.2s variables.$ease-in-out;

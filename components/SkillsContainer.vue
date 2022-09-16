@@ -52,7 +52,7 @@ onMounted(() => {
   @include screens.laptop {
     top: -14rem;
     left: 50%;
-    transform: translateX(-50%);
+    translate: -50%;
     width: 100vw;
     height: calc(100% + 14rem * 2);
   }

@@ -9,8 +9,8 @@ const isMobile = useIsMobile();
         >Colin Lienard</strong
       ><span>,</span> <strong>webdesigner</strong> <br v-if="isMobile" /><span
         >&</span
-      ><br />
-      <strong>développeur front-end</strong>
+      ><br v-if="!isMobile" />
+      <strong> développeur front-end</strong>
     </h1>
     <div class="scroll-guide">
       <img class="arrow" src="/icons/arrow-down.svg" alt="" />
@@ -32,15 +32,15 @@ const isMobile = useIsMobile();
 <style scoped lang="scss">
 @keyframes arrow {
   0% {
-    transform: translateY(-0.2rem);
+    translate: 0 -0.3rem;
   }
 
   50% {
-    transform: translateY(0.2rem);
+    translate: 0 0.3rem;
   }
 
   100% {
-    transform: translateY(-0.2rem);
+    translate: 0 -0.3rem;
   }
 }
 
@@ -72,9 +72,11 @@ const isMobile = useIsMobile();
     z-index: 1;
     pointer-events: none;
     mix-blend-mode: difference;
+    translate: 0 6rem;
 
     @include screens.laptop {
       max-width: 64rem;
+      translate: 0;
     }
 
     @include screens.desktop {
@@ -89,10 +91,16 @@ const isMobile = useIsMobile();
   .scroll-guide {
     position: absolute;
     bottom: 2rem;
+    left: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    z-index: 1;
+
+    @include screens.laptop {
+      left: auto;
+    }
 
     .arrow {
       animation: arrow 2s infinite variables.$ease-in-out;
@@ -100,6 +108,7 @@ const isMobile = useIsMobile();
   }
 
   .button-container {
+    @include mixins.mobile-padding;
     @include mixins.section-width;
 
     position: absolute;

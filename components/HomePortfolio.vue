@@ -9,35 +9,38 @@ const { data } = await useAsyncData('projects', () =>
 </script>
 
 <template>
-  <article id="portfolio" class="container">
+  <NuxtLayout id="portfolio" name="section">
     <h2 class="hero">
       <strong>Portfolio</strong> <span class="empty">2022</span>
     </h2>
     <ul class="list">
-      <li v-for="(project, index) in data" :key="index">
-        <NuxtLink :to="`/projects/${project.slug}`">
+      <li
+        v-for="(project, index) in data"
+        :key="index"
+        class="item"
+        data-scroll
+        :data-scroll-speed="index % 2 === 0 ? 1 : -1"
+        data-scroll-direction="horizontal"
+        @mouseenter="cursorContent = 'Voir'"
+        @mouseleave="cursorContent = null"
+      >
+        <NuxtLink :to="`/projects/${project.slug}`" class="link">
           <nuxt-img
             class="image"
             :src="`/images/projects/${project.image}`"
             alt=""
-            sizes="mobile:800px tablet:2500px"
+            sizes="mobile:350px tablet:488px"
             quality="100"
-            @mouseenter="cursorContent = project.title"
-            @mouseleave="cursorContent = null"
           />
           <h3 class="title">{{ project.title }}</h3>
           <p class="description">{{ project.description }}</p>
         </NuxtLink>
       </li>
     </ul>
-  </article>
+  </NuxtLayout>
 </template>
 
 <style scoped lang="scss">
-.container {
-  @include mixins.section;
-}
-
 .hero {
   @include typography.heading-2;
 
@@ -53,26 +56,50 @@ const { data } = await useAsyncData('projects', () =>
   gap: 3rem;
 
   @include screens.laptop {
-    gap: 4rem;
-    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem 3rem;
+    padding-bottom: 16rem;
   }
 
-  .image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  .item {
+    background-color: variables.$dark;
 
-  .title {
-    @include typography.heading-3;
+    @include screens.laptop {
+      &:nth-of-type(2n) {
+        translate: 0 16rem;
+      }
+    }
 
-    margin: 1em 0 0.5em;
-  }
+    .link {
+      cursor: none;
 
-  .description {
-    @include typography.paragraph;
+      @include screens.laptop {
+        transition: opacity 0.3s variables.$ease-in-out;
 
-    color: variables.$grey;
+        &:not(&:hover) {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .title {
+      @include typography.heading-3;
+
+      margin: 1em 0 0.5em;
+    }
+
+    .description {
+      @include typography.paragraph;
+
+      color: variables.$grey;
+    }
   }
 }
 </style>
