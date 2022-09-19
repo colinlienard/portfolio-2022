@@ -19,6 +19,30 @@
   }
 }
 
+@mixin dashed-circle($gradient, $size: 100%) {
+  position: absolute;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-image: $gradient;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 50%;
+    border: 4px dashed variables.$dark;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border-radius: 50%;
+    background-color: variables.$dark;
+  }
+}
+
 @mixin link {
   color: variables.$white;
   transition: color 0.3s variables.$ease-in-out;

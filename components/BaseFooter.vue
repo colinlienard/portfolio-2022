@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const config = useRuntimeConfig();
 const scrollTo = useScrollTo();
 const route = useRoute();
 
@@ -37,25 +38,21 @@ const handleScrollTo = (target: string) => {
         </ul>
         <ul class="list">
           <li>
-            <a
-              class="button"
-              href="https://github.com/ColinLienard"
-              target="_blank"
-            >
+            <a class="button" :href="config.public.githubLink" target="_blank">
               GitHub
             </a>
           </li>
           <li>
             <a
               class="button"
-              href="https://www.linkedin.com/in/colin-lienard-83490a1a4/"
+              :href="config.public.linkedinLink"
               target="_blank"
             >
               LinkedIn
             </a>
           </li>
           <li>
-            <a class="button" href="mailto:contact@colin-lienard.fr">
+            <a class="button" :href="config.public.email">
               contact@colin-lienard.fr
             </a>
           </li>

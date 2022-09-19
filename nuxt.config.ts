@@ -18,6 +18,11 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content', '@nuxt/image-edge'],
   runtimeConfig: {
     public: {
+      githubLink: 'https://github.com/ColinLienard',
+      linkedinLink: 'https://www.linkedin.com/in/colin-lienard-83490a1a4/',
+      maltLink: 'https://www.malt.com/',
+      redditLink: 'https://www.reddit.com/user/colinlienard',
+      email: 'contact@colin-lienard.fr',
       spotifyClientId: '',
       spotifyClientSecret: '',
       spotifyRefreshToken: '',
@@ -33,6 +38,7 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         scss: {
           additionalData: `
+            @use 'sass:color';
             @use "~/styles/mixins";
             @use "~/styles/screens";
             @use "~/styles/typography";

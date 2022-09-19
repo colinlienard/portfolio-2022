@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const config = useRuntimeConfig();
 const isMobile = useIsMobile();
 </script>
 
@@ -20,7 +21,7 @@ const isMobile = useIsMobile();
       <IconButton
         class="button"
         icon-src="/icons/malt-logo.svg"
-        href="https://www.malt.com/"
+        :href="config.public.maltLink"
       >
         Hire me on Malt
       </IconButton>
