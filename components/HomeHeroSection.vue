@@ -84,12 +84,19 @@ const isMobile = useIsMobile();
       max-width: 80rem;
     }
 
+    .filled {
+      @include animations.appear;
+    }
+
     :not(.filled) {
       @include mixins.text-stroke;
+      @include animations.appear-with-delay;
     }
   }
 
   .scroll-guide {
+    @include animations.appear-with-delay;
+
     position: absolute;
     bottom: 2rem;
     left: 1.5rem;
@@ -111,6 +118,7 @@ const isMobile = useIsMobile();
   .button-container {
     @include mixins.mobile-padding;
     @include mixins.section-width;
+    @include animations.appear-with-delay;
 
     position: absolute;
     bottom: 2rem;

@@ -1,0 +1,33 @@
+@use 'variables';
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear-with-delay {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin appear($time: 1s) {
+  animation: appear $time variables.$ease-in-out;
+}
+
+@mixin appear-with-delay($time: 2s) {
+  animation: appear-with-delay $time variables.$ease-in-out;
+}

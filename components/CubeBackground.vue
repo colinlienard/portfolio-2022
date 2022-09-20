@@ -27,7 +27,7 @@ onMounted(async () => {
   scale: 0.5;
   translate: 0 -6rem;
   pointer-events: none;
-  transition: opacity 2s variables.$ease-in-out;
+  transition: opacity 3s variables.$ease-in-out;
 
   &:not(&.visible) {
     opacity: 0;

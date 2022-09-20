@@ -39,6 +39,7 @@ export default defineNuxtConfig({
         scss: {
           additionalData: `
             @use 'sass:color';
+            @use "~/styles/animations";
             @use "~/styles/mixins";
             @use "~/styles/screens";
             @use "~/styles/typography";
