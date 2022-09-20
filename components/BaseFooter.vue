@@ -52,9 +52,12 @@ const handleScrollTo = (target: string) => {
             </a>
           </li>
           <li>
-            <a class="button" :href="config.public.email">
+            <CopyButton :to-copy="config.public.email">
+              {{ config.public.email }}
+            </CopyButton>
+            <!-- <a class="button" :href="config.public.email">
               contact@colin-lienard.fr
-            </a>
+            </a> -->
           </li>
         </ul>
         <ul class="list">

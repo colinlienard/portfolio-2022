@@ -49,6 +49,7 @@ onUnmounted(() => {
   flex-direction: column;
   align-items: center;
   gap: 8rem;
+  overflow: hidden;
 
   @include screens.laptop {
     gap: 16rem;

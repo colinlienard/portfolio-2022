@@ -26,14 +26,9 @@ const config = useRuntimeConfig();
         >
           <img src="/icons/malt.svg" alt="" />
         </a>
-        <a
-          class="icon icon-3"
-          :href="config.public.email"
-          target="_blank"
-          rel="norefferer"
-        >
+        <CopyButton class="icon icon-3" :to-copy="config.public.email">
           <img src="/icons/email.svg" alt="" />
-        </a>
+        </CopyButton>
       </div>
       <div class="orbit orbit-2">
         <span class="circle" />
@@ -58,7 +53,6 @@ const config = useRuntimeConfig();
         class="image"
         src="/images/colin.webp"
         alt=""
-        sizes="mobile:160px tablet:128px"
         width="128"
         height="128"
         quality="100"
@@ -99,12 +93,13 @@ const config = useRuntimeConfig();
 }
 
 .galaxy {
-  width: min(100%, 40rem);
+  width: min(calc(100% - 2rem), 40rem);
   aspect-ratio: 1 / 1;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 
   .orbit {
     aspect-ratio: 1 / 1;
@@ -114,7 +109,9 @@ const config = useRuntimeConfig();
 
   .icon {
     position: absolute;
+    translate: -50% -50%;
     z-index: 1;
+    pointer-events: all;
     animation: anti-rotate linear infinite;
     transition: scale 0.3s variables.$ease-in-out;
 
@@ -123,13 +120,25 @@ const config = useRuntimeConfig();
     }
 
     img {
+      width: 2.5rem;
       pointer-events: none;
+
+      @include screens.laptop {
+        width: 4rem;
+      }
     }
   }
 
   .image {
     position: absolute;
     border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+
+    @include screens.laptop {
+      width: 8rem;
+      height: 8rem;
+    }
   }
 }
 
@@ -154,28 +163,30 @@ const config = useRuntimeConfig();
         variables.$blue
       )
     );
-
-    pointer-events: none;
   }
 
   .icon-1 {
     top: 6%;
-    left: 13%;
+    left: 26%;
   }
 
   .icon-2 {
-    top: 76%;
-    left: 84%;
+    top: 80%;
+    left: 89%;
   }
 
   .icon-3 {
-    top: 70%;
-    left: 2%;
+    top: 66%;
+    left: 3%;
   }
 }
 
 .orbit-2 {
-  width: 70%;
+  width: calc(50% + 2rem);
+
+  @include screens.laptop {
+    width: calc(50% + 4rem);
+  }
 
   &,
   .icon {
@@ -198,13 +209,13 @@ const config = useRuntimeConfig();
   }
 
   .icon-1 {
-    top: -2%;
-    left: 63%;
+    top: 3%;
+    left: 65%;
   }
 
   .icon-2 {
-    top: 93%;
-    left: 44%;
+    top: 99%;
+    left: 54%;
   }
 }
 </style>
