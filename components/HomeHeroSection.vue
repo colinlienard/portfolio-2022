@@ -23,7 +23,7 @@ const isMobile = useIsMobile();
         icon-src="/icons/malt-logo.svg"
         :href="config.public.maltLink"
       >
-        Hire me on Malt
+        M'embaucher sur Malt
       </IconButton>
     </div>
     <CubeBackground />

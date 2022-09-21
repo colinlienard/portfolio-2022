@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     public: {
       githubLink: 'https://github.com/ColinLienard',
       linkedinLink: 'https://www.linkedin.com/in/colin-lienard-83490a1a4/',
-      maltLink: 'https://www.malt.com/',
+      maltLink: 'https://www.malt.fr/profile/colinlienard1',
       redditLink: 'https://www.reddit.com/user/colinlienard',
       email: 'contact@colin-lienard.fr',
       spotifyClientId: '',

@@ -132,7 +132,7 @@ const { data } = await useAsyncData('milestones', async () =>
 
   @include screens.laptop {
     gap: 8rem;
-    right: 2rem;
+    right: 2.5rem;
   }
 
   .timeline {

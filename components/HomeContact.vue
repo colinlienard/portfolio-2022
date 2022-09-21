@@ -15,6 +15,7 @@ const config = useRuntimeConfig();
           :href="config.public.githubLink"
           target="_blank"
           rel="norefferer"
+          title="GitHub"
         >
           <img src="/icons/github.svg" alt="" />
         </a>
@@ -23,6 +24,7 @@ const config = useRuntimeConfig();
           :href="config.public.maltLink"
           target="_blank"
           rel="norefferer"
+          title="Malt"
         >
           <img src="/icons/malt.svg" alt="" />
         </a>
@@ -37,6 +39,7 @@ const config = useRuntimeConfig();
           :href="config.public.linkedinLink"
           target="_blank"
           rel="norefferer"
+          title="LinkedIn"
         >
           <img src="/icons/linkedin.svg" alt="" />
         </a>
@@ -45,16 +48,16 @@ const config = useRuntimeConfig();
           :href="config.public.redditLink"
           target="_blank"
           rel="norefferer"
+          title="Reddit"
         >
           <img src="/icons/reddit.svg" alt="" />
         </a>
       </div>
       <nuxt-img
         class="image"
-        src="/images/colin.webp"
+        src="/images/colin-small.webp"
         alt=""
-        width="128"
-        height="128"
+        sizes="mobile:64px tablet:128px"
         quality="100"
       />
     </div>
