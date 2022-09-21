@@ -1,19 +1,32 @@
-<script setup>
+<script setup lang="ts">
 const scrollTo = useScrollTo();
+const route = useRoute();
+
+const handleScrollTo = (target: string) => {
+  // If the current page is the home
+  if (Object.keys(route.params).length === 0) {
+    scrollTo(target);
+    return;
+  }
+
+  navigateTo(`/${target}`);
+};
 </script>
 
 <template>
   <nav class="nav" data-scroll data-scroll-sticky data-scroll-target="main">
-    <button class="home-link" @click="scrollTo(0)">Colin Lienard</button>
+    <button class="home-link" @click="handleScrollTo('#hero')">
+      Colin Lienard
+    </button>
     <ul class="list">
       <li class="link">
-        <button @click="scrollTo('#portfolio')">Portfolio</button>
+        <button @click="handleScrollTo('#portfolio')">Portfolio</button>
       </li>
       <li class="link">
-        <button @click="scrollTo('#about')">À propos</button>
+        <button @click="handleScrollTo('#about')">À propos</button>
       </li>
       <li class="link">
-        <button @click="scrollTo('#contact')">Contact</button>
+        <button @click="handleScrollTo('#contact')">Contact</button>
       </li>
     </ul>
   </nav>

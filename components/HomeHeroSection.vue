@@ -4,7 +4,7 @@ const isMobile = useIsMobile();
 </script>
 
 <template>
-  <header class="header">
+  <header id="hero" class="header">
     <h1 class="hero">
       <span>Je suis</span> <br v-if="isMobile" /><strong class="filled"
         >Colin Lienard</strong
@@ -14,7 +14,7 @@ const isMobile = useIsMobile();
       <strong> développeur front-end</strong>
     </h1>
     <div class="scroll-guide">
-      <img class="arrow" src="/icons/arrow-down.svg" alt="" />
+      <img class="arrow" src="/icons/arrow.svg" alt="" />
       <span>Scroll</span>
     </div>
     <div class="button-container">

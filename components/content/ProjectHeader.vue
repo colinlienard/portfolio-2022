@@ -1,125 +1,147 @@
 <script setup lang="ts">
 defineProps<{
   image: string;
+  color: string;
 }>();
 </script>
 
 <template>
   <header class="header-container">
-    <div
-      class="image-container"
-      data-scroll
-      data-scroll-class="visible"
-      data-scroll-repeat
-      data-scroll-offset="0%,25%"
-    >
+    <span class="background" :style="`background-color: ${color};`" />
+    <div class="image-container">
       <nuxt-img
         class="image"
         :src="`/images/projects/${image}`"
         alt=""
-        sizes="mobile:800px tablet:2500px"
+        sizes="mobile:480px tablet:1024px"
         quality="100"
       />
+      <NuxtLink class="back" to="/">
+        <img src="/icons/arrow.svg" alt="" />
+      </NuxtLink>
     </div>
-    <div class="content">
-      <div class="back-wrapper">
-        <NuxtLink class="back" to="/">
-          <span class="line"></span>
-          Retour
-        </NuxtLink>
-      </div>
-      <slot name="hero" />
-      <slot name="links" />
-    </div>
+    <slot name="hero" />
+    <slot name="links" />
   </header>
 </template>
 
 <style lang="scss">
 .header-container {
-  .image-container {
+  @include mixins.section-width;
+  @include mixins.mobile-padding;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  padding-top: 5rem;
+
+  @include screens.laptop {
+    padding: 6rem 0 0;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100vw;
-    height: 50vh;
-    border-radius: 0 0 2rem 2rem;
-    overflow: hidden;
-    opacity: 0;
-    transition: opacity 0.3s variables.$ease-in-out,
-      height 1s variables.$ease-in-out, border-radius 1s variables.$ease-in-out;
+    height: 100%;
+    z-index: -1;
 
-    &.visible {
-      opacity: 1;
+    @include screens.laptop {
+      left: -31rem;
     }
 
-    &:hover {
-      height: 80vh;
-      border-radius: 0;
-      transition: height 1.5s 0.25s variables.$ease-in-out,
-        border-radius 1.5s 0.25s variables.$ease-in-out;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 13.4rem;
+      left: 0;
+      width: 100%;
+      height: 6rem;
+      background-image: linear-gradient(
+        transparent,
+        rgba(variables.$dark, 0.5)
+      );
+
+      @include screens.laptop {
+        bottom: 24.4rem;
+      }
     }
 
-    .image {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 14.5rem;
+      left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      background-color: variables.$dark;
+
+      @include screens.laptop {
+        top: 28.4rem;
+      }
     }
   }
 
-  .content {
-    padding: 2rem 1.5rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  .image-container {
+    position: relative;
+    translate: 0 3.5rem;
 
     @include screens.laptop {
-      align-items: center;
-      gap: 3rem;
-      padding: 3rem 0 0;
+      translate: 0 4.5rem;
     }
 
-    .back-wrapper {
-      @include mixins.section-width;
-
-      .back {
-        display: flex;
-        align-items: center;
-        gap: 1em;
-        width: fit-content;
-
-        .line {
-          width: 3rem;
-          height: 1px;
-          background-color: variables.$white;
-          transition: width 0.5s variables.$ease-in-out;
-
-          @include screens.laptop {
-            width: 1rem;
-          }
-        }
-
-        &:hover .line {
-          width: 4rem;
-        }
-      }
-    }
-
-    h1 {
-      @include typography.heading-1;
-
-      text-align: center;
-      width: 100%;
-    }
-
-    ul {
+    .back {
+      width: 2.25rem;
+      aspect-ratio: 1 / 1;
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 2rem;
+      background-color: variables.$white;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      translate: -50% -50%;
+      transition: scale 0.3s variables.$ease-in-out;
 
       @include screens.laptop {
-        gap: 4rem;
+        width: 4rem;
       }
 
-      li {
-        @include mixins.link;
+      &:hover {
+        scale: 0.9;
       }
+
+      img {
+        filter: invert(1);
+        rotate: 90deg;
+        width: min(1.5rem, 50%);
+        pointer-events: none;
+      }
+    }
+  }
+
+  h1 {
+    @include typography.heading-1;
+
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    @include screens.laptop {
+      gap: 2rem;
+    }
+
+    li a {
+      @include mixins.link;
     }
   }
 }

@@ -27,6 +27,7 @@ onUnmounted(() => {
 
 <template>
   <main id="main" class="main">
+    <BaseNavbar />
     <CustomCursor v-if="!isMobile" />
     <slot />
   </main>

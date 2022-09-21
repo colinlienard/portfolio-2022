@@ -5,18 +5,12 @@ defineProps<{
 </script>
 
 <template>
-  <figure
-    class="image-container"
-    data-scroll
-    data-scroll-class="visible"
-    data-scroll-repeat
-    data-scroll-offset="25%,0%"
-  >
+  <figure class="image-container">
     <nuxt-img
       class="image"
       :src="`/images/projects/${source}`"
       alt=""
-      sizes="mobile:480px tablet:1200px"
+      sizes="mobile:480px tablet:1024px"
       quality="100"
     />
     <figcaption class="figcaption">
@@ -28,22 +22,10 @@ defineProps<{
 <style scoped lang="scss">
 .image-container {
   @include mixins.section-width;
-
-  padding: 0 1.5rem;
-  opacity: 0;
-  transition: opacity 0.3s variables.$ease-in-out;
-
-  &.visible {
-    opacity: 1;
-  }
-
-  @include screens.laptop {
-    padding: 0;
-  }
+  @include mixins.mobile-padding;
 
   .image {
     width: 100%;
-    border-radius: 2rem;
   }
 
   .figcaption {

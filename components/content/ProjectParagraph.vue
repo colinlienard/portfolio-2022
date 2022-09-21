@@ -47,7 +47,6 @@
   blockquote {
     padding: 1.5em;
     border-radius: 1rem;
-    /* stylelint-disable-next-line color-function-notation */
     background-color: rgba(variables.$blue, 10%);
 
     p {

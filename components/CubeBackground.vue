@@ -3,14 +3,22 @@ import { Application } from '@splinetool/runtime';
 
 const canvas = ref<HTMLCanvasElement>();
 const visible = ref(false);
+const spline = ref<Application>();
 
-onMounted(async () => {
+onMounted(() => {
   if (canvas.value) {
-    const spline = new Application(canvas.value);
-    await spline.load('/spline/cube.splinecode');
+    spline.value = new Application(canvas.value);
 
-    visible.value = true;
+    setTimeout(async () => {
+      await spline.value?.load('/spline/cube.splinecode');
+
+      visible.value = true;
+    }, 1000);
   }
+});
+
+onUnmounted(() => {
+  spline.value?.dispose();
 });
 </script>
 
