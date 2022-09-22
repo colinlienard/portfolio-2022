@@ -29,9 +29,6 @@ onUnmounted(() => {
 <style scoped lang="scss">
 .canvas {
   position: absolute;
-  inset: -50%;
-  width: 200% !important;
-  height: 200% !important;
   scale: 0.5;
   translate: 0 -6rem;
   pointer-events: none;
@@ -42,9 +39,6 @@ onUnmounted(() => {
   }
 
   @include screens.laptop {
-    inset: 0;
-    width: 100% !important;
-    height: 100% !important;
     scale: 1;
     translate: 0;
     pointer-events: all;
