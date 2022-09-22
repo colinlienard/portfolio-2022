@@ -3,8 +3,7 @@ const scrollTo = useScrollTo();
 const route = useRoute();
 
 const handleScrollTo = (target: string) => {
-  // If the current page is the home
-  if (Object.keys(route.params).length === 0) {
+  if (route.path === '/') {
     scrollTo(target);
     return;
   }

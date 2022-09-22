@@ -2,6 +2,7 @@
 const scroll = ref();
 const cursorContent = ref<string | null>();
 const isMobile = useIsMobile();
+const route = useRoute();
 
 provide('scroll', scroll);
 provide('cursor', cursorContent);
@@ -16,6 +17,17 @@ onMounted(() => {
       smooth: true,
       multiplier: 0.8,
       reloadOnContextChange: true,
+      initPosition: {
+        x: 0,
+        y:
+          route.path === '/' && route.hash === ''
+            ? sessionStorage.getItem('scroll-position') || 0
+            : 0,
+      },
+    });
+
+    scroll.value.on('scroll', (event: any) => {
+      sessionStorage.setItem('scroll-position', event.scroll.y);
     });
   }, 1000);
 });
