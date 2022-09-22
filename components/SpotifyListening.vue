@@ -97,8 +97,6 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="scss">
-@use 'styles/variables';
-
 @keyframes music {
   0% {
     clip-path: inset(70% 0 0 0);

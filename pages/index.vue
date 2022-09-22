@@ -13,8 +13,7 @@ useHead({
 
 <template>
   <NuxtLayout name="page">
-    <BaseNavbar />
-    <HomeHeader />
+    <HomeHeroSection />
     <HomePortfolio />
     <HomeAbout />
     <HomeContact />

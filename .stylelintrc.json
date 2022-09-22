@@ -3,5 +3,8 @@
     "stylelint-config-standard-scss",
     "stylelint-config-standard-vue/scss",
     "stylelint-config-prettier"
-  ]
+  ],
+  "rules": {
+    "color-function-notation": "legacy"
+  }
 }

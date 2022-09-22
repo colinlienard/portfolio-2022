@@ -5,11 +5,6 @@
 </template>
 
 <style lang="scss">
-@use 'styles/mixins';
-@use 'styles/screens';
-@use 'styles/typography';
-@use 'styles/variables';
-
 .paragraph-container {
   width: min(100%, 40rem);
   padding: 0 1.5rem;
@@ -52,7 +47,6 @@
   blockquote {
     padding: 1.5em;
     border-radius: 1rem;
-    /* stylelint-disable-next-line color-function-notation */
     background-color: rgba(variables.$blue, 10%);
 
     p {

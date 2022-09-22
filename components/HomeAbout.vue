@@ -10,7 +10,7 @@ const { data } = await useAsyncData('milestones', async () =>
     <SkillsContainer />
     <figure class="figure">
       <figcaption v-if="isMobile">
-        <h2 class="hero">À propos de moi</h2>
+        <h2 class="hero">À propos <span class="empty">de moi</span></h2>
       </figcaption>
       <nuxt-img
         class="image"
@@ -20,16 +20,18 @@ const { data } = await useAsyncData('milestones', async () =>
         quality="100"
       />
       <figcaption class="figcaption">
-        <h2 v-if="!isMobile" class="hero">À propos de moi</h2>
+        <h2 v-if="!isMobile" class="hero">
+          À propos <span class="empty">de moi</span>
+        </h2>
         <p class="paragraph">
-          Je suis un <strong>webdesigner</strong> 🎨 et un
-          <strong>développeur front-end</strong> ⚡ fraîchement diplômé,
+          Je suis un <strong>webdesigner</strong> et un
+          <strong>développeur front-end</strong> fraîchement diplômé,
           actuellement basé à Limoges.<br /><br />Passionné par la
-          <strong>création d’interfaces</strong> 🖥️, aussi bien par le côté
+          <strong>création d’interfaces</strong>️, aussi bien par le côté
           graphique que par le développement, j’adore tester des
           <strong>nouvelles tendances et technologies</strong
-          >.<br /><br />J’essaie aussi de créer des projets cools ✨👀 sur mon
-          temps libre !<br /><br />Pour découvrir mes compétences,
+          >.<br /><br />J’essaie aussi de créer des projets cools sur mon temps
+          libre !<br /><br />Pour découvrir mes compétences,
           <strong>cliquez n’importe où</strong>...
         </p>
       </figcaption>
@@ -77,11 +79,6 @@ const { data } = await useAsyncData('milestones', async () =>
 </template>
 
 <style scoped lang="scss">
-@use 'styles/mixins';
-@use 'styles/screens';
-@use 'styles/typography';
-@use 'styles/variables';
-
 .figure {
   @include mixins.section;
 
@@ -104,6 +101,10 @@ const { data } = await useAsyncData('milestones', async () =>
 
   .hero {
     @include typography.heading-2;
+
+    .empty {
+      @include mixins.text-stroke;
+    }
   }
 
   .image {
@@ -131,7 +132,7 @@ const { data } = await useAsyncData('milestones', async () =>
 
   @include screens.laptop {
     gap: 8rem;
-    right: 2rem;
+    right: 2.5rem;
   }
 
   .timeline {
@@ -171,8 +172,8 @@ const { data } = await useAsyncData('milestones', async () =>
       border-radius: 50%;
       background-color: variables.$dark;
       border: 2px solid variables.$white;
-      transform: scale(0);
-      transition: transform 0.5s 0.25s variables.$ease-in-out;
+      scale: 0;
+      transition: scale 0.5s 0.25s variables.$ease-in-out;
 
       @include screens.laptop {
         width: 3rem;
@@ -188,15 +189,11 @@ const { data } = await useAsyncData('milestones', async () =>
       flex-direction: column;
       gap: 0.5rem;
       opacity: 0;
-      transform: translateY(1rem);
+      translate: 0 1rem;
       transition: 0.5s 0.25s variables.$ease-in-out;
 
       .title {
         @include typography.heading-3;
-
-        @include screens.laptop {
-          transform: translateX(-18rem);
-        }
       }
 
       .description-wrapper {
@@ -242,11 +239,11 @@ const { data } = await useAsyncData('milestones', async () =>
 
     .list-item {
       .circle {
-        transform: none;
+        scale: 1;
       }
 
       .content {
-        transform: none;
+        translate: 0;
         opacity: 1;
       }
     }

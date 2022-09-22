@@ -6,13 +6,13 @@ image: your-core-music-thumbnail.webp
 order: 1
 ---
 
-::project-header{image="your-core-music-thumbnail.webp"}
+::project-header{image="your-core-music-thumbnail.webp" color="#4B53F7"}
 #hero
 # Your Core Music
 
 #links
-- [Voir Your Core Music](https://your-core-music.vercel.app)
-- [Repo GitHub](https://github.com/ColinLienard/your-core-music)
+- [Voir Your Core Music](https://your-core-music.vercel.app){:target="_blank"}
+- [Repo GitHub](https://github.com/ColinLienard/your-core-music){:target="_blank"}
 ::
 
 ::project-paragraph

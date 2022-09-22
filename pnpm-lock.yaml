@@ -4,6 +4,7 @@ specifiers:
   '@nuxt/content': ^2.1.0
   '@nuxt/image-edge': 1.0.0-27707824.1028381
   '@nuxtjs/eslint-config-typescript': ^11.0.0
+  '@splinetool/runtime': ^0.9.106
   '@typescript-eslint/eslint-plugin': ^5.36.2
   '@typescript-eslint/parser': ^5.36.2
   eslint: ^8.23.0
@@ -25,6 +26,7 @@ specifiers:
   typescript: ^4.8.2
 
 dependencies:
+  '@splinetool/runtime': 0.9.106
   locomotive-scroll: 4.1.4
 
 devDependencies:
@@ -1173,6 +1175,15 @@ packages:
       estree-walker: 2.0.2
       picomatch: 2.3.1
     dev: true
+
+  /@splinetool/runtime/0.9.106:
+    resolution:
+      {
+        integrity: sha512-ivV8h1BrmJrZq1XVqXMPLn8QLpqT8zQqMRMd6v/io0TIL0F44RNcPIbaK+bAIxWlsIvdZMJH5Wqv9Cqo9FPyHw==,
+      }
+    dependencies:
+      on-change: 4.0.1
+    dev: false
 
   /@trysound/sax/0.2.0:
     resolution:
@@ -7648,6 +7659,14 @@ packages:
       ufo: 0.8.5
       undici: 5.10.0
     dev: true
+
+  /on-change/4.0.1:
+    resolution:
+      {
+        integrity: sha512-Gxmr/8NsLTigoUUEPvnAIUGl7uxwfC3Mm1G+qTmODEZcT4ZGfeaFyQgfGCdbKVS2pICIFYB82RH6MUHToPcS4Q==,
+      }
+    engines: { node: ^12.20.0 || ^14.13.1 || >=16.0.0 }
+    dev: false
 
   /on-finished/2.4.1:
     resolution:

@@ -1,11 +1,7 @@
 import { defineNuxtConfig } from 'nuxt';
-import { resolve } from 'path';
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  alias: {
-    styles: resolve(__dirname, './styles'),
-  },
   css: [
     '~/styles/reset.scss',
     'locomotive-scroll/dist/locomotive-scroll.css',
@@ -22,6 +18,11 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content', '@nuxt/image-edge'],
   runtimeConfig: {
     public: {
+      githubLink: 'https://github.com/ColinLienard',
+      linkedinLink: 'https://www.linkedin.com/in/colin-lienard-83490a1a4/',
+      maltLink: 'https://www.malt.fr/profile/colinlienard1',
+      redditLink: 'https://www.reddit.com/user/colinlienard',
+      email: 'contact@colin-lienard.fr',
       spotifyClientId: '',
       spotifyClientSecret: '',
       spotifyRefreshToken: '',
@@ -31,5 +32,21 @@ export default defineNuxtConfig({
   target: 'static',
   typescript: {
     strict: true,
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `
+            @use 'sass:color';
+            @use "~/styles/animations";
+            @use "~/styles/mixins";
+            @use "~/styles/screens";
+            @use "~/styles/typography";
+            @use "~/styles/variables";
+          `,
+        },
+      },
+    },
   },
 });

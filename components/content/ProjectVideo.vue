@@ -5,13 +5,7 @@ defineProps<{
 </script>
 
 <template>
-  <div
-    class="section-container"
-    data-scroll
-    data-scroll-class="visible"
-    data-scroll-repeat
-    data-scroll-offset="25%,0%"
-  >
+  <div class="section-container">
     <video
       class="video"
       :src="`/images/projects/${source}`"
@@ -23,28 +17,13 @@ defineProps<{
 </template>
 
 <style scoped lang="scss">
-@use 'styles/mixins';
-@use 'styles/screens';
-@use 'styles/variables';
-
 .section-container {
   @include mixins.section-width;
-
-  padding: 0 1.5rem;
-  opacity: 0;
-  transition: opacity 0.3s variables.$ease-in-out;
-
-  &.visible {
-    opacity: 1;
-  }
-
-  @include screens.laptop {
-    padding: 0;
-  }
+  @include mixins.mobile-padding;
 
   .video {
     width: 100%;
-    border-radius: 2rem;
+    border-radius: 0.5rem;
   }
 }
 </style>

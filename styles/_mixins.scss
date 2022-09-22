@@ -19,17 +19,52 @@
   }
 }
 
+@mixin dashed-circle($gradient, $size: 100%) {
+  position: absolute;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-image: $gradient;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 50%;
+    border: 4px dashed variables.$dark;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border-radius: 50%;
+    background-color: variables.$dark;
+  }
+}
+
 @mixin link {
-  color: variables.$white;
-  transition: color 0.3s variables.$ease-in-out;
+  padding: 0.5em 0.75em;
+  border: 1px solid rgba(variables.$grey, 0.3);
+  border-radius: 99rem;
+  transition: background-color 0.3s variables.$ease-in-out;
 
   &:hover {
-    color: variables.$green;
+    background-color: rgba(variables.$grey, 0.1);
+  }
+}
+
+@mixin mobile-padding {
+  padding: 0 1.5rem;
+
+  @include screens.laptop {
+    padding: 0;
   }
 }
 
 @mixin section {
-  padding: 0 1.5rem;
+  @include mobile-padding;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,11 +72,18 @@
   position: relative;
 
   @include screens.laptop {
-    padding: 0;
     gap: 6rem;
   }
 }
 
 @mixin section-width {
-  width: min(100%, 75rem);
+  width: min(100%, 64rem);
+}
+
+@mixin text-stroke($color: variables.$white, $thickness: 1px) {
+  color: variables.$dark;
+  text-shadow: $thickness $thickness $color, -$thickness $thickness $color,
+    $thickness (-$thickness) $color, -$thickness (-$thickness) $color;
+
+  // -webkit-text-stroke: $thickness $color;
 }

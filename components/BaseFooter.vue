@@ -1,10 +1,10 @@
 <script setup lang="ts">
+const config = useRuntimeConfig();
 const scrollTo = useScrollTo();
 const route = useRoute();
 
 const handleScrollTo = (target: string) => {
-  // If the current page is the home
-  if (Object.keys(route.params).length === 0) {
+  if (route.path === '/') {
     scrollTo(target);
     return;
   }
@@ -37,27 +37,26 @@ const handleScrollTo = (target: string) => {
         </ul>
         <ul class="list">
           <li>
-            <a
-              class="button"
-              href="https://github.com/ColinLienard"
-              target="_blank"
-            >
+            <a class="button" :href="config.public.githubLink" target="_blank">
               GitHub
             </a>
           </li>
           <li>
             <a
               class="button"
-              href="https://www.linkedin.com/in/colin-lienard-83490a1a4/"
+              :href="config.public.linkedinLink"
               target="_blank"
             >
               LinkedIn
             </a>
           </li>
           <li>
-            <a class="button" href="mailto:contact@colin-lienard.fr">
+            <CopyButton :to-copy="config.public.email">
+              {{ config.public.email }}
+            </CopyButton>
+            <!-- <a class="button" :href="config.public.email">
               contact@colin-lienard.fr
-            </a>
+            </a> -->
           </li>
         </ul>
         <ul class="list">
@@ -74,10 +73,6 @@ const handleScrollTo = (target: string) => {
 </template>
 
 <style scoped lang="scss">
-@use 'styles/screens';
-@use 'styles/typography';
-@use 'styles/variables';
-
 .footer {
   display: flex;
   flex-direction: column;

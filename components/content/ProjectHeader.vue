@@ -1,130 +1,130 @@
 <script setup lang="ts">
 defineProps<{
   image: string;
+  color: string;
 }>();
 </script>
 
 <template>
   <header class="header-container">
-    <div
-      class="image-container"
-      data-scroll
-      data-scroll-class="visible"
-      data-scroll-repeat
-      data-scroll-offset="0%,25%"
-    >
+    <div class="image-container">
+      <span class="background" :style="`background-color: ${color};`" />
       <nuxt-img
         class="image"
         :src="`/images/projects/${image}`"
         alt=""
-        sizes="mobile:800px tablet:2500px"
+        sizes="mobile:480px tablet:1024px"
         quality="100"
       />
+      <NuxtLink class="back" to="/">
+        <img src="/icons/arrow.svg" alt="" />
+      </NuxtLink>
     </div>
-    <div class="content">
-      <div class="back-wrapper">
-        <NuxtLink class="back" to="/">
-          <span class="line"></span>
-          Retour
-        </NuxtLink>
-      </div>
-      <slot name="hero" />
-      <slot name="links" />
-    </div>
+    <slot name="hero" />
+    <slot name="links" />
   </header>
 </template>
 
 <style lang="scss">
-@use 'styles/screens';
-@use 'styles/mixins';
-@use 'styles/typography';
-@use 'styles/variables';
-
 .header-container {
+  @include mixins.section-width;
+  @include mixins.mobile-padding;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  padding-top: 5rem;
+
+  @include screens.laptop {
+    padding: 6rem 0 0;
+  }
+
   .image-container {
-    width: 100vw;
-    height: 50vh;
-    border-radius: 0 0 2rem 2rem;
-    overflow: hidden;
-    opacity: 0;
-    transition: opacity 0.3s variables.$ease-in-out,
-      height 1s variables.$ease-in-out, border-radius 1s variables.$ease-in-out;
+    position: relative;
+    translate: 0 3.25rem;
 
-    &.visible {
-      opacity: 1;
+    @include screens.laptop {
+      translate: 0 4.5rem;
     }
 
-    &:hover {
-      height: 80vh;
-      border-radius: 0;
-      transition: height 1.5s 0.25s variables.$ease-in-out,
-        border-radius 1.5s 0.25s variables.$ease-in-out;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 50% -50vw 0;
+      background-color: variables.$dark;
+      z-index: -1;
     }
 
-    .image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0 -50vw 50%;
+      background-image: linear-gradient(
+        transparent,
+        rgba(variables.$dark, 0.5)
+      );
+      z-index: -1;
+    }
+
+    .background {
+      position: absolute;
+      inset: -16rem -50vw 0;
+      z-index: -2;
+    }
+
+    .back {
+      width: 3rem;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: variables.$white;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      translate: -50% -50%;
+      transition: scale 0.3s variables.$ease-in-out;
+
+      @include screens.laptop {
+        width: 4rem;
+        top: 50%;
+        left: 0;
+      }
+
+      &:hover {
+        scale: 0.9;
+      }
+
+      img {
+        filter: invert(1);
+        rotate: 90deg;
+        width: min(1.5rem, 40%);
+        pointer-events: none;
+      }
     }
   }
 
-  .content {
-    padding: 2rem 1.5rem 0;
+  h1 {
+    @include typography.heading-1;
+
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+  }
+
+  ul {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    justify-content: center;
+    gap: 1rem;
 
     @include screens.laptop {
-      align-items: center;
-      gap: 3rem;
-      padding: 3rem 0 0;
-    }
-
-    .back-wrapper {
-      @include mixins.section-width;
-
-      .back {
-        display: flex;
-        align-items: center;
-        gap: 1em;
-        width: fit-content;
-
-        .line {
-          width: 3rem;
-          height: 1px;
-          background-color: variables.$white;
-          transition: width 0.5s variables.$ease-in-out;
-
-          @include screens.laptop {
-            width: 1rem;
-          }
-        }
-
-        &:hover .line {
-          width: 4rem;
-        }
-      }
-    }
-
-    h1 {
-      @include typography.heading-1;
-
-      text-align: center;
-      width: 100%;
-    }
-
-    ul {
-      display: flex;
-      justify-content: center;
       gap: 2rem;
+    }
 
-      @include screens.laptop {
-        gap: 4rem;
-      }
-
-      li {
-        @include mixins.link;
-      }
+    li a {
+      @include mixins.link;
     }
   }
 }

@@ -1,13 +1,3 @@
-@use 'screens';
-@use 'variables';
-
-@font-face {
-  font-family: Syne;
-  src: url('/fonts/Syne-Medium.ttf');
-  font-weight: 500;
-  font-display: swap;
-}
-
 @font-face {
   font-family: Syne;
   src: url('/fonts/Syne-SemiBold.ttf');
@@ -15,9 +5,23 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: Manrope;
+  src: url('/fonts/Manrope-Medium.ttf');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Manrope;
+  src: url('/fonts/Manrope-Bold.ttf');
+  font-weight: 700;
+  font-display: swap;
+}
+
 body {
   background-color: variables.$dark;
-  font-family: Syne, sans-serif;
+  font-family: Manrope, sans-serif;
   font-weight: 500;
   color: variables.$white;
   font-size: 0.875rem;
@@ -27,5 +31,27 @@ body {
 
     // Required for locomotive-scroll
     overflow: hidden;
+  }
+}
+
+// Scroll bar styles
+.c-scrollbar {
+  opacity: 1 !important;
+
+  /* stylelint-disable-next-line selector-class-pattern */
+  .c-scrollbar_thumb {
+    background-color: variables.$grey;
+    opacity: 0.25;
+    margin: 4px;
+    transition: opacity 0.3s variables.$ease-in-out;
+
+    &:hover,
+    &:active {
+      opacity: 0.5;
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
   }
 }
