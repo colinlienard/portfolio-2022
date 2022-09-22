@@ -7,8 +7,8 @@ defineProps<{
 
 <template>
   <header class="header-container">
-    <span class="background" :style="`background-color: ${color};`" />
     <div class="image-container">
+      <span class="background" :style="`background-color: ${color};`" />
       <nuxt-img
         class="image"
         :src="`/images/projects/${image}`"
@@ -40,60 +40,41 @@ defineProps<{
     padding: 6rem 0 0;
   }
 
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100%;
-    z-index: -1;
-
-    @include screens.laptop {
-      left: -31rem;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: 13.4rem;
-      left: 0;
-      width: 100%;
-      height: 6rem;
-      background-image: linear-gradient(
-        transparent,
-        rgba(variables.$dark, 0.5)
-      );
-
-      @include screens.laptop {
-        bottom: 24.4rem;
-      }
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 14.5rem;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: variables.$dark;
-
-      @include screens.laptop {
-        top: 28.4rem;
-      }
-    }
-  }
-
   .image-container {
     position: relative;
-    translate: 0 3.5rem;
+    translate: 0 3.25rem;
 
     @include screens.laptop {
       translate: 0 4.5rem;
     }
 
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 50% -50vw 0;
+      background-color: variables.$dark;
+      z-index: -1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0 -50vw 50%;
+      background-image: linear-gradient(
+        transparent,
+        rgba(variables.$dark, 0.5)
+      );
+      z-index: -1;
+    }
+
+    .background {
+      position: absolute;
+      inset: -16rem -50vw 0;
+      z-index: -2;
+    }
+
     .back {
-      width: 2.25rem;
+      width: 3rem;
       aspect-ratio: 1 / 1;
       display: flex;
       align-items: center;
@@ -101,13 +82,15 @@ defineProps<{
       background-color: variables.$white;
       border-radius: 50%;
       position: absolute;
-      top: 50%;
-      left: 0;
+      top: 0;
+      left: 50%;
       translate: -50% -50%;
       transition: scale 0.3s variables.$ease-in-out;
 
       @include screens.laptop {
         width: 4rem;
+        top: 50%;
+        left: 0;
       }
 
       &:hover {
@@ -117,7 +100,7 @@ defineProps<{
       img {
         filter: invert(1);
         rotate: 90deg;
-        width: min(1.5rem, 50%);
+        width: min(1.5rem, 40%);
         pointer-events: none;
       }
     }
