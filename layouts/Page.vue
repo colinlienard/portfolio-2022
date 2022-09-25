@@ -2,7 +2,7 @@
 const scroll = ref();
 const cursorContent = ref<string | null>();
 const isMobile = useIsMobile();
-const route = useRoute();
+// const route = useRoute();
 
 provide('scroll', scroll);
 provide('cursor', cursorContent);
@@ -17,18 +17,18 @@ onMounted(() => {
       smooth: true,
       multiplier: 0.8,
       reloadOnContextChange: true,
-      initPosition: {
-        x: 0,
-        y:
-          route.path === '/' && route.hash === ''
-            ? sessionStorage.getItem('scroll-position') || 0
-            : 0,
-      },
+      // initPosition: {
+      //   x: 0,
+      //   y:
+      //     route.path === '/' && route.hash === ''
+      //       ? sessionStorage.getItem('scroll-position') || 0
+      //       : 0,
+      // },
     });
 
-    scroll.value.on('scroll', (event: any) => {
-      sessionStorage.setItem('scroll-position', event.scroll.y);
-    });
+    // scroll.value.on('scroll', (event: any) => {
+    //   sessionStorage.setItem('scroll-position', event.scroll.y);
+    // });
   }, 1000);
 });
 
@@ -46,16 +46,6 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="scss">
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.3s variables.$ease-in-out;
-}
-
-.page-enter-from,
-.page-leave-to {
-  opacity: 0;
-}
-
 .main {
   position: relative;
   display: flex;

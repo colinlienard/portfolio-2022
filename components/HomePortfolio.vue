@@ -24,7 +24,7 @@ const { data } = await useAsyncData('projects', () =>
         @mouseenter="cursorContent = 'Voir'"
         @mouseleave="cursorContent = null"
       >
-        <NuxtLink :to="`/projects/${project.slug}`" class="link">
+        <PageLink :to="`/projects/${project.slug}`" class="link">
           <nuxt-img
             class="image"
             :src="`/images/projects/${project.image}`"
@@ -34,7 +34,7 @@ const { data } = await useAsyncData('projects', () =>
           />
           <h3 class="title">{{ project.title }}</h3>
           <p class="description">{{ project.description }}</p>
-        </NuxtLink>
+        </PageLink>
       </li>
     </ul>
   </NuxtLayout>
