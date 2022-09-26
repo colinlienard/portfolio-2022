@@ -17,7 +17,7 @@ defineProps<{
         quality="100"
       />
       <PageLink class="back" to="/">
-        <img src="/icons/arrow.svg" alt="" />
+        <img class="icon" src="/icons/arrow.svg" alt="" />
       </PageLink>
     </div>
     <slot name="hero" />
@@ -130,11 +130,15 @@ defineProps<{
         scale: 0.9;
       }
 
-      img {
+      .icon {
         filter: invert(1);
         rotate: 90deg;
-        width: min(1.5rem, 40%);
         pointer-events: none;
+        width: 1rem;
+
+        @include screens.laptop {
+          width: 1.5rem;
+        }
       }
     }
   }

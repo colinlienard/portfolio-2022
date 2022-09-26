@@ -5,16 +5,25 @@ const props = defineProps<{
   to: string;
 }>();
 
-const nuxtApp = useNuxtApp();
-
 const handleClick = () => {
-  nuxtApp.callHook('link:prefetch', props.to);
   Emitter.emit('route-change', props.to);
 };
 </script>
 
 <template>
-  <a href="" @click.prevent="handleClick">
-    <slot />
-  </a>
+  <button class="button" @click="handleClick">
+    <NuxtLink :to="to" class="disabled">
+      <slot />
+    </NuxtLink>
+  </button>
 </template>
+
+<style scoped lang="scss">
+.button {
+  text-align: left;
+
+  .disabled {
+    pointer-events: none;
+  }
+}
+</style>
