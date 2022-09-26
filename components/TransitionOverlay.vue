@@ -14,55 +14,50 @@ Emitter.on('route-change', (to) => {
 </script>
 
 <template>
-  <div class="container">
-    <Transition mode="out-in">
-      <div v-if="change" class="overlay overlay-1" />
-    </Transition>
-    <Transition mode="out-in">
-      <div v-if="change" class="overlay overlay-2" />
-    </Transition>
-    <Transition mode="out-in">
-      <div v-if="change" class="overlay overlay-3" />
-    </Transition>
-  </div>
+  <Transition mode="out-in">
+    <div v-if="change" class="overlay">
+      <p class="text">Colin Lienard</p>
+    </div>
+  </Transition>
 </template>
 
 <style scoped lang="scss">
-.container {
+.overlay {
   position: fixed;
   inset: 0;
+  background-color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   z-index: 999;
-  pointer-events: none;
-}
+  cursor: none;
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  transition: translate 1s variables.$smooth;
-
-  &.overlay-1 {
-    background-color: variables.$white;
+  &,
+  .text {
+    transition: 1s variables.$smooth;
   }
 
-  &.overlay-2 {
-    background-color: variables.$white;
-    transition-delay: 0.4s;
-  }
-
-  &.overlay-3 {
-    background-color: variables.$dark;
-    transition-delay: 0.2s;
+  .text {
+    font-weight: bold;
   }
 }
 
 .v-enter-from {
-  translate: -100% 0;
+  translate: 0 100%;
+
+  .text {
+    translate: 0 -60vh;
+    opacity: 0;
+  }
 }
 
 .v-leave-to {
-  translate: 100% 0;
+  translate: 0 -100%;
+
+  .text {
+    translate: 0 60vh;
+    opacity: 0;
+  }
 }
 </style>
