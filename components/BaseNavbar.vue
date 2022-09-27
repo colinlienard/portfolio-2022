@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Emitter from '~~/utils/emitter';
+
 const scrollTo = useScrollTo();
 const route = useRoute();
 
@@ -8,7 +10,7 @@ const handleScrollTo = (target: string) => {
     return;
   }
 
-  navigateTo(`/${target}`);
+  Emitter.emit('route-change', `/${target}`);
 };
 </script>
 

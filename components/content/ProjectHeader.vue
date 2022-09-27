@@ -16,9 +16,9 @@ defineProps<{
         sizes="mobile:480px tablet:1024px"
         quality="100"
       />
-      <NuxtLink class="back" to="/">
-        <img src="/icons/arrow.svg" alt="" />
-      </NuxtLink>
+      <PageLink class="back" to="/">
+        <img class="icon" src="/icons/arrow.svg" alt="" />
+      </PageLink>
     </div>
     <slot name="hero" />
     <slot name="links" />
@@ -26,6 +26,37 @@ defineProps<{
 </template>
 
 <style lang="scss">
+@keyframes image {
+  0% {
+    opacity: 0;
+    translate: 0 2rem;
+  }
+
+  50% {
+    opacity: 0;
+    translate: 0 2rem;
+  }
+
+  100% {
+    opacity: 1;
+    translate: 0;
+  }
+}
+
+@keyframes back {
+  0% {
+    scale: 0;
+  }
+
+  70% {
+    scale: 0;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
 .header-container {
   @include mixins.section-width;
   @include mixins.mobile-padding;
@@ -59,11 +90,8 @@ defineProps<{
     &::after {
       content: '';
       position: absolute;
-      inset: 0 -50vw 50%;
-      background-image: linear-gradient(
-        transparent,
-        rgba(variables.$dark, 0.5)
-      );
+      inset: 0 -50vw 0;
+      background-image: linear-gradient(transparent, variables.$dark);
       z-index: -1;
     }
 
@@ -71,6 +99,10 @@ defineProps<{
       position: absolute;
       inset: -16rem -50vw 0;
       z-index: -2;
+    }
+
+    .image {
+      animation: image 2s variables.$ease-in-out;
     }
 
     .back {
@@ -86,6 +118,7 @@ defineProps<{
       left: 50%;
       translate: -50% -50%;
       transition: scale 0.3s variables.$ease-in-out;
+      animation: back 2.2s variables.$ease-in-out;
 
       @include screens.laptop {
         width: 4rem;
@@ -97,11 +130,15 @@ defineProps<{
         scale: 0.9;
       }
 
-      img {
+      .icon {
         filter: invert(1);
         rotate: 90deg;
-        width: min(1.5rem, 40%);
         pointer-events: none;
+        width: 1rem;
+
+        @include screens.laptop {
+          width: 1.5rem;
+        }
       }
     }
   }
