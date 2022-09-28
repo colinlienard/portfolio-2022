@@ -5,7 +5,10 @@ const props = defineProps<{
   to: string;
 }>();
 
+const nuxtApp = useNuxtApp();
+
 const handleClick = () => {
+  nuxtApp.callHook('link:prefetch', props.to);
   Emitter.emit('route-change', props.to);
 };
 </script>
