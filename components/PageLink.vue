@@ -11,19 +11,9 @@ const handleClick = () => {
 </script>
 
 <template>
-  <button class="button" @click="handleClick">
-    <NuxtLink :to="to" class="disabled">
+  <NuxtLink :to="to" custom>
+    <a :href="to" v-bind="$attrs" @click.prevent="handleClick">
       <slot />
-    </NuxtLink>
-  </button>
+    </a>
+  </NuxtLink>
 </template>
-
-<style scoped lang="scss">
-.button {
-  text-align: left;
-
-  .disabled {
-    pointer-events: none;
-  }
-}
-</style>

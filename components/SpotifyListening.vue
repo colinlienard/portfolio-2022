@@ -70,7 +70,7 @@ onUnmounted(() => {
 
 <template>
   <aside :class="['spotify', { disabled: music === null }]">
-    <nuxt-img
+    <NuxtImg
       src="/icons/spotify.svg"
       alt=""
       class="icon"

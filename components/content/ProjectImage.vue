@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <figure class="image-container">
-    <nuxt-img
+    <NuxtImg
       class="image"
       :src="`/images/projects/${source}`"
       alt=""

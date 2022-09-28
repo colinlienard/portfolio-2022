@@ -30,7 +30,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <nuxt-img
+  <NuxtImg
     v-if="isMobile"
     :class="['image', { visible }]"
     src="/images/cube.webp"
