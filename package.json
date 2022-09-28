@@ -5,6 +5,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "analyze": "nuxt analyze dist",
     "typecheck": "tsc --noEmit",
     "lint": "eslint **/*.ts **/*.vue && stylelint \"**/*.{vue,scss}\"",
     "lint:fix": "eslint --fix **/*.ts **/*.vue && stylelint --fix \"**/*.{vue,scss}\"",
