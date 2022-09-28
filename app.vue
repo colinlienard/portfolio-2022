@@ -12,9 +12,7 @@ definePageMeta({
 
 <template>
   <Html lang="fr">
-    <div>
-      <TransitionOverlay />
-      <NuxtPage />
-    </div>
+    <TransitionOverlay />
+    <NuxtPage />
   </Html>
 </template>

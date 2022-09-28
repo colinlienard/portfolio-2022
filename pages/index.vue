@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'Colin Lienard 👋',
+  title: 'Colin Lienard | Webdesign & Dévelopeur front-end',
   meta: [
     {
       name: 'description',
