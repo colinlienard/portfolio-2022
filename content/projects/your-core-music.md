@@ -1,12 +1,12 @@
 ---
 title: Your Core Music
-slug: your-core-music
 description: Your Core Music est un site permettant de découvrir ses statistiques Spotify.
 image: your-core-music-thumbnail.webp
+color: 4B53F7
 order: 1
 ---
 
-::project-header{image="your-core-music-thumbnail.webp" color="#4B53F7"}
+::project-header{image="your-core-music-thumbnail.webp"}
 #hero
 # Your Core Music
 

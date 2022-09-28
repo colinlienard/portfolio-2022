@@ -5,25 +5,18 @@ const props = defineProps<{
   to: string;
 }>();
 
+const nuxtApp = useNuxtApp();
+
 const handleClick = () => {
+  nuxtApp.callHook('link:prefetch', props.to);
   Emitter.emit('route-change', props.to);
 };
 </script>
 
 <template>
-  <button class="button" @click="handleClick">
-    <NuxtLink :to="to" class="disabled">
+  <NuxtLink :to="to" custom>
+    <a :href="to" v-bind="$attrs" @click.prevent="handleClick">
       <slot />
-    </NuxtLink>
-  </button>
+    </a>
+  </NuxtLink>
 </template>
-
-<style scoped lang="scss">
-.button {
-  text-align: left;
-
-  .disabled {
-    pointer-events: none;
-  }
-}
-</style>

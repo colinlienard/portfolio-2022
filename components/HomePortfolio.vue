@@ -24,8 +24,8 @@ const { data } = await useAsyncData('projects', () =>
         @mouseenter="cursorContent = 'Voir'"
         @mouseleave="cursorContent = null"
       >
-        <PageLink :to="`/projects/${project.slug}`" class="link">
-          <nuxt-img
+        <PageLink :to="(project._path as string)" class="item-link">
+          <NuxtImg
             class="image"
             :src="`/images/projects/${project.image}`"
             alt=""
@@ -71,15 +71,17 @@ const { data } = await useAsyncData('projects', () =>
       }
     }
 
-    .link {
+    :global(.item-link) {
       cursor: none;
 
       @include screens.laptop {
         transition: opacity 0.3s variables.$ease-in-out;
+      }
+    }
 
-        &:not(&:hover) {
-          opacity: 0.5;
-        }
+    :global(.item-link:not(:hover)) {
+      @include screens.laptop {
+        opacity: 0.5;
       }
     }
 

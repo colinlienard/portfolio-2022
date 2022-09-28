@@ -1,20 +1,18 @@
 <script setup lang="ts">
-import { Application } from '@splinetool/runtime';
+import type Spline from '@splinetool/runtime';
 
 const canvas = ref<HTMLCanvasElement>();
 const visible = ref(false);
-const spline = ref<Application>();
+const spline = ref<Spline.Application>();
 const isMobile = useIsMobile();
 
-onMounted(() => {
+onMounted(async () => {
   if (window.innerWidth > 480 && canvas.value) {
+    const { Application } = await import('@splinetool/runtime');
     spline.value = new Application(canvas.value);
+    await spline.value?.load('/spline/cube.splinecode');
 
-    setTimeout(async () => {
-      await spline.value?.load('/spline/cube.splinecode');
-
-      visible.value = true;
-    }, 1000);
+    visible.value = true;
 
     return;
   }
@@ -30,7 +28,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <nuxt-img
+  <NuxtImg
     v-if="isMobile"
     :class="['image', { visible }]"
     src="/images/cube.webp"

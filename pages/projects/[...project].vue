@@ -1,3 +1,9 @@
+<script setup lang="ts">
+useHead({
+  titleTemplate: 'Colin Lienard | %s',
+});
+</script>
+
 <template>
   <NuxtLayout name="page">
     <ContentDoc tag="article" />

@@ -53,7 +53,7 @@ const config = useRuntimeConfig();
           <img src="/icons/reddit.svg" alt="" />
         </a>
       </div>
-      <nuxt-img
+      <NuxtImg
         class="image"
         src="/images/colin-small.webp"
         alt=""

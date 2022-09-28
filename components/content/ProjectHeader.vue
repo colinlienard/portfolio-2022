@@ -1,15 +1,23 @@
 <script setup lang="ts">
 defineProps<{
   image: string;
-  color: string;
 }>();
+
+const { path } = useRoute();
+
+const { data } = await useAsyncData(path, () =>
+  queryContent('/projects/').where({ _path: path }).find()
+);
 </script>
 
 <template>
   <header class="header-container">
     <div class="image-container">
-      <span class="background" :style="`background-color: ${color};`" />
-      <nuxt-img
+      <span
+        class="background"
+        :style="`background-color: #${data && data[0].color};`"
+      />
+      <NuxtImg
         class="image"
         :src="`/images/projects/${image}`"
         alt=""
