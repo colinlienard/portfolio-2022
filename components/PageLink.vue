@@ -7,8 +7,8 @@ const props = defineProps<{
 
 const nuxtApp = useNuxtApp();
 
-const handleClick = () => {
-  nuxtApp.callHook('link:prefetch', props.to);
+const handleClick = async () => {
+  await nuxtApp.callHook('link:prefetch', props.to);
   Emitter.emit('route-change', props.to);
 };
 </script>
