@@ -1,18 +1,18 @@
 ---
 title: Outer Life
-slug: outerlife
-description: Outer Life est en jeu en cours de développement à propos d'un aventurier explorant des planètes inconnues.
+description: (Développement, pixel-art) Jeu en cours de développement à propos d'un aventurier explorant des planètes inconnues.
 image: outerlife-thumbnail.webp
-order: 2
+color: 80B878
+order: 3
 ---
 
-::project-header{image="outerlife-thumbnail.webp"}
+::project-header{image="outerlife-0.webp"}
 #hero
 # Outer Life
 
 #links
-- [Voir Outer Life](https://outerlife.vercel.app/)
-- [Repo GitHub](https://github.com/ColinLienard/outerlife)
+- [Voir le projet live](https://outerlife.vercel.app/){:target="_blank"}
+- [Repo GitHub](https://github.com/ColinLienard/outerlife){:target="_blank"}
 ::
 
 ::project-paragraph
@@ -23,9 +23,9 @@ order: 2
 ## Technologies utilisées
 
 - Vue
-- Nuxtjs
+- Nuxt.js
 - Typescript
-- Canvas API
+- WebGL vanilla
 ::
 
 ::project-paragraph
@@ -37,7 +37,6 @@ Le projet est pour l'instant à un stade très peu avancé mais je compte contin
 ::
 
 ::project-video{source="outerlife-1.mp4"}
-Les artistes les plus écoutées.
 ::
 
 ::project-paragraph

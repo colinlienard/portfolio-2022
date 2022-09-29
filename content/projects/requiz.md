@@ -1,17 +1,17 @@
 ---
 name: Requiz
-slug: requiz
-description: Requiz est un site permettant de jouer à des quiz en simultané avec d'autres personnes, et de créer et partager son propre quiz.
+description: (Webdesign, développement) Application pour de jouer à des quiz en simultané avec d'autres personnes, et de créer et partager son propre quiz.
 image: requiz-thumbnail.webp
-order: 3
+color: 3C38FC
+order: 4
 ---
 
-::project-header{image="requiz-thumbnail.webp"}
+::project-header{image="requiz-0.webp"}
 #hero
 # Requiz
 
 #links
-- [Repo GitHub](https://github.com/ColinLienard/requiz)
+- [Repo GitHub](https://github.com/ColinLienard/requiz){:target="_blank"}
 ::
 
 ::project-paragraph
@@ -22,7 +22,7 @@ order: 3
 ## Technologies utilisées
 
 - React
-- Nextjs
+- Next.js
 - Next Auth
 - Typescript
 - Socket.io
@@ -37,7 +37,7 @@ order: 3
 L'utilisateur peut se connecter ou se créer un compte en utilisant une adresse mail, ou alors en se connectant avec Discord ou Google.
 ::
 
-::project-image{source="requiz-0.webp"}
+::project-image{source="requiz-1.webp"}
 L'interface de connexion.
 ::
 
@@ -45,7 +45,7 @@ L'interface de connexion.
 Un **éditeur de quiz** complet est présent et permet de créer des questions, chacune contenant des réponses possibles dont une seule juste. Un thème peut aussi être choisi, ainsi qu'un nom et qu'une description. L'utilisateur peut ensuite sauvegarder son quiz pour l'éditer plus tard, ou alors le publier pour qu'il soit visible pour les autres utilisateurs.
 ::
 
-::project-image{source="requiz-1.webp"}
+::project-image{source="requiz-2.webp"}
 L'éditeur de quiz.
 ::
 
@@ -53,7 +53,7 @@ L'éditeur de quiz.
 Lorsqu'un quiz est rejoint par au moins une personne, une **salle d'attente** est créée dans laquelle un chat est disponible.
 ::
 
-::project-image{source="requiz-2.webp"}
+::project-image{source="requiz-3.webp"}
 La salle d'attente.
 ::
 
@@ -61,6 +61,6 @@ La salle d'attente.
 Quand le quiz est lancé, les questions s'enchaînent et les joueurs doivent cliquer sur ce qu'ils pensent être la bonne réponse. À chaque mauvaise réponse, les joueurs perdent une vie. Le gagnant du quiz est celui à qui il reste le plus de vies.
 ::
 
-::project-image{source="requiz-3.webp"}
+::project-image{source="requiz-4.webp"}
 L'interface de quiz.
 ::
