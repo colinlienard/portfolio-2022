@@ -6,10 +6,10 @@ const change = ref(false);
 Emitter.on('route-change', (to) => {
   change.value = true;
 
-  setTimeout(() => {
-    navigateTo(to);
+  setTimeout(async () => {
+    await navigateTo(to);
     change.value = false;
-  }, 1000);
+  }, 800);
 });
 </script>
 
@@ -35,7 +35,7 @@ Emitter.on('route-change', (to) => {
 
   &,
   .text {
-    transition: 1s variables.$smooth;
+    transition: 0.8s variables.$smooth;
   }
 
   .text {
