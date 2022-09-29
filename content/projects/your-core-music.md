@@ -19,9 +19,9 @@ order: 1
 ## Technologies utilisées
 
 - React
-- Nextjs
+- Next.js
 - Typescript
-- L'API Spotify
+- Spotify API
 ::
 
 ::project-paragraph

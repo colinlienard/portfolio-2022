@@ -22,7 +22,7 @@ order: 4
 ## Technologies utilisées
 
 - React
-- Nextjs
+- Next.js
 - Next Auth
 - Typescript
 - Socket.io

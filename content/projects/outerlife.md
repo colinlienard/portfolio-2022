@@ -23,7 +23,7 @@ order: 3
 ## Technologies utilisées
 
 - Vue
-- Nuxtjs
+- Nuxt.js
 - Typescript
 - WebGL vanilla
 ::
