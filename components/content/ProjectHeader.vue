@@ -40,7 +40,7 @@ const { data } = await useAsyncData(path, () =>
     translate: 0 2rem;
   }
 
-  50% {
+  25% {
     opacity: 0;
     translate: 0 2rem;
   }
@@ -56,7 +56,7 @@ const { data } = await useAsyncData(path, () =>
     scale: 0;
   }
 
-  70% {
+  75% {
     scale: 0;
   }
 
@@ -110,7 +110,7 @@ const { data } = await useAsyncData(path, () =>
     }
 
     .image {
-      animation: image 2s variables.$ease-in-out;
+      animation: image 1.5s variables.$ease-in-out;
     }
 
     .back {
@@ -126,7 +126,7 @@ const { data } = await useAsyncData(path, () =>
       left: 50%;
       translate: -50% -50%;
       transition: scale 0.3s variables.$ease-in-out;
-      animation: back 2.2s variables.$ease-in-out;
+      animation: back 2s variables.$ease-in-out;
 
       @include screens.laptop {
         width: 4rem;
