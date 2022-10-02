@@ -21,6 +21,7 @@
     "@nuxt/content": "^2.1.0",
     "@nuxt/image-edge": "1.0.0-27707824.1028381",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
+    "@types/locomotive-scroll": "^4.1.0",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
     "eslint": "^8.23.0",
