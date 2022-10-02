@@ -5,6 +5,7 @@ specifiers:
   '@nuxt/image-edge': 1.0.0-27707824.1028381
   '@nuxtjs/eslint-config-typescript': ^11.0.0
   '@splinetool/runtime': ^0.9.106
+  '@types/locomotive-scroll': ^4.1.0
   '@typescript-eslint/eslint-plugin': ^5.36.2
   '@typescript-eslint/parser': ^5.36.2
   eslint: ^8.23.0
@@ -33,6 +34,7 @@ devDependencies:
   '@nuxt/content': 2.1.0
   '@nuxt/image-edge': 1.0.0-27707824.1028381
   '@nuxtjs/eslint-config-typescript': 11.0.0_yqf6kl63nyoq5megxukfnom5rm
+  '@types/locomotive-scroll': 4.1.0
   '@typescript-eslint/eslint-plugin': 5.36.2_iurrlxgqcgk5svigzxakafpeuu
   '@typescript-eslint/parser': 5.36.2_yqf6kl63nyoq5megxukfnom5rm
   eslint: 8.23.0
@@ -1297,6 +1299,13 @@ packages:
     resolution:
       {
         integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==,
+      }
+    dev: true
+
+  /@types/locomotive-scroll/4.1.0:
+    resolution:
+      {
+        integrity: sha512-Tnw/FEJQxMhQwIDEzbLIlJuCJOma0D0l3hymoyE75TermfRfNGkUlvzlyHkZvu/GrGW4CH2mUaPs1n1iCdgjqQ==,
       }
     dev: true
 

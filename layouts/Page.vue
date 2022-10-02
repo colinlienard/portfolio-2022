@@ -9,11 +9,10 @@ provide('cursor', cursorContent);
 
 onMounted(() => {
   setTimeout(async () => {
-    // @ts-ignore
-    const locomotiveScroll = await import('locomotive-scroll');
+    const LocomotiveScroll = await import('locomotive-scroll');
     // eslint-disable-next-line new-cap
-    scroll.value = new locomotiveScroll.default({
-      el: document.querySelector('#main'),
+    scroll.value = new LocomotiveScroll.default({
+      el: document.querySelector('#main') as HTMLElement,
       smooth: true,
       multiplier: 0.8,
       reloadOnContextChange: true,
@@ -21,7 +20,7 @@ onMounted(() => {
       //   x: 0,
       //   y:
       //     route.path === '/' && route.hash === ''
-      //       ? sessionStorage.getItem('scroll-position') || 0
+      //       ? parseInt(sessionStorage.getItem('scroll-position'),10) || 0
       //       : 0,
       // },
     });
