@@ -2,17 +2,20 @@
 defineProps<{
   source: string;
 }>();
+
+const { path } = useRoute();
+
+const { data } = await useAsyncData(path, () =>
+  queryContent('/projects/').where({ _path: path }).find()
+);
 </script>
 
 <template>
   <div class="section-container">
-    <video
-      class="video"
-      :src="`/images/projects/${source}`"
-      autoplay
-      muted
-      loop
-    />
+    <div class="video-container">
+      <video :src="`/images/projects/${source}`" autoplay muted loop />
+      <span :style="`background-color: #${data ? data[0].color : '000'}`" />
+    </div>
   </div>
 </template>
 
@@ -21,8 +24,8 @@ defineProps<{
   @include mixins.section-width;
   @include mixins.mobile-padding;
 
-  .video {
-    width: 100%;
+  .video-container {
+    @include mixins.image-with-shadow;
   }
 }
 </style>
