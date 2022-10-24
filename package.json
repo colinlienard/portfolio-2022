@@ -14,11 +14,11 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@splinetool/runtime": "^0.9.106",
+    "@splinetool/runtime": "0.9.128",
     "locomotive-scroll": "^4.1.4"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.1.0",
+    "@nuxt/content": "^2.2.0",
     "@nuxt/image-edge": "1.0.0-27707824.1028381",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "@types/locomotive-scroll": "^4.1.0",
@@ -30,7 +30,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-vue": "^9.4.0",
     "husky": "^8.0.1",
-    "nuxt": "3.0.0-rc.11",
+    "nuxt": "3.0.0-rc.12",
     "postcss": "^8.4.16",
     "postcss-html": "^1.5.0",
     "prettier": "^2.7.1",
