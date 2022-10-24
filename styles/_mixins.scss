@@ -87,3 +87,45 @@
 
   // -webkit-text-stroke: $thickness $color;
 }
+
+@mixin image-with-shadow() {
+  @include screens.laptop {
+    position: relative;
+    transition: translate 0.3s variables.$ease-in-out;
+
+    img,
+    video {
+      width: 100%;
+    }
+
+    span {
+      position: absolute;
+      inset: 0 calc(-1rem + 1px) -1rem 0;
+      clip-path: polygon(
+        0 0,
+        calc(100% - 1rem) 0,
+        calc(100% - 1rem) 0,
+        calc(100% - 1rem) calc(100% - 1rem),
+        0 calc(100% - 1rem),
+        0 calc(100% - 1rem)
+      );
+      z-index: -1;
+      transition: clip-path 0.3s variables.$ease-in-out;
+    }
+
+    &:hover {
+      translate: -0.5rem -0.5rem;
+
+      span {
+        clip-path: polygon(
+          0 0,
+          calc(100% - 1rem) 0,
+          100% 1rem,
+          100% 100%,
+          1rem 100%,
+          0 calc(100% - 1rem)
+        );
+      }
+    }
+  }
+}

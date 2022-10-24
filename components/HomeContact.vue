@@ -193,7 +193,7 @@ const config = useRuntimeConfig();
 
   &,
   .icon {
-    animation-duration: 70s !important;
+    animation-duration: 60s !important;
   }
 
   .circle {
