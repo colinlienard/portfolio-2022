@@ -1,41 +1,24 @@
 <script setup lang="ts">
-import { inject, Ref } from 'vue';
-
-const cursorContent = inject<Ref<string | null>>('cursor');
-
 const { data } = await useAsyncData('projects', () =>
   queryContent('/projects/').sort({ order: 1 }).find()
 );
 </script>
 
 <template>
-  <NuxtLayout id="portfolio" name="section">
-    <h2 class="hero">
+  <NuxtLayout name="section">
+    <h2 id="portfolio" class="hero">
       <strong>Portfolio</strong> <span class="empty">2022</span>
     </h2>
     <ul class="list">
-      <li
+      <PortfolioItem
         v-for="(project, index) in data"
         :key="index"
-        class="item"
-        data-scroll
-        :data-scroll-speed="index % 2 === 0 ? 1 : -1"
-        data-scroll-direction="horizontal"
-        @mouseenter="cursorContent = 'Voir'"
-        @mouseleave="cursorContent = null"
-      >
-        <PageLink :to="(project._path as string)" class="item-link">
-          <NuxtImg
-            class="image"
-            :src="`/images/projects/${project.image}`"
-            alt=""
-            sizes="mobile:350px tablet:488px"
-            quality="100"
-          />
-          <h3 class="title">{{ project.title }}</h3>
-          <p class="description">{{ project.description }}</p>
-        </PageLink>
-      </li>
+        :index="index"
+        :title="(project.title as string)"
+        :description="project.description"
+        :image="project.image"
+        :link="(project._path as string)"
+      />
     </ul>
   </NuxtLayout>
 </template>
@@ -59,7 +42,8 @@ const { data } = await useAsyncData('projects', () =>
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 6rem 3rem;
-    padding-bottom: 16rem;
+
+    // padding-bottom: 16rem;
   }
 
   .item {

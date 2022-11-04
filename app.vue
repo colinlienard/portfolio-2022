@@ -1,10 +1,10 @@
 <script setup lang="ts">
 // Global meta data
-definePageMeta({
+useHead({
   link: [
     {
-      rel: 'favicon',
-      src: '/favicon.ico',
+      rel: 'icon',
+      href: '/favicon.ico',
     },
   ],
 });

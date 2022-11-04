@@ -3,7 +3,7 @@ title: Your Core Music
 description: (Webdesign, développement) Application permettant de découvrir ses statistiques Spotify.
 image: your-core-music-thumbnail.webp
 color: 24D560
-order: 1
+order: 2
 ---
 
 ::project-header{image="your-core-music-0.webp"}
@@ -11,7 +11,7 @@ order: 1
 # Your Core Music
 
 #links
-- [Voir le projet live](https://your-core-music.vercel.app){:target="_blank"}
+- [Projet live](https://your-core-music.vercel.app){:target="_blank"}
 - [Repo GitHub](https://github.com/ColinLienard/your-core-music){:target="_blank"}
 ::
 

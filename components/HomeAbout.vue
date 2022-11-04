@@ -6,9 +6,9 @@ const { data } = await useAsyncData('milestones', async () =>
 </script>
 
 <template>
-  <NuxtLayout id="about" name="section">
+  <NuxtLayout name="section">
     <SkillsContainer />
-    <figure class="figure">
+    <figure id="about" class="figure">
       <figcaption v-if="isMobile">
         <h2 class="hero">À propos <span class="empty">de moi</span></h2>
       </figcaption>
