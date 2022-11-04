@@ -37,7 +37,12 @@ const handleScrollTo = (target: string) => {
         </ul>
         <ul class="list">
           <li>
-            <a class="button" :href="config.public.githubLink" target="_blank">
+            <a
+              class="button"
+              :href="config.public.githubLink"
+              target="_blank"
+              rel="noreferrer"
+            >
               GitHub
             </a>
           </li>
@@ -46,6 +51,7 @@ const handleScrollTo = (target: string) => {
               class="button"
               :href="config.public.linkedinLink"
               target="_blank"
+              rel="noreferrer"
             >
               LinkedIn
             </a>
@@ -54,9 +60,6 @@ const handleScrollTo = (target: string) => {
             <CopyButton :to-copy="config.public.email">
               {{ config.public.email }}
             </CopyButton>
-            <!-- <a class="button" :href="config.public.email">
-              contact@colin-lienard.fr
-            </a> -->
           </li>
         </ul>
         <ul class="list">

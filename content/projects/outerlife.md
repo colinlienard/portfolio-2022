@@ -3,7 +3,7 @@ title: Outer Life
 description: (Développement, pixel-art) Jeu en cours de développement à propos d'un aventurier explorant des planètes inconnues.
 image: outerlife-thumbnail.webp
 color: 80B878
-order: 3
+order: 1
 ---
 
 ::project-header{image="outerlife-0.webp"}
@@ -11,7 +11,7 @@ order: 3
 # Outer Life
 
 #links
-- [Voir le projet live](https://outerlife.vercel.app/){:target="_blank"}
+- [Projet live](https://outerlife.vercel.app/){:target="_blank"}
 - [Repo GitHub](https://github.com/ColinLienard/outerlife){:target="_blank"}
 ::
 

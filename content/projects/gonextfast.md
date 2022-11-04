@@ -3,7 +3,7 @@ title: GoNextFast
 description: (Webdesign) Site web de GoNextFast, équipe esport organisatrice d'évènements à Angoulême.
 image: gonextfast-thumbnail.webp
 color: C300F9
-order: 2
+order: 4
 ---
 
 ::project-header{image="gonextfast-0.webp"}
@@ -11,12 +11,10 @@ order: 2
 # GoNextFast
 
 #links
-- [Voir le projet live](https://www.gonextfast.xyz/){:target="_blank"}
+- [Projet live](https://www.gonextfast.xyz/){:target="_blank"}
 ::
 
 ::project-paragraph
-## Présentation
-
 **GoNextFast** est une équipe esport organisatrice d'évènements à Angoulême, pour laquelle j'ai réalisé le design du site.
 
 Comme le thème principal est celui des jeux vidéos, l'interface contient des couleurs vives, des images avec du mouvement et des effets de particules pour créer un **effet impactant**.

@@ -3,8 +3,8 @@ const config = useRuntimeConfig();
 </script>
 
 <template>
-  <NuxtLayout id="contact" name="section">
-    <h2 class="hero">
+  <NuxtLayout name="section">
+    <h2 id="contact" class="hero">
       <span class="stroke">Me </span>contact<span class="stroke">er</span>
     </h2>
     <div class="galaxy">
