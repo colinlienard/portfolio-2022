@@ -29,7 +29,6 @@ export default defineNuxtConfig({
     },
   },
   ssr: true,
-  target: 'static',
   typescript: {
     strict: true,
   },
