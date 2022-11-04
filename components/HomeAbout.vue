@@ -66,12 +66,24 @@ const { data } = await useAsyncData('milestones', async () =>
           <h3 class="title">2022 - 202x</h3>
           <div class="description-wrapper">
             <p class="description">Open to work!</p>
-            <span class="line"></span>
-            <a class="button" href="/pdf/colin-lienard-cv.pdf" target="_blank">
+            <img class="arrow" src="/icons/arrow.svg" alt="" />
+            <a
+              class="button"
+              href="/media/colin-lienard-cv.pdf"
+              target="_blank"
+            >
               Télécharger mon CV
             </a>
+            <p>/</p>
+            <a
+              class="button"
+              href="/media/colin-lienard-cv-en.pdf"
+              target="_blank"
+            >
+              Download my CV
+            </a>
           </div>
-          <p class="sub">La Rochelle, Limoges ou autres</p>
+          <p class="sub">La Rochelle, Bordeaux ou Limoges</p>
         </div>
       </li>
     </ul>
@@ -201,10 +213,8 @@ const { data } = await useAsyncData('milestones', async () =>
         align-items: center;
         gap: 1em;
 
-        .line {
-          width: 1em;
-          height: 1px;
-          background-color: variables.$white;
+        .arrow {
+          rotate: -90deg;
         }
 
         .button {
