@@ -28,6 +28,7 @@ const cursorContent = inject<Ref<string | null>>('cursor');
         alt=""
         width="488"
         height="488"
+        loading="lazy"
       />
       <h3 class="title">{{ props.title }}</h3>
       <p class="description">{{ props.description }}</p>
@@ -60,9 +61,11 @@ const cursorContent = inject<Ref<string | null>>('cursor');
   }
 
   .image {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+    height: 100%;
+
+    @include screens.laptop {
+      height: unset;
+    }
   }
 
   .title {

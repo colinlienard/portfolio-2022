@@ -11,7 +11,7 @@ useHead({
 </script>
 
 <template>
-  <Html lang="fr">
+  <Html lang="en">
     <TransitionOverlay />
     <NuxtPage />
   </Html>

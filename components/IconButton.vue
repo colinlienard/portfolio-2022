@@ -7,11 +7,11 @@ defineProps<{
 
 <template>
   <a v-if="href" class="button" :href="href" target="_blank" rel="noreferrer">
-    <img :src="iconSrc" alt="" />
+    <img :src="iconSrc" alt="" loading="lazy" />
     <slot />
   </a>
   <button v-else class="button">
-    <img :src="iconSrc" alt="" />
+    <img :src="iconSrc" alt="" loading="lazy" />
     <slot />
   </button>
 </template>

@@ -2,33 +2,18 @@
 const scroll = ref();
 const cursorContent = ref<string | null>();
 const isMobile = useIsMobile();
-// const route = useRoute();
 
 provide('scroll', scroll);
 provide('cursor', cursorContent);
 
-onMounted(() => {
-  setTimeout(async () => {
-    const LocomotiveScroll = await import('locomotive-scroll');
-    // eslint-disable-next-line new-cap
-    scroll.value = new LocomotiveScroll.default({
-      el: document.querySelector('#main') as HTMLElement,
-      smooth: true,
-      multiplier: 0.8,
-      reloadOnContextChange: true,
-      // initPosition: {
-      //   x: 0,
-      //   y:
-      //     route.path === '/' && route.hash === ''
-      //       ? parseInt(sessionStorage.getItem('scroll-position'),10) || 0
-      //       : 0,
-      // },
-    });
-
-    // scroll.value.on('scroll', (event: any) => {
-    //   sessionStorage.setItem('scroll-position', event.scroll.y);
-    // });
-  }, 1000);
+onMounted(async () => {
+  const { default: LocomotiveScroll } = await import('locomotive-scroll');
+  scroll.value = new LocomotiveScroll({
+    el: document.querySelector('#main') as HTMLElement,
+    smooth: true,
+    multiplier: 0.8,
+    reloadOnContextChange: true,
+  });
 });
 
 onUnmounted(() => {

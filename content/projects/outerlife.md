@@ -1,6 +1,6 @@
 ---
 title: Outer Life
-description: (Développement, pixel-art) Jeu en cours de développement à propos d'un aventurier explorant des planètes inconnues.
+description: (Development, Pixel-art) Game in development about an adventurer exploring unknown planets.
 image: outerlife-thumbnail.webp
 color: 80B878
 order: 1
@@ -11,16 +11,16 @@ order: 1
 # Outer Life
 
 #links
-- [Projet live](https://outerlife.vercel.app/){:target="_blank"}
-- [Repo GitHub](https://github.com/ColinLienard/outerlife){:target="_blank"}
+- [Live project](https://outerlife.vercel.app/){:target="_blank"}
+- [GitHub repo](https://github.com/ColinLienard/outerlife){:target="_blank"}
 ::
 
 ::project-paragraph
-> ⚠️ Projet en cours de développement
+> ⚠️ Project under development
 ::
 
 ::project-paragraph
-## Technologies utilisées
+## Tech stack
 
 - Vue
 - Nuxt.js
@@ -29,20 +29,20 @@ order: 1
 ::
 
 ::project-paragraph
-## Présentation
+## Presentation
 
-**Outer Life** est en jeu en cours de développement à propos d'un aventurier explorant des planètes inconnues.
+**Outer Life** is a game in development about an adventurer exploring unknown planets.
 
-Le projet est pour l'instant à un stade très peu avancé mais je compte continuer à travailler dessus régulièrement.
+The project is currently at a very early stage but I plan to continue working on it regularly.
 ::
 
 ::project-video{source="outerlife-1.mp4"}
 ::
 
 ::project-paragraph
-Un **éditeur de map** permet de placer des terrains et des environnements facilement puis d'exporter le résultat en json pour pouvoir ensuite l'utiliser dans le jeu.
+A **map editor** allows you to place terrains and environments easily and to export the result in `json` to be used in the game.
 ::
 
 ::project-image{source="outerlife-2.webp"}
-L'éditeur de map
+The map editor.
 ::

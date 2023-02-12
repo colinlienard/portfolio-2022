@@ -1,6 +1,6 @@
 ---
 name: Requiz
-description: (Webdesign, développement) Application pour de jouer à des quiz en simultané avec d'autres personnes, et de créer et partager son propre quiz.
+description: (Webdesign, development) Application to play quizzes simultaneously with other people, and to create and share your own quiz.
 image: requiz-thumbnail.webp
 color: 3C38FC
 order: 5
@@ -11,15 +11,15 @@ order: 5
 # Requiz
 
 #links
-- [Repo GitHub](https://github.com/ColinLienard/requiz){:target="_blank"}
+- [GitHub repo](https://github.com/ColinLienard/requiz){:target="_blank"}
 ::
 
 ::project-paragraph
-> ⚠️ Projet non terminé
+> ⚠️ Project not completed
 ::
 
 ::project-paragraph
-## Technologies utilisées
+## Tech stack
 
 - React
 - Next.js
@@ -30,37 +30,37 @@ order: 5
 ::
 
 ::project-paragraph
-## Présentation
+## Presentation
 
-**Requiz** est un site permettant de jouer à des quiz en simultané avec d'autres personnes, et de créer et partager son propre quiz.
+**Requiz** is a site where you can play quizzes simultaneously with other people, and create and share your own quiz.
 
-L'utilisateur peut se connecter ou se créer un compte en utilisant une adresse mail, ou alors en se connectant avec Discord ou Google.
+The user can log in or create an account using an email address, or by connecting with Discord or Google.
 ::
 
 ::project-image{source="requiz-1.webp"}
-L'interface de connexion.
+The login interface.
 ::
 
 ::project-paragraph
-Un **éditeur de quiz** complet est présent et permet de créer des questions, chacune contenant des réponses possibles dont une seule juste. Un thème peut aussi être choisi, ainsi qu'un nom et qu'une description. L'utilisateur peut ensuite sauvegarder son quiz pour l'éditer plus tard, ou alors le publier pour qu'il soit visible pour les autres utilisateurs.
+A full-featured **quiz editor** is present and allows you to create questions, each containing possible answers, only one of which is correct. A theme can also be chosen, as well as a name and a description. The user can then save his quiz to edit it later, or publish it so that it is visible to other users.
 ::
 
 ::project-image{source="requiz-2.webp"}
-L'éditeur de quiz.
+The quiz editor.
 ::
 
 ::project-paragraph
-Lorsqu'un quiz est rejoint par au moins une personne, une **salle d'attente** est créée dans laquelle un chat est disponible.
+When a quiz is joined by at least one person, a **waiting room** is created in which a chat is available.
 ::
 
 ::project-image{source="requiz-3.webp"}
-La salle d'attente.
+The waiting room.
 ::
 
 ::project-paragraph
-Quand le quiz est lancé, les questions s'enchaînent et les joueurs doivent cliquer sur ce qu'ils pensent être la bonne réponse. À chaque mauvaise réponse, les joueurs perdent une vie. Le gagnant du quiz est celui à qui il reste le plus de vies.
+When the quiz is launched, the questions follow one another and players must click on what they think is the right answer. For each wrong answer, players lose a life. The winner of the quiz is the player with the most lives left.
 ::
 
 ::project-image{source="requiz-4.webp"}
-L'interface de quiz.
+The quiz interface.
 ::

@@ -7,7 +7,7 @@ const { data } = await useAsyncData('projects', () =>
 <template>
   <NuxtLayout name="section">
     <h2 id="portfolio" class="hero">
-      <strong>Portfolio</strong> <span class="empty">2022</span>
+      <strong>Portfolio</strong> <span class="empty">2023</span>
     </h2>
     <ul class="list">
       <PortfolioItem
@@ -42,8 +42,6 @@ const { data } = await useAsyncData('projects', () =>
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 6rem 3rem;
-
-    // padding-bottom: 16rem;
   }
 
   .item {

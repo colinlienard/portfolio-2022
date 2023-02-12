@@ -35,7 +35,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <ul class="container" @click="placeSkill">
+  <ul ref="container" class="container" @click="placeSkill">
     <li v-for="(skill, index) in skills" :key="index">
       <SkillSticker :source="skill.source" :x="skill.x" :y="skill.y" />
     </li>

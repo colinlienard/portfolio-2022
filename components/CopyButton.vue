@@ -18,7 +18,7 @@ const copyToClipboard = () => {
 <template>
   <button class="button" @click="copyToClipboard">
     <slot />
-    <span :class="['tooltip', { visible }]">Copié !</span>
+    <span :class="['tooltip', { visible }]">Copied!</span>
   </button>
 </template>
 

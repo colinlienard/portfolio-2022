@@ -17,7 +17,7 @@ const handleScrollTo = (target: string) => {
   <NuxtLayout name="section">
     <footer class="footer">
       <SpotifyListening />
-      <div class="links-list">
+      <nav class="links-list">
         <ul class="list">
           <li>
             <button class="button" @click="handleScrollTo('#portfolio')">
@@ -26,7 +26,7 @@ const handleScrollTo = (target: string) => {
           </li>
           <li>
             <button class="button" @click="handleScrollTo('#about')">
-              À propos
+              About
             </button>
           </li>
           <li>
@@ -62,14 +62,9 @@ const handleScrollTo = (target: string) => {
             </CopyButton>
           </li>
         </ul>
-        <ul class="list">
-          <li>
-            <button class="button">Mentions légales</button>
-          </li>
-        </ul>
-      </div>
+      </nav>
       <p class="copyright">
-        © Copyright 2022 - Tous droits réservés, Colin Lienard
+        © Copyright 2022 - All rights reserved, Colin Lienard
       </p>
     </footer>
   </NuxtLayout>
@@ -94,23 +89,20 @@ const handleScrollTo = (target: string) => {
   }
 
   .links-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
     @include screens.laptop {
-      display: grid;
-      grid-template-columns: repeat(3, 16rem);
+      grid-template-columns: repeat(2, 16rem);
+      gap: 2rem;
     }
 
     .list {
       display: flex;
       flex-direction: column;
-      align-items: center;
       gap: 1rem;
 
       .button {
-        text-align: center;
         color: variables.$grey;
         transition: color 0.3s ease-in-out;
 
