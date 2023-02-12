@@ -1,8 +1,3 @@
 {
-  // https://v3.nuxtjs.org/concepts/typescript
-  "compilerOptions": {
-    "jsx": "preserve",
-    "types": ["@nuxt/image-edge"]
-  },
   "extends": "./.nuxt/tsconfig.json"
 }

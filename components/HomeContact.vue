@@ -53,12 +53,13 @@ const config = useRuntimeConfig();
           <img src="/icons/reddit.svg" alt="" />
         </a>
       </div>
-      <NuxtImg
+      <img
         class="image"
         src="/images/colin-small.webp"
         alt=""
-        sizes="mobile:64px tablet:128px"
-        quality="100"
+        width="128"
+        height="128"
+        loading="lazy"
       />
     </div>
   </NuxtLayout>

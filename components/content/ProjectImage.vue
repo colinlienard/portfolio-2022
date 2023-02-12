@@ -13,11 +13,11 @@ const { data } = await useAsyncData(path, () =>
 <template>
   <figure class="figure">
     <div class="image-container">
-      <NuxtImg
+      <img
         :src="`/images/projects/${source}`"
         alt=""
-        sizes="mobile:480px tablet:1024px"
-        quality="100"
+        width="1024"
+        height="576"
       />
       <span :style="`background-color: #${data ? data[0].color : '000'}`" />
     </div>
