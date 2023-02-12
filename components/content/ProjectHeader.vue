@@ -17,12 +17,12 @@ const { data } = await useAsyncData(path, () =>
         class="background"
         :style="`background-color: #${data && data[0].color};`"
       />
-      <NuxtImg
+      <img
         class="image"
         :src="`/images/projects/${image}`"
         alt=""
-        sizes="mobile:480px tablet:1024px"
-        quality="100"
+        width="1024"
+        height="576"
       />
       <PageLink class="back" to="/">
         <img class="icon" src="/icons/arrow.svg" alt="" />

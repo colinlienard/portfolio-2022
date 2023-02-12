@@ -28,14 +28,13 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <NuxtImg
+  <img
     v-if="isMobile"
     :class="['image', { visible }]"
     src="/images/cube.webp"
     alt=""
     width="384"
     height="384"
-    quality="100"
   />
   <canvas v-else ref="canvas" :class="['canvas', { visible }]" />
 </template>

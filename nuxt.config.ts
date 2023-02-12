@@ -7,15 +7,7 @@ export default defineNuxtConfig({
     'locomotive-scroll/dist/locomotive-scroll.css',
     '~/styles/globals.scss',
   ],
-  image: {
-    screens: {
-      mobile: 480,
-      tablet: 1024,
-      laptop: 1600,
-      desktop: 2560,
-    },
-  },
-  modules: ['@nuxt/content', '@nuxt/image-edge'],
+  modules: ['@nuxt/content'],
   runtimeConfig: {
     public: {
       githubLink: 'https://github.com/ColinLienard',

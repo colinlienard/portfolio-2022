@@ -22,12 +22,12 @@ const cursorContent = inject<Ref<string | null>>('cursor');
     @mouseleave="cursorContent = null"
   >
     <PageLink :to="props.link" class="item-link">
-      <NuxtImg
+      <img
         class="image"
         :src="`/images/projects/${props.image}`"
         alt=""
-        sizes="mobile:350px tablet:488px"
-        quality="100"
+        width="488"
+        height="488"
       />
       <h3 class="title">{{ props.title }}</h3>
       <p class="description">{{ props.description }}</p>
