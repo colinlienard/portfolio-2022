@@ -1,6 +1,6 @@
 ---
 title: Your Core Music
-description: (Webdesign, développement) Application permettant de découvrir ses statistiques Spotify.
+description: (Development, Webdesign) Application to discover your Spotify statistics.
 image: your-core-music-thumbnail.webp
 color: 24D560
 order: 2
@@ -11,12 +11,12 @@ order: 2
 # Your Core Music
 
 #links
-- [Projet live](https://your-core-music.vercel.app){:target="_blank"}
-- [Repo GitHub](https://github.com/ColinLienard/your-core-music){:target="_blank"}
+- [Live project](https://your-core-music.vercel.app){:target="_blank"}
+- [GitHub repo](https://github.com/ColinLienard/your-core-music){:target="_blank"}
 ::
 
 ::project-paragraph
-## Technologies utilisées
+## Tech stack
 
 - React
 - Next.js
@@ -25,37 +25,37 @@ order: 2
 ::
 
 ::project-paragraph
-## Présentation
+## Presentation
 
-**Your Core Music** est un site permettant de découvrir ses **statistiques Spotify**.
+**Your Core Music** is a site that allows you to discover your **Spotify statistics**.
 
-L'utilisateur doit se connecter à son compte Spotify pour ensuite être redirigé vers l'interface de statistiques divisée en 4 parties.
+The user must log in to their Spotify account to be redirected to the statistics interface divided into 4 parts.
 ::
 
 ::project-image{source="your-core-music-1.webp"}
-Les artistes les plus écoutés.
+The most listened artists.
 ::
 
 ::project-paragraph
-Un **player audio** est disponible et se déclenche quand l'utilisateur arrive sur la page. Des extraits de 30 secondes des 10 premiers morceaux préférés sont joués à la suite. La musique peut être mise en pause, et il y a des liens vers le morceau et son artiste.
+An **audio player** is available and is triggered when the user arrives on the page. 30 second clips of the top 10 favorite songs are played in succession. The music can be paused, and there are links to the song and its artist.
 ::
 
 ::project-image{source="your-core-music-2.webp"}
-Les morceaux les plus écoutés.
+The most listened songs.
 ::
 
 ::project-paragraph
-L'utilisateur peut choisir la période de ses statistiques : depuis un mois, six mois ou depuis la création de son compte.
+The user can choose the period of his statistics: since one month, six months or since the creation of his account.
 ::
 
 ::project-image{source="your-core-music-3.webp"}
-Les genres les plus écoutés.
+The most listened genres.
 ::
 
 ::project-paragraph
-Pour chaque artiste, chaque morceau et chaque genre de chaque période, il est possible de voir si l'élément a monté ou baissé dans le classement, et de combien de places.
+For each artist, each song and each genre of each period, it is possible to see if the item has gone up or down in the ranking, and by how many places.
 ::
 
 ::project-image{source="your-core-music-4.webp"}
-Des recommendations musicales basées sur différentes ambiances.
+Musical recommendations based on different atmospheres.
 ::

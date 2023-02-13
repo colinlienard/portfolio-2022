@@ -17,13 +17,15 @@ const { data } = await useAsyncData(path, () =>
         class="background"
         :style="`background-color: #${data && data[0].color};`"
       />
-      <img
-        class="image"
-        :src="`/images/projects/${image}`"
-        alt=""
-        width="1024"
-        height="576"
-      />
+      <div class="image-wrapper">
+        <img
+          class="image"
+          :src="`/images/projects/${image}`"
+          alt=""
+          width="1024"
+          height="576"
+        />
+      </div>
       <PageLink class="back" to="/">
         <img class="icon" src="/icons/arrow.svg" alt="" />
       </PageLink>
@@ -109,8 +111,14 @@ const { data } = await useAsyncData(path, () =>
       z-index: -2;
     }
 
-    .image {
-      animation: image 1.5s variables.$ease-in-out;
+    .image-wrapper {
+      width: min(100%, 64rem);
+      aspect-ratio: 16 / 9;
+
+      .image {
+        height: 100%;
+        animation: image 1.5s variables.$ease-in-out;
+      }
     }
 
     .back {

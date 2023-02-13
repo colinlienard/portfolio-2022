@@ -13,10 +13,6 @@
 
 @mixin blink {
   animation: blink 0.4s steps(2, jump-none) infinite;
-
-  &:hover {
-    animation: blink 0.2s steps(2, jump-none) infinite;
-  }
 }
 
 @mixin dashed-circle($gradient, $size: 100%) {
@@ -80,12 +76,15 @@
   width: min(100%, 64rem);
 }
 
-@mixin text-stroke($color: variables.$white, $thickness: 1px) {
+@mixin text-stroke($color: variables.$white) {
   color: variables.$dark;
-  text-shadow: $thickness $thickness $color, -$thickness $thickness $color,
-    $thickness (-$thickness) $color, -$thickness (-$thickness) $color;
+  text-shadow: 1px 1px $color, -1px 1px $color, 1px (-1px) $color,
+    -1px (-1px) $color;
 
-  // -webkit-text-stroke: $thickness $color;
+  @include screens.laptop {
+    text-shadow: 2px 2px $color, -2px 2px $color, 2px (-2px) $color,
+      -2px (-2px) $color;
+  }
 }
 
 @mixin image-with-shadow() {

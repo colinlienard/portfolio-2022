@@ -70,7 +70,14 @@ onUnmounted(() => {
 
 <template>
   <aside :class="['spotify', { disabled: music === null }]">
-    <img src="/icons/spotify.svg" alt="" class="icon" width="24" height="24" />
+    <img
+      src="/icons/spotify.svg"
+      alt=""
+      class="icon"
+      width="24"
+      height="24"
+      loading="lazy"
+    />
     <a
       v-if="music"
       class="text"

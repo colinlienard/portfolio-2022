@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const useThrottle = (
   callback: (...args: any) => void,
   delay: number

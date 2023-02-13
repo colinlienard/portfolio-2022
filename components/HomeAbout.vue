@@ -10,7 +10,7 @@ const { data } = await useAsyncData('milestones', async () =>
     <SkillsContainer />
     <figure id="about" class="figure">
       <figcaption v-if="isMobile">
-        <h2 class="hero">À propos <span class="empty">de moi</span></h2>
+        <h2 class="hero">About <span class="empty">me</span></h2>
       </figcaption>
       <img
         class="image"
@@ -18,21 +18,24 @@ const { data } = await useAsyncData('milestones', async () =>
         alt=""
         width="256"
         height="384"
+        loading="lazy"
       />
       <figcaption class="figcaption">
         <h2 v-if="!isMobile" class="hero">
-          À propos <span class="empty">de moi</span>
+          About <span class="empty">me</span>
         </h2>
         <p class="paragraph">
-          Je suis un <strong>webdesigner</strong> et un
-          <strong>développeur front-end</strong> fraîchement diplômé,
-          actuellement basé à Limoges.<br /><br />Passionné par la
-          <strong>création d’interfaces</strong>️, aussi bien par le côté
-          graphique que par le développement, j’adore tester des
-          <strong>nouvelles tendances et technologies</strong
-          >.<br /><br />J’essaie aussi de créer des projets cools sur mon temps
-          libre !<br /><br />Pour découvrir mes compétences,
-          <strong>cliquez n’importe où</strong>...
+          I am a French <strong>frontend developer</strong> working from Limoges
+          and Paris.<br /><br />
+          I am passionate about <strong>creating interfaces</strong>, both from
+          a design and development perspective, and I love to test new trends
+          and technologies.<br /><br />
+          I recently joined <strong>Mobsuccess</strong> where I create
+          interfaces using <strong>React</strong> and
+          <strong>Typescript</strong>, but I also do side projects on my free
+          time.<br /><br />
+          To discover my tech stack,
+          <strong class="blink">click anywhere</strong>...
         </p>
       </figcaption>
     </figure>
@@ -60,32 +63,6 @@ const { data } = await useAsyncData('milestones', async () =>
           </p>
         </div>
       </li>
-      <li class="list-item">
-        <span class="circle full"></span>
-        <div class="content">
-          <h3 class="title">2022 - 202x</h3>
-          <div class="description-wrapper">
-            <p class="description">Open to work!</p>
-            <img class="arrow" src="/icons/arrow.svg" alt="" />
-            <a
-              class="button"
-              href="/media/colin-lienard-cv.pdf"
-              target="_blank"
-            >
-              Télécharger mon CV
-            </a>
-            <p>/</p>
-            <a
-              class="button"
-              href="/media/colin-lienard-cv-en.pdf"
-              target="_blank"
-            >
-              Download my CV
-            </a>
-          </div>
-          <p class="sub">La Rochelle, Bordeaux ou Limoges</p>
-        </div>
-      </li>
     </ul>
   </NuxtLayout>
 </template>
@@ -95,6 +72,7 @@ const { data } = await useAsyncData('milestones', async () =>
   @include mixins.section;
 
   padding: 0;
+  width: min(100%, 55rem);
 
   @include screens.laptop {
     flex-direction: row;
@@ -103,7 +81,6 @@ const { data } = await useAsyncData('milestones', async () =>
       display: flex;
       flex-direction: column;
       gap: 4rem;
-      width: min-content;
 
       .hero {
         white-space: nowrap;
@@ -131,6 +108,10 @@ const { data } = await useAsyncData('milestones', async () =>
     strong {
       color: variables.$white;
     }
+
+    .blink {
+      @include mixins.blink;
+    }
   }
 }
 
@@ -139,8 +120,6 @@ const { data } = await useAsyncData('milestones', async () =>
   flex-direction: column;
   gap: 4rem;
   position: relative;
-  z-index: 2;
-  pointer-events: none;
 
   @include screens.laptop {
     gap: 8rem;
@@ -208,22 +187,6 @@ const { data } = await useAsyncData('milestones', async () =>
         @include typography.heading-3;
       }
 
-      .description-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 1em;
-
-        .arrow {
-          rotate: -90deg;
-        }
-
-        .button {
-          @include mixins.blink;
-
-          pointer-events: all;
-        }
-      }
-
       .sub {
         color: variables.$grey;
       }
@@ -239,6 +202,10 @@ const { data } = await useAsyncData('milestones', async () =>
 
     &:nth-of-type(4) * {
       transition-delay: 1s;
+    }
+
+    &:nth-last-of-type(1) .circle {
+      background-color: variables.$white;
     }
   }
 

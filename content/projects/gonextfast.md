@@ -1,6 +1,6 @@
 ---
 title: GoNextFast
-description: (Webdesign) Site web de GoNextFast, équipe esport organisatrice d'évènements à Angoulême.
+description: (Webdesign) Website of GoNextFast, esport team organizing events in Angoulême.
 image: gonextfast-thumbnail.webp
 color: C300F9
 order: 4
@@ -11,25 +11,25 @@ order: 4
 # GoNextFast
 
 #links
-- [Projet live](https://www.gonextfast.xyz/){:target="_blank"}
+- [Live project](https://www.gonextfast.xyz/){:target="_blank"}
 ::
 
 ::project-paragraph
-**GoNextFast** est une équipe esport organisatrice d'évènements à Angoulême, pour laquelle j'ai réalisé le design du site.
+**GoNextFast** is an esport team organizing events in Angoulême, for which I designed the website.
 
-Comme le thème principal est celui des jeux vidéos, l'interface contient des couleurs vives, des images avec du mouvement et des effets de particules pour créer un **effet impactant**.
+As the main theme is video games, the interface contains bright colors, images with movement and particle effects to create an **impactful effect**.
 ::
 
 ::project-image{source="gonextfast-1.webp"}
-Les jeux joués par l'association.
+The games played by the association.
 ::
 
 ::project-paragraph
-La font des titres (`Akira Expanded`) très grasse et la répétition des titres appuient les images.
+The title font (`Akira Expanded`) and the repetition of the titles support the images.
 
-Les effets d'opacité et les dégradés contribuent à l'aspect moderne et adoucissent les couleurs vives.
+Opacity effects and gradients contribute to the modern look and soften the bright colors.
 ::
 
 ::project-image{source="gonextfast-2.webp"}
-Les joueurs de l'association.
+The players of the association.
 ::

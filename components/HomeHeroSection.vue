@@ -1,33 +1,30 @@
 <script setup lang="ts">
 const config = useRuntimeConfig();
-const isMobile = useIsMobile();
 </script>
 
 <template>
-  <header id="hero" class="header">
+  <section id="hero" class="container">
     <h1 class="hero">
-      <span>Je suis</span> <br v-if="isMobile" /><strong class="filled"
-        >Colin Lienard</strong
-      ><span>,</span> <strong>webdesigner</strong> <br v-if="isMobile" /><span
-        >&</span
-      ><br v-if="!isMobile" />
-      <strong> développeur front-end</strong>
+      <span>Hi, I'm </span><strong class="filled">Colin Lienard</strong
+      ><span>,</span> <strong>frontend developer</strong><br /><span>
+        from France</span
+      >
     </h1>
     <div class="scroll-guide">
-      <img class="arrow" src="/icons/arrow.svg" alt="" />
+      <img class="arrow" src="/icons/arrow.svg" alt="" width="24" height="24" />
       <span>Scroll</span>
     </div>
     <div class="button-container">
       <IconButton
         class="button"
-        icon-src="/icons/malt-logo.svg"
-        :href="config.public.maltLink"
+        icon-src="/icons/github-logo.svg"
+        :href="config.public.githubLink"
       >
-        M'embaucher sur Malt
+        Check out my GitHub!
       </IconButton>
     </div>
     <CubeBackground />
-  </header>
+  </section>
 </template>
 
 <style scoped lang="scss">
@@ -45,7 +42,7 @@ const isMobile = useIsMobile();
   }
 }
 
-.header {
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,6 +88,10 @@ const isMobile = useIsMobile();
     :not(.filled) {
       @include mixins.text-stroke;
       @include animations.appear-with-delay;
+
+      @include screens.laptop {
+        @include mixins.text-stroke(variables.$white);
+      }
     }
   }
 

@@ -1,6 +1,6 @@
 ---
 title: Auto-layout Spaces
-description: (Développement) Plugin Figma pour visualiser tous les espacements en une seule fois dans les auto-layouts.
+description: (Development) A Figma plugin to view all spacing at once in auto-layouts.
 image: auto-layout-spaces-thumbnail.webp
 color: 9540CE
 order: 3
@@ -11,27 +11,27 @@ order: 3
 # Auto-layout Spaces
 
 #links
-- [Page Figma](https://www.figma.com/community/plugin/1141632283161323116/Auto-layout-Spaces){:target="_blank"}
-- [Repo GitHub](https://github.com/ColinLienard/auto-layout-spaces){:target="_blank"}
+- [Figma page](https://www.figma.com/community/plugin/1141632283161323116/Auto-layout-Spaces){:target="_blank"}
+- [GitHub repo](https://github.com/ColinLienard/auto-layout-spaces){:target="_blank"}
 ::
 
 ::project-paragraph
-## Présentation
+## Presentation
 
-Ce plugin Figma permet d'affiche tous les espaces dans les auto-layouts en une seule fois, afin que les développeurs qui font l'intégration n'aient pas à sélectionner les éléments un par un pour voir leurs espacements.
+This Figma plugin displays all the spaces in the auto-layouts at once, so that the developers doing the integration don't have to select the elements one by one to see their spaces.
 ::
 
 ::project-image{source="auto-layout-spaces-1.webp"}
-Page Figma du plugin.
+Figma page of the plugin.
 ::
 
 ::project-paragraph
 ## Features
 
-- Affiche les espaces dans touts les auto-layouts du fichier.
-- Les masque.
-- Affiche uniquement l'espacement entre les éléments, ou uniquement les paddings.
-- Choix entre différentes unités pour la valeur des espaces (`px`, `rem` ou un ratio de pixels personnalisé).
-- Choix entre conserver ou non les espaces après la fermeture du plugin.
-- Les espaces sont affichés avec différentes couleurs, chaque couleur correspondant à une valeur spécifique.
+- Show spaces in all of the auto-layouts in the page.
+- Hide them.
+- Show only spacing between items, or only paddings.
+- Choose different units for the value of spaces (px, rem or a custom pixel ratio).
+- Choose to keep or not spaces after closing the plugin.
+- Spaces are shown with different colors, each color corresponding to a specific value.
 ::
