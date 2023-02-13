@@ -7,6 +7,7 @@ const props = defineProps<{
   description: string;
   image: string;
   link: string;
+  transparent: boolean;
 }>();
 
 const cursorContent = inject<Ref<string | null>>('cursor');
@@ -14,11 +15,11 @@ const cursorContent = inject<Ref<string | null>>('cursor');
 
 <template>
   <li
-    class="item"
+    :class="['item', { transparent }]"
     data-scroll
     :data-scroll-speed="index % 2 === 0 ? 1 : -1"
     data-scroll-direction="horizontal"
-    @mouseenter="cursorContent = 'Voir'"
+    @mouseenter="cursorContent = 'See'"
     @mouseleave="cursorContent = null"
   >
     <PageLink :to="props.link" class="item-link">
@@ -44,18 +45,18 @@ const cursorContent = inject<Ref<string | null>>('cursor');
     &:nth-of-type(2n) {
       translate: 0 16rem;
     }
-  }
 
-  :global(.item-link) {
-    cursor: none;
-
-    @include screens.laptop {
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: variables.$dark;
+      opacity: 0;
+      cursor: none;
       transition: opacity 0.3s variables.$ease-in-out;
     }
-  }
 
-  :global(.item-link:not(:hover)) {
-    @include screens.laptop {
+    &.transparent::before {
       opacity: 0.5;
     }
   }

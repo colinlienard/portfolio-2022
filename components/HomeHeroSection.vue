@@ -1,19 +1,17 @@
 <script setup lang="ts">
 const config = useRuntimeConfig();
-const isMobile = useIsMobile();
 </script>
 
 <template>
   <section id="hero" class="container">
     <h1 class="hero">
-      <span>Hi, I'm </span><br v-if="isMobile" /><strong class="filled"
-        >Colin Lienard</strong
+      <span>Hi, I'm </span><strong class="filled">Colin Lienard</strong
       ><span>,</span> <strong>frontend developer</strong><br /><span>
         from France</span
       >
     </h1>
     <div class="scroll-guide">
-      <img class="arrow" src="/icons/arrow.svg" alt="" />
+      <img class="arrow" src="/icons/arrow.svg" alt="" width="24" height="24" />
       <span>Scroll</span>
     </div>
     <div class="button-container">
@@ -92,7 +90,7 @@ const isMobile = useIsMobile();
       @include animations.appear-with-delay;
 
       @include screens.laptop {
-        @include mixins.text-stroke(variables.$white, 2px);
+        @include mixins.text-stroke(variables.$white);
       }
     }
   }

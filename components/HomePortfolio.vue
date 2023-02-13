@@ -2,6 +2,8 @@
 const { data } = await useAsyncData('projects', () =>
   queryContent('/projects/').sort({ order: 1 }).find()
 );
+
+const hovered = ref<null | number>(null);
 </script>
 
 <template>
@@ -18,6 +20,9 @@ const { data } = await useAsyncData('projects', () =>
         :description="project.description"
         :image="project.image"
         :link="(project._path as string)"
+        :transparent="hovered === null ? false : hovered !== index"
+        @mouseenter="hovered = index"
+        @mouseleave="hovered = null"
       />
     </ul>
   </NuxtLayout>
@@ -50,20 +55,6 @@ const { data } = await useAsyncData('projects', () =>
     @include screens.laptop {
       &:nth-of-type(2n) {
         translate: 0 16rem;
-      }
-    }
-
-    :global(.item-link) {
-      cursor: none;
-
-      @include screens.laptop {
-        transition: opacity 0.3s variables.$ease-in-out;
-      }
-    }
-
-    :global(.item-link:not(:hover)) {
-      @include screens.laptop {
-        opacity: 0.5;
       }
     }
 

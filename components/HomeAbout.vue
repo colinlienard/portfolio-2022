@@ -203,6 +203,10 @@ const { data } = await useAsyncData('milestones', async () =>
     &:nth-of-type(4) * {
       transition-delay: 1s;
     }
+
+    &:nth-last-of-type(1) .circle {
+      background-color: variables.$white;
+    }
   }
 
   &.visible {

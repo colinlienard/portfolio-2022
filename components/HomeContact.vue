@@ -17,7 +17,13 @@ const config = useRuntimeConfig();
           rel="norefferer"
           title="GitHub"
         >
-          <img src="/icons/github.svg" alt="" loading="lazy" />
+          <img
+            src="/icons/github.svg"
+            alt=""
+            width="64"
+            height="64"
+            loading="lazy"
+          />
         </a>
         <a
           class="icon icon-2"
@@ -26,10 +32,22 @@ const config = useRuntimeConfig();
           rel="norefferer"
           title="Malt"
         >
-          <img src="/icons/malt.svg" alt="" loading="lazy" />
+          <img
+            src="/icons/malt.svg"
+            alt=""
+            width="64"
+            height="64"
+            loading="lazy"
+          />
         </a>
         <CopyButton class="icon icon-3" :to-copy="config.public.email">
-          <img src="/icons/email.svg" alt="" />
+          <img
+            src="/icons/email.svg"
+            alt=""
+            width="64"
+            height="64"
+            loading="lazy"
+          />
         </CopyButton>
       </div>
       <div class="orbit orbit-2">
@@ -41,7 +59,13 @@ const config = useRuntimeConfig();
           rel="norefferer"
           title="LinkedIn"
         >
-          <img src="/icons/linkedin.svg" alt="" loading="lazy" />
+          <img
+            src="/icons/linkedin.svg"
+            alt=""
+            width="64"
+            height="64"
+            loading="lazy"
+          />
         </a>
         <a
           class="icon icon-2"
@@ -50,7 +74,13 @@ const config = useRuntimeConfig();
           rel="norefferer"
           title="Reddit"
         >
-          <img src="/icons/reddit.svg" alt="" loading="lazy" />
+          <img
+            src="/icons/reddit.svg"
+            alt=""
+            width="64"
+            height="64"
+            loading="lazy"
+          />
         </a>
       </div>
       <img
