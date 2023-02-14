@@ -22,7 +22,7 @@ const cursorContent = inject<Ref<string | null>>('cursor');
     @mouseenter="cursorContent = 'See'"
     @mouseleave="cursorContent = null"
   >
-    <PageLink :to="props.link" class="item-link">
+    <PageLink :to="props.link" class="portfolio-item-link">
       <img
         class="image"
         :src="`/images/projects/${props.image}`"
@@ -52,13 +52,17 @@ const cursorContent = inject<Ref<string | null>>('cursor');
       inset: 0;
       background-color: variables.$dark;
       opacity: 0;
-      cursor: none;
+      pointer-events: none;
       transition: opacity 0.3s variables.$ease-in-out;
     }
 
     &.transparent::before {
       opacity: 0.5;
     }
+  }
+
+  :global(.portfolio-item-link) {
+    cursor: none;
   }
 
   .image {
