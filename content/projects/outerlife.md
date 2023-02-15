@@ -2,7 +2,7 @@
 title: Outer Life
 description: (Development, Pixel-art) Game in development about an adventurer exploring unknown planets.
 image: outerlife-thumbnail.webp
-color: 80B878
+color: E88872
 order: 1
 ---
 
@@ -11,7 +11,7 @@ order: 1
 # Outer Life
 
 #links
-- [Live project](https://outerlife.vercel.app/){:target="_blank"}
+- [Latest release](https://outerlife-aundzwrni-colinlienard.vercel.app/){:target="_blank"}
 - [GitHub repo](https://github.com/ColinLienard/outerlife){:target="_blank"}
 ::
 
@@ -36,13 +36,13 @@ order: 1
 The project is currently at a very early stage but I plan to continue working on it regularly.
 ::
 
-::project-video{source="outerlife-1.mp4"}
+::project-video{source="outerlife.mp4"}
 ::
 
 ::project-paragraph
 A **map editor** allows you to place terrains and environments easily and to export the result in `json` to be used in the game.
 ::
 
-::project-image{source="outerlife-2.webp"}
+::project-image{source="outerlife-1.webp"}
 The map editor.
 ::
