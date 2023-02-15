@@ -170,10 +170,10 @@ const { data } = await useAsyncData(path, () =>
   ul {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.5rem;
 
     @include screens.laptop {
-      gap: 2rem;
+      gap: 1rem;
     }
 
     li a {
