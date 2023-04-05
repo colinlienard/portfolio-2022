@@ -14,11 +14,11 @@
     "prepare": "nuxt prepare && husky install"
   },
   "dependencies": {
-    "@splinetool/runtime": "0.9.128",
+    "@splinetool/runtime": "0.9.282",
     "locomotive-scroll": "^4.1.4"
   },
   "devDependencies": {
-    "@nuxt/content": "2.4.3",
+    "@nuxt/content": "^2.4.3",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@types/locomotive-scroll": "^4.1.0",
     "@types/node": "^18.13.0",
@@ -30,15 +30,15 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-vue": "^9.4.0",
     "husky": "^8.0.1",
-    "nuxt": "3.2.0",
+    "nuxt": "^3.3.3",
     "postcss": "^8.4.16",
     "postcss-html": "^1.5.0",
     "prettier": "^2.7.1",
     "sass": "^1.58.0",
-    "stylelint": "^14.11.0",
+    "stylelint": "^15.4.0",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-config-standard-scss": "^7.0.1",
     "stylelint-config-standard-vue": "^1.0.0",
-    "typescript": "^4.9.5"
+    "typescript": "^5.0.3"
   }
 }
