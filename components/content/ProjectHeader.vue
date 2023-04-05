@@ -100,7 +100,7 @@ const { data } = await useAsyncData(path, () =>
     &::after {
       content: '';
       position: absolute;
-      inset: 0 -50vw 0;
+      inset: 0 -50vw;
       background-image: linear-gradient(transparent, variables.$dark);
       z-index: -1;
     }

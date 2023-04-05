@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Lint
-        run: pnpm lint
+        run: pnpm lint && pnpm prettier
   typecheck:
     runs-on: ubuntu-latest
     steps:
@@ -40,7 +40,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Typecheck
-        run: pnpm check
+        run: pnpm typecheck
   build:
     runs-on: ubuntu-latest
     steps:
