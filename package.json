@@ -11,7 +11,7 @@
     "lint:fix": "eslint --fix **/*.ts **/*.vue && stylelint --fix \"**/*.{vue,scss}\"",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "prepare": "nuxt prepare && husky install"
+    "prepare": "nuxt prepare"
   },
   "dependencies": {
     "@splinetool/runtime": "0.9.282",
@@ -29,7 +29,6 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-vue": "^9.4.0",
-    "husky": "^8.0.1",
     "nuxt": "^3.3.3",
     "postcss": "^8.4.16",
     "postcss-html": "^1.5.0",
