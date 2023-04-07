@@ -2,9 +2,10 @@ import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
   css: [
-    '~/styles/reset.scss',
+    '~/styles/_reset.scss',
     'locomotive-scroll/dist/locomotive-scroll.css',
-    '~/styles/globals.scss',
+    '~/styles/_fonts.scss',
+    '~/styles/_base.scss',
   ],
   modules: ['@nuxt/content'],
   runtimeConfig: {

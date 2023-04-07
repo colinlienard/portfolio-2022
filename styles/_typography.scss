@@ -2,7 +2,6 @@
 
 @mixin heading-1 {
   font-family: Syne, sans-serif;
-  font-weight: 600;
   font-size: 3rem;
 
   @include screens.laptop {
@@ -16,7 +15,6 @@
 
 @mixin heading-2 {
   font-family: Syne, sans-serif;
-  font-weight: 600;
   font-size: 2rem;
 
   @include screens.laptop {
@@ -26,7 +24,6 @@
 
 @mixin heading-3 {
   font-family: Syne, sans-serif;
-  font-weight: 600;
   font-size: 1.25rem;
 
   @include screens.laptop {
