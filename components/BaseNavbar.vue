@@ -83,7 +83,7 @@ const handleScrollTo = (target: string) => {
 
       @include screens.laptop {
         flex-direction: row;
-        gap: 4rem;
+        gap: 2rem;
       }
     }
   }
