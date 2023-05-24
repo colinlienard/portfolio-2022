@@ -2,7 +2,7 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@splinetool/runtime':
-    specifier: 0.9.340
+    specifier: ^0.9.340
     version: 0.9.340
   locomotive-scroll:
     specifier: ^4.1.4
