@@ -7,6 +7,9 @@ export default defineNuxtConfig({
     '~/styles/_fonts.scss',
     '~/styles/_base.scss',
   ],
+  devtools: {
+    enabled: true,
+  },
   modules: ['@nuxt/content'],
   runtimeConfig: {
     public: {
