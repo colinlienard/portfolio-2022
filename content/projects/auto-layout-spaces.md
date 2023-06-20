@@ -3,7 +3,7 @@ title: Auto-layout Spaces
 description: (Development) A Figma plugin to view all spacing at once in auto-layouts.
 image: auto-layout-spaces-thumbnail.webp
 color: 9540CE
-order: 3
+order: 5
 ---
 
 ::project-header{image="auto-layout-spaces-0.webp"}
@@ -12,7 +12,7 @@ order: 3
 
 #links
 - [Figma page](https://www.figma.com/community/plugin/1141632283161323116/Auto-layout-Spaces){:target="_blank"}
-- [GitHub repo](https://github.com/ColinLienard/auto-layout-spaces){:target="_blank"}
+- [GitHub repo](https://github.com/colinlienard/auto-layout-spaces){:target="_blank"}
 ::
 
 ::project-paragraph

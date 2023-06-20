@@ -27,13 +27,13 @@ const config = useRuntimeConfig();
         </a>
         <a
           class="icon icon-2"
-          :href="config.public.maltLink"
+          :href="config.public.twitterLink"
           target="_blank"
           rel="norefferer"
           title="Malt"
         >
           <img
-            src="/icons/malt.svg"
+            src="/icons/twitter.svg"
             alt=""
             width="64"
             height="64"

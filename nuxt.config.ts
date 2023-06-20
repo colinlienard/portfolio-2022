@@ -13,9 +13,9 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content'],
   runtimeConfig: {
     public: {
-      githubLink: 'https://github.com/ColinLienard',
+      githubLink: 'https://github.com/colinlienard',
       linkedinLink: 'https://www.linkedin.com/in/colin-lienard-83490a1a4/',
-      maltLink: 'https://www.malt.fr/profile/colinlienard1',
+      twitterLink: 'https://twitter.com/colinlienard',
       redditLink: 'https://www.reddit.com/user/colinlienard',
       email: 'contact@colin-lienard.fr',
       spotifyClientId: '',

@@ -1,8 +1,8 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_649_178)">
 <circle cx="32" cy="32" r="32" fill="white"/>
-<rect x="12" y="16" width="40" height="32" fill="#0B0B0D"/>
-<path d="M48 20H16L32 36L48 20Z" fill="white"/>
+<rect x="12" y="16" width="40" height="32" rx="4" fill="#0B0B0D"/>
+<path d="M45.5858 20H18.4142C17.5233 20 17.0771 21.0771 17.7071 21.7071L31.2929 35.2929C31.6834 35.6834 32.3166 35.6834 32.7071 35.2929L46.2929 21.7071C46.9229 21.0771 46.4767 20 45.5858 20Z" fill="white"/>
 </g>
 <defs>
 <clipPath id="clip0_649_178">
