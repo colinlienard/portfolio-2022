@@ -28,6 +28,10 @@
     color: variables.$grey;
   }
 
+  a {
+    @include mixins.blink;
+  }
+
   strong {
     color: variables.$white;
   }
