@@ -42,6 +42,6 @@
     "typescript": "^5.0.4"
   },
   "engines": {
-    "pnpm": ">=8"
+    "pnpm": ">=8.6"
   }
 }
