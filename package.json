@@ -1,17 +1,17 @@
 {
   "private": true,
   "scripts": {
+    "analyze": "nuxt analyze dist",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "analyze": "nuxt analyze dist",
-    "typecheck": "tsc --noEmit",
     "lint": "eslint **/*.ts **/*.vue && stylelint \"**/*.{vue,scss}\"",
     "lint:fix": "eslint --fix **/*.ts **/*.vue && stylelint --fix \"**/*.{vue,scss}\"",
+    "prepare": "nuxt prepare",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "prepare": "nuxt prepare"
+    "preview": "nuxt preview",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@splinetool/runtime": "^0.9.340",
@@ -35,10 +35,13 @@
     "postcss-html": "^1.5.0",
     "prettier": "^2.8.8",
     "sass": "^1.62.1",
-    "stylelint": "^15.6.2",
-    "stylelint-config-prettier": "^9.0.3",
+    "stylelint": "^15.9.0",
+    "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-standard-scss": "^9.0.0",
     "stylelint-config-standard-vue": "^1.0.0",
     "typescript": "^5.0.4"
+  },
+  "engines": {
+    "pnpm": ">=8"
   }
 }
