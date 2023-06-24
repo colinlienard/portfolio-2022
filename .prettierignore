@@ -3,3 +3,4 @@
 dist
 node_modules
 content/*/*.md
+pnpm-lock.yaml
