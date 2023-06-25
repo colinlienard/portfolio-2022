@@ -5,10 +5,12 @@
   "commitMessagePrefix": ":arrow_up: ",
   "packageRules": [
     {
+      "matchPackagePatterns": ["*"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "all non-major dependencies"
     },
     {
+      "matchPackagePatterns": ["*"],
       "matchUpdateTypes": ["major"],
       "groupName": "all major dependencies"
     }
