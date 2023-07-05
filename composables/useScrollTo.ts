@@ -10,7 +10,7 @@ const useScrollTo = () => {
       typeof target === 'number' ? target : document.querySelector(target),
       {
         offset: isMobile ? -128 : -224,
-      }
+      },
     );
   };
 };

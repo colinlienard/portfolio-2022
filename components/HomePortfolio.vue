@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { data } = await useAsyncData('projects', () =>
-  queryContent('/projects/').sort({ order: 1 }).find()
+  queryContent('/projects/').sort({ order: 1 }).find(),
 );
 
 const hovered = ref<null | number>(null);
@@ -16,10 +16,10 @@ const hovered = ref<null | number>(null);
         v-for="(project, index) in data"
         :key="index"
         :index="index"
-        :title="(project.title as string)"
+        :title="project.title as string"
         :description="project.description"
         :image="project.image"
-        :link="(project._path as string)"
+        :link="project._path as string"
         :transparent="hovered === null ? false : hovered !== index"
         @mouseenter="hovered = index"
         @mouseleave="hovered = null"

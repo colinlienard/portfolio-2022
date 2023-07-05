@@ -1,6 +1,6 @@
 const useThrottle = (
   callback: (...args: any) => void,
-  delay: number
+  delay: number,
 ): (() => void) => {
   let wait = false;
 

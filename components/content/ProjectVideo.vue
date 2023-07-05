@@ -6,7 +6,7 @@ defineProps<{
 const { path } = useRoute();
 
 const { data } = await useAsyncData(path, () =>
-  queryContent('/projects/').where({ _path: path }).find()
+  queryContent('/projects/').where({ _path: path }).find(),
 );
 </script>
 

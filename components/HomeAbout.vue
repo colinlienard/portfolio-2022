@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const isMobile = useIsMobile();
 const { data } = await useAsyncData('milestones', async () =>
-  queryContent('/milestones').findOne()
+  queryContent('/milestones').findOne(),
 );
 </script>
 
