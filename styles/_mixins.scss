@@ -78,11 +78,17 @@
 
 @mixin text-stroke($color: variables.$white) {
   color: variables.$dark;
-  text-shadow: 1px 1px $color, -1px 1px $color, 1px (-1px) $color,
+  text-shadow:
+    1px 1px $color,
+    -1px 1px $color,
+    1px (-1px) $color,
     -1px (-1px) $color;
 
   @include screens.laptop {
-    text-shadow: 2px 2px $color, -2px 2px $color, 2px (-2px) $color,
+    text-shadow:
+      2px 2px $color,
+      -2px 2px $color,
+      2px (-2px) $color,
       -2px (-2px) $color;
   }
 }

@@ -13,10 +13,10 @@ const getMusic = async () => {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
         Authorization: `Basic ${btoa(
-          `${config.public.spotifyClientId}:${config.public.spotifyClientSecret}`
+          `${config.public.spotifyClientId}:${config.public.spotifyClientSecret}`,
         )}`,
       },
-    }
+    },
   );
   if (!responseToken.ok) {
     return;
@@ -32,7 +32,7 @@ const getMusic = async () => {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${access_token}`,
       },
-    }
+    },
   );
   if (response.ok) {
     try {
@@ -42,7 +42,7 @@ const getMusic = async () => {
       const artist = item.artists.reduce(
         (previous: string, current: any) =>
           `${previous ? `${previous}, ` : ''}${current.name}`,
-        ''
+        '',
       );
       const link = item.external_urls.spotify;
 

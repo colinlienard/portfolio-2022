@@ -108,7 +108,9 @@ onUnmounted(() => {
   justify-content: center;
   mix-blend-mode: difference;
   animation: appear 1s variables.$ease-in-out;
-  transition: width 0.5s variables.$ease-in-out, top 0.5s variables.$ease-in-out,
+  transition:
+    width 0.5s variables.$ease-in-out,
+    top 0.5s variables.$ease-in-out,
     left 0.5s variables.$ease-in-out,
     background-color 0.5s variables.$ease-in-out;
 
@@ -128,7 +130,9 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: width 0.5s variables.$ease-in-out, top 0.5s variables.$ease-in-out,
+  transition:
+    width 0.5s variables.$ease-in-out,
+    top 0.5s variables.$ease-in-out,
     left 0.5s variables.$ease-in-out;
 
   &.visible {
