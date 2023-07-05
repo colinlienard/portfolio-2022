@@ -2,17 +2,5 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
   "labels": ["dependency"],
-  "commitMessagePrefix": ":arrow_up: ",
-  "packageRules": [
-    {
-      "matchPackagePatterns": ["*"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "all non-major dependencies"
-    },
-    {
-      "matchPackagePatterns": ["*"],
-      "matchUpdateTypes": ["major"],
-      "groupName": "all major dependencies"
-    }
-  ]
+  "commitMessagePrefix": ":arrow_up: "
 }
