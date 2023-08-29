@@ -18,9 +18,9 @@
     "locomotive-scroll": "^4.1.4"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.7.0",
+    "@nuxt/content": "^2.8.0",
     "@nuxt/devtools": "^0.8.0",
-    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@types/locomotive-scroll": "^4.1.0",
     "@types/node": "^20.3.3",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
@@ -33,7 +33,7 @@
     "nuxt": "^3.7.0",
     "postcss": "^8.4.24",
     "postcss-html": "^1.5.0",
-    "prettier": "^3.0.0",
+    "prettier": "^3.0.3",
     "sass": "^1.63.6",
     "stylelint": "^15.10.0",
     "stylelint-config-prettier": "^9.0.5",
