@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const isMobile = useIsMobile();
-const { data } = await useAsyncData('milestones', async () =>
+const { data } = await useAsyncData('milestones', () =>
   queryContent('/milestones').findOne(),
 );
 </script>

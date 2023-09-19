@@ -5,8 +5,8 @@
   },
   "extends": [
     "plugin:vue/essential",
-    "@nuxtjs/eslint-config-typescript",
     "airbnb-base",
+    "@nuxtjs/eslint-config-typescript",
     "prettier"
   ],
   "parserOptions": {
@@ -26,7 +26,8 @@
   "rules": {
     "import/extensions": ["error", { "ts": "never" }],
     "import/no-extraneous-dependencies": "off",
-    "@typescript-eslint/no-unused-vars": ["error"]
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "constistent-return": "off"
   },
   // Vue and Nuxt auto imports (https://v3.nuxtjs.org/guide/concepts/auto-imports)
   "overrides": [

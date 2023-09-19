@@ -12,15 +12,15 @@ export default defineNuxtConfig({
   },
   modules: ['@nuxt/content'],
   runtimeConfig: {
+    spotifyClientId: '',
+    spotifyClientSecret: '',
+    spotifyRefreshToken: '',
     public: {
       githubLink: 'https://github.com/colinlienard',
       linkedinLink: 'https://www.linkedin.com/in/colin-lienard-83490a1a4/',
       twitterLink: 'https://twitter.com/colinlienard',
       redditLink: 'https://www.reddit.com/user/colinlienard',
       email: 'contact@colin-lienard.fr',
-      spotifyClientId: '',
-      spotifyClientSecret: '',
-      spotifyRefreshToken: '',
     },
   },
   ssr: true,
