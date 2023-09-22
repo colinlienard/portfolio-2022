@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { data: music, refresh } = await useFetch('/api/spotify-listening');
+const { data: music, refresh } = await useFetch('/api/spotify-listening', {
+  server: false,
+});
 let interval: ReturnType<typeof setInterval> | null = null;
 
 onMounted(() => {
