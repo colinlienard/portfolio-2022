@@ -13,7 +13,8 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content'],
   nitro: {
     prerender: {
-      ignore: ['/api/spotify-listening'],
+      crawlLinks: true,
+      routes: ['/'],
     },
   },
   runtimeConfig: {
