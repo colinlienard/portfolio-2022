@@ -11,6 +11,11 @@ export default defineNuxtConfig({
     enabled: true,
   },
   modules: ['@nuxt/content'],
+  nitro: {
+    prerender: {
+      ignore: ['/api'],
+    },
+  },
   runtimeConfig: {
     spotifyClientId: '',
     spotifyClientSecret: '',
@@ -23,7 +28,6 @@ export default defineNuxtConfig({
       email: 'contact@colin-lienard.fr',
     },
   },
-  ssr: true,
   typescript: {
     strict: true,
   },
