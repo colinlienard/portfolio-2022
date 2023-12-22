@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@splinetool/runtime':
-    specifier: ^0.9.505
-    version: 0.9.523
+    specifier: ^1.0.16
+    version: 1.0.16
   '@vercel/analytics':
     specifier: ^1.1.1
     version: 1.1.1
@@ -1592,6 +1592,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
+      napi-wasm: 1.1.0
     dev: true
     bundledDependencies:
       - napi-wasm
@@ -1950,8 +1951,8 @@ packages:
     resolution: {integrity: sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==}
     dev: true
 
-  /@splinetool/runtime@0.9.523:
-    resolution: {integrity: sha512-F1QZYUyELxnhG8c4vnAcf7U2R7ZUDCOCsfjsIu6exLb87TRsOr6KvOYYa/8kOlRrdcmDeK4dhHHTTlpcyK4MvQ==}
+  /@splinetool/runtime@1.0.16:
+    resolution: {integrity: sha512-9Fp7rfeyMeRfj6Ldj++1MgbPeVLtwq7cJobDiNFv9XlVeqwzM/M7AWA8jzACwnRB/Cm/I1gJGx/wdK9TqrKYAA==}
     dependencies:
       on-change: 4.0.2
       semver-compare: 1.0.0
@@ -6618,6 +6619,10 @@ packages:
     resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
     engines: {node: ^14 || ^16 || >=18}
     hasBin: true
+    dev: true
+
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
     dev: true
 
   /natural-compare@1.4.0:
