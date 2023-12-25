@@ -1,8 +1,7 @@
 {
   "extends": [
     "stylelint-config-standard-scss",
-    "stylelint-config-standard-vue/scss",
-    "stylelint-config-prettier"
+    "stylelint-config-recommended-vue/scss"
   ],
   "rules": {
     "color-function-notation": "legacy"
