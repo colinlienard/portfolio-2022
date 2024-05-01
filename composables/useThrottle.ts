@@ -1,15 +1,14 @@
 const useThrottle = (
-  callback: (...args: any) => void,
+  callback: (...args: unknown[]) => void,
   delay: number,
 ): (() => void) => {
   let wait = false;
 
-  return (...args: any) => {
+  return (...args: unknown[]) => {
     if (wait) {
       return;
     }
 
-    // eslint-disable-next-line n/no-callback-literal
     callback(...args);
     wait = true;
 

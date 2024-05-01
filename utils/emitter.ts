@@ -1,5 +1,4 @@
-/* eslint-disable n/no-callback-literal */
-
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-extraneous-class */
 interface EventMap {
   'route-change': (to: string) => void;
 }
