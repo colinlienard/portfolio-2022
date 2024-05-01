@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
-  modules: ['@nuxt/content'],
+  modules: ['@nuxt/content', '@nuxt/eslint'],
   nitro: {
     prerender: {
       crawlLinks: true,

@@ -46,13 +46,13 @@ const { data } = await useAsyncData('milestones', () =>
       data-scroll-class="visible"
       :data-scroll-offset="isMobile ? '0' : '25%'"
     >
-      <li class="timeline"></li>
+      <li class="timeline" />
       <li
         v-for="(milestone, index) in data.milestones"
         :key="index"
         class="list-item"
       >
-        <span class="circle"></span>
+        <span class="circle" />
         <div class="content">
           <h3 class="title">{{ milestone.start }} - {{ milestone.end }}</h3>
           <p class="description">

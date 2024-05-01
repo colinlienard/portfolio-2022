@@ -35,10 +35,10 @@ onUnmounted(() => {
     >
     <p v-else class="text">Not playing • Spotify</p>
     <div v-if="music" class="music">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+      <span />
+      <span />
+      <span />
+      <span />
     </div>
   </aside>
 </template>
