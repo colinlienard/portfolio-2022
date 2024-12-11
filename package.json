@@ -23,7 +23,7 @@
     "@nuxt/devtools": "^1.2.0",
     "@nuxt/eslint": "^0.3.10",
     "@types/locomotive-scroll": "^4.1.3",
-    "@types/node": "^20.12.7",
+    "@types/node": "^22.10.2",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "^7.8.0",
     "eslint": "^9.1.1",
