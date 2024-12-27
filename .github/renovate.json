@@ -3,5 +3,6 @@
   "extends": ["config:base", "group:allNonMajor"],
   "labels": ["dependency"],
   "commitMessagePrefix": ":arrow_up: ",
-  "rangeStrategy": "bump"
+  "rangeStrategy": "bump",
+  "enabled": false
 }
